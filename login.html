@@ -22,7 +22,6 @@
 	opacity: 0.7;
     height:245px;
 	width: 270px;	
-	
 	position:absolute; 
 	left:200px; 
 	top: 170px;
@@ -88,12 +87,8 @@
 	  if(Img.src="pig.jpg"){Img.src="grass.jpg";	}else{Img.src="pig.jpg";}
 	  //图片改变
 	  
-	     obj.style.backgroundColor ='#87CEFA';
-		 
-		 o.style.backgroundColor ='#87CEFA';
-		 
-		 j.style.backgroundColor =lightblue;
-	  if(use.selectIndex.value=="Stuff"){
+	     
+	  if(use.selectIndex.value=="stuff"){
 	     alert("Stuff");
 	     
 		 obj.style.transition="-moz-transform 5s linear";
@@ -130,20 +125,20 @@
   <body>
     <img src="icon.jpg" width="80px" height="80px">
 	<b style="font-size: 30px; top:25px;position:absolute;">Hibernia-Sino Travel Insurance Company</b>
-	<p><select id = "user"  style="top:70px;position:absolute;left:800px" onchange="change()">
+	<p><select id = "user"  style="top:70px;position:absolute;left:800px" onchange="change(10)">
 		     <option value = "customer" selected="selected">Customer</option>
 		     <option value = "stuff">Staff</option>
 	         </select></p>
 			 
     <form>
 	     <img id="img" src="pig.jpg" width="80px" height="80px">
-		                                     
+		 
          <fieldset class=formstyle>
              <legend id="leg">Log in</legend>
 			
-             <p>Username <input type="text" name="user"/></p>
+             <p>Username </p><input type="text" name="user"/>
              <br/>
-             <p>Password <input type="text" name="password"/></p>
+             <p>Password </p><input type="text" name="password"/>
              <br/>
              <input style="color:white;background-color:lightblue;font-size:18px;" type="button" value="Enter"></br>
 			 <a href="reset_page_Eng.html" style="text-align:left;font-size:15px;">Forget the password?</a >
