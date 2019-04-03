@@ -9,12 +9,12 @@
 		background-image:url('login.jpg');
 		background-position:0px 120px;
 		background-size:100%,100% ;
-		background-position:0px 90px;
+		background-position:0px 80px;
 		background-repeat:no-repeat;
 		
 	}
 	
-	form{
+	#cust{
   	-moz-appearance: none;
 	border-radius:4px;
 	border:3px solid #FF8247;
@@ -22,13 +22,32 @@
 	opacity: 0.7;
     height:245px;
 	width: 270px;	
+	
 	position:absolute; 
-	left:200px; 
-	top: 170px;
+	left:400px; 
+	top: 150px;
 	background-color:#FFDEAD;
+	
+	
+    }
+	
+	#staf{
+  	-moz-appearance: none;
+	border-radius:4px;
+	border:3px solid #1CC09F;
+	outline:0;
+	opacity: 0.7;
+    height:245px;
+	width: 270px;	
+	
+	position:absolute; 
+	left:1100px; 
+	top: 150px;
+	background-color:lightblue;
+	
     }
    
-	.formstyle{
+	.formstylec{
 	border:2px solid #FF8247;
 	border-radius:4px;
 	text-align:center;
@@ -39,15 +58,32 @@
 	top: -38px;
 	margin:15px;
 	
-	-moz-animation-name: move;
-    -moz-animation-timing-function:linear;
-	-moz-animation-duration: 5s;
+	
 
 	}
+	.formstyles{
+	border:2px solid #1CC09F;
+	border-radius:4px;
+	text-align:center;
+	position:absolute; 
+	height:250px;
+	width: 250px;
+	left:-20px; 
+	top: -38px;
+	margin:15px;
+	}
 	
-	#leg{
+	#leg1{
 	color:white;
 	background-color:#F4A460;
+	margin:8px;
+	font-size:20px;
+	width:70px;
+	}
+	
+	#leg2{
+	color:white;
+	background-color:#1CC09F;
 	margin:8px;
 	font-size:20px;
 	width:70px;
@@ -57,93 +93,131 @@
 	margin:1px;
 	font-size:18px;
 	}
-	
+	input:focus{
+    border: 2px solid #FFFACD;
+	}
 	br{
 	font-family: cursive;
     margin: 5px;
     }
-	
-	@moz-keyframes move{
-            0% {}
-			50%{ -moz-transform: translateX(200px);}
-            
-            100% {
-                -moz-transform: translateX(300px);
-            }
-    }
+	select{
+	border:2px solid #BEBEBE;
+	background-color:#D3D3D3;
+	}
+	   
+	body{
+	background-color:#FF8247}
 
+		
 	
     </style>
 	
 	<script type="text/javascript">
-	function change(m){
-	  var obj=document.getElementsByClassName("formstyle");
-	  var Img=document.getElementById('img');
-	  var use=document.getElementById('user');
-	  var arr=document.getElementById('ar');
-	  var j=document.getElementById('leg');
-	  var o=document.getElementsByTagName("form");
-	  
-	  if(Img.src="pig.jpg"){Img.src="grass.jpg";	}else{Img.src="pig.jpg";}
-	  //图片改变
-	  
-	     
-	  if(use.selectIndex.value=="stuff"){
-	     alert("Stuff");
-	     
-		 obj.style.transition="-moz-transform 5s linear";
-		 obj.style.webkitTransform="translate("+m+"px,0px) scale(1) translateZ(0px)";
-		 //动画开始
 	
-		 //arr.removeAttribute("href");
-		 //取消超链接（员工不能注册新用户）
-		 
-		 //use.options[1].selected=true;
-		 //修改user select 默认项为员工
-		 obj.style.backgroundColor ='#87CEFA';
-		 
-		 o.style.backgroundColor ='#87CEFA';
-		 
-		 j.style.backgroundColor =lightblue;
-		 //修改form颜色
-	  }else{
-         alert("Customer");
-		 obj.style.backgroundColor ="#F4A460";
-		 
-		 o.style.backgroundColor ="#F4A460";
-		 
-		 j.style.backgroundColor ="#F4A460";
-      }	  
+	
+	function changec(sum){
+	    var obj=document.getElementById("cust");
+		obj.style.transition="-webkit-transform 500ms ease-out";
+		obj.style.webkitTransform="translate("+sum+"px,0px) scale(1) translateZ(0px)";
+		
+		var sss=document.getElementById('staf');
+		sss.style.transition="-webkit-transform 500ms ease-out";
+		sss.style.webkitTransform="translate("+sum+"px,0px) scale(1) translateZ(0px)";
+		
+		document.getElementById('bod').style.backgroundColor=='#FF8247';
+		
+		
+	    document.getElementById('su').disabled = true;
+		document.getElementById('sp').disabled = true;
+		document.getElementById('sb').disabled = true;
+		document.getElementById('sl').disabled = true;
+		
+		document.getElementById('cu').disabled = false;
+		document.getElementById('cp').disabled = false;
+		document.getElementById('cb').disabled = false;
+		document.getElementById('cl1').disabled = false;
+		document.getElementById('cl2').disabled = false;
+		
 
 	}
+	
+	function changes(sum){
+	    var obj=document.getElementById("cust");
+		obj.style.transition="-webkit-transform 500ms ease-out";
+		obj.style.webkitTransform="translate("+sum+"px,0px) scale(1) translateZ(0px)";
+		
+		var sss=document.getElementById('staf');
+		sss.style.transition="-webkit-transform 500ms ease-out";
+		sss.style.webkitTransform="translate("+sum+"px,0px) scale(1) translateZ(0px)";
+	
+	    document.getElementById('bod').style.backgroundColor='#1CC09F';
+		
+	    document.getElementById('cu').disabled = true;
+		document.getElementById('cp').disabled = true;
+		document.getElementById('cb').disabled = true;
+		document.getElementById('cl1').disabled = true;
+		document.getElementById('cl2').disabled = true;
+		
+		document.getElementById('su').disabled = false;
+		document.getElementById('sp').disabled = false;
+		document.getElementById('sb').disabled = false;
+		document.getElementById('sl').disabled = false;
+		
+
+	}
+
+
+	 function changel(){
+	    window.location.href='login_ch.html';
+	 }
+	 
 	</script>
 	
-	
-  <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />中文转换-->
+
   </head>
   
-  <body>
-    <img src="icon.jpg" width="80px" height="80px">
-	<b style="font-size: 30px; top:25px;position:absolute;">Hibernia-Sino Travel Insurance Company</b>
-	<p><select id = "user"  style="top:70px;position:absolute;left:800px" onchange="change(10)">
-		     <option value = "customer" selected="selected">Customer</option>
-		     <option value = "stuff">Staff</option>
-	         </select></p>
+  <body id="bod">
+    <img src="icon.jpg" width="75px" height="75px" style="left:2px;top:2px;position:absolute;">
+	<b style="font-size: 30px; left:90px;top:25px;position:absolute;">Hibernia-Sino Travel Insurance Company</b>
+	
+	<input style="color:white;background-color:#BEBEBE;font-size:18px;top:65px;position:absolute;left:800px" type="button" value="Customer" onclick="changec(0)">
+    <input style="color:white;background-color:#BEBEBE;font-size:18px;top:65px;position:absolute;left:890px" type="button" value="Staff" onclick="changes(-600)">
+	
+	<p><select id = "language"  style="top:70px;position:absolute;left:1000px" onchange="changel()">
+		     <option value = "Chinese" selected="selected">English</option>
+		     <option value = "English">Chinese</option>
+	         </select></p>		 
 			 
-    <form>
-	     <img id="img" src="pig.jpg" width="80px" height="80px">
-		 
-         <fieldset class=formstyle>
-             <legend id="leg">Log in</legend>
+    <form id="cust">
+		                                     
+         <fieldset class=formstylec>
+             <legend id="leg1">Log in </legend> <small>[customer]</small>
 			
-             <p>Username </p><input type="text" name="user"/>
+             <p>Username <input type="text" name="user" id="cu"/></p>
              <br/>
-             <p>Password </p><input type="text" name="password"/>
+             <p>Password <input type="text" name="password"id="cp"/></p>
              <br/>
-             <input style="color:white;background-color:lightblue;font-size:18px;" type="button" value="Enter"></br>
-			 <a href="reset_page_Eng.html" style="text-align:left;font-size:15px;">Forget the password?</a >
-			 <a href="register_page_Eng" id="ar" style="text-align:right;font-size:15px;">New user?</a >
+             <input id="cb"style="color:white;background-color:#FF8247;font-size:18px;" type="button" value="Enter"></br>
+			 <a href="reset_page_Eng.html" style="text-align:left;font-size:15px;" id="cl1" >Forget the password?</a >
+			 <a href="register_page_Eng" id="ar" style="text-align:right;font-size:15px;" id="cl2">New user?</a >
          </fieldset>
+		 
+   </form>
+   
+   <form id="staf">
+		                                     
+         <fieldset class=formstyles>
+             <legend id="leg2">Log in</legend> <small>[staff]</small>
+			
+             <p>Username <input type="text" id="su" name="user" ></p>
+             <br/>
+             <p>Password <input type="text" id="sp" name="password" ></p>
+             <br/>
+             <input style="color:white;background-color:lightblue;font-size:18px;" type="button" id="sb" value="Enter" ></br>
+			 <a href="reset_page_Eng.html" style="text-align:left;font-size:15px;" id="sl" >Forget the password?</a >
+			
+         </fieldset>
+		 
    </form>
    
    
