@@ -3,7 +3,7 @@
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-	<!-- Bootstrap Styles-->
+    <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
@@ -15,60 +15,10 @@
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
      <!-- TABLE STYLES-->
     <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-
-<script>
-
-    // Builds the HTML Table out of myList.
-    function buildHtmlTable(selector) {
-        $(selector).empty();
-        let xmlhttp = new XMLHttpRequest();
-        let url = "http://cccbd.top:8080/RESTHello/account?limit=10";
-        xmlhttp.open("GET", url, true);
-        xmlhttp.send();
-        xmlhttp.onreadystatechange = function () {
-            if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                let myArr = JSON.parse(xmlhttp.responseText);
-                console.log(xmlhttp.responseText);
-                var columns = addAllColumnHeaders(myArr, selector);
-                for (var i = 0; i < myArr.length; i++) {
-                    var row$ = $('<tr/>');
-                    for (var colIndex = 0; colIndex < columns.length; colIndex++) {
-                        var cellValue = myArr[i][columns[colIndex]];
-                        if (cellValue == null) cellValue = "";
-                        row$.append($('<td/>').html(cellValue));
-                }
-                $(selector).append(row$);
-            }
-            }
-            
-        };
-    }
-
-    // Adds a header row to the table and returns the set of columns.
-    // Need to do union of keys from all records as some records may not contain
-    // all records.
-    function addAllColumnHeaders(myList, selector) {
-        var columnSet = [];
-        var headerTr$ = $('<tr/>');
-        for (var i = 0; i < myList.length; i++) {
-            var rowHash = myList[i];
-            for (var key in rowHash) {
-                if ($.inArray(key, columnSet) === -1) {
-                    columnSet.push(key);
-                    headerTr$.append($('<th/>').html(key));
-                }
-            }
-        }
-        $(selector).append(headerTr$);
-        return columnSet;
-    }
-</script>
-<script src="jquery-3.3.1.js"></script>
-
 </head>
-<body onload="buildHtmlTable('#dataTables-example')">
-	 <div id="wrapper">
-	 	<nav class="navbar navbar-default top-navbar" role="navigation">
+<body>
+     <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -104,66 +54,82 @@
 
 
         <!--/. NAV TOP  -->
-	 	 <nav class="navbar-default navbar-side" role="navigation">
+         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="employee_dashboard1.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a href="homepage_customer.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
-                    <li>
-                        <a href="employee_unprocessed.html" class="active-menu"><i class="fa fa-edit"></i> Unprocessed</a>
-                    </li>
+					
 					<li>
-                        <a href="employee_processed.html"><i class="fa fa-fw fa-file"></i> Processed</a>
+                        <a href="Lost-custo.html"><i class="fa fa-dashboard"></i> Lost luggage</a>
                     </li>
-                    
+					
+					<li>
+                        <a href="process.html" class="active-menu"><i class="fa fa-dashboard"></i> Process Procedure</a>
+                    </li>
+					
+					<li>
+                        <a href="policy.html"><i class="fa fa-dashboard"></i>Policies</a>
+                    </li>
+					
                 </ul>
-
             </div>
-
         </nav>
-
-
+        <!--/. NAV side  -->
         <div id="page-wrapper" >
-            <div id="page-inner">
-			 <div class="row">
+             <div id="page-inner">
+                <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            Unprocessed Claims<small>       Please be fair and professional</small>
+                            Claim Details <small>detail information</small>
                         </h1>
                     </div>
                 </div> 
-                 <!-- /. ROW  -->
-               
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advanced Tables -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                             Advanced Tables
-                        </div>
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    
-                                </table>
-                               
-</body>
-                               
+                <!-- /. ROW  -->
+                <div class="row">
+                    <div class="col-md-4 col-sm-4" style="size: height:100%;width:100%;">
+
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                            Name
                             </div>
-                            
+                        </div>
+                        <div class="panel panel-info" >
+                            <div class="panel-heading">
+                            ClaimNo
+                            </div>
+                            <div class="panel-body">
+                            <p id="ddetails">detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail.</p>
+                            </div>
+                            <div class="panel-footer">
+                      
+                                Instruction:<textarea class="form-control" placeholder="   details about requirement " rows="3"></textarea>
+                        
+                            </div>
                         </div>
                     </div>
-                    <!--End Advanced Tables -->
                 </div>
-            </div>
+                <!-- /. ROW  -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-danger btn-circle" style="position: absolute;margin-left: 40%"><i class="fa fa-times fa-2x"></i>
+                        </button>
+                        <button type="button" class="btn btn-success btn-circle" style="position:absolute;margin-left: 80%"><i class="fa fa-check fa-2x"></i>
+                        </button>
+                        <button type="button" class="btn btn-info btn-circle" style="position: absolute;margin-left: 120%"><i class="fa fa-info fa-2x"></i>
+                        </button>
+                    </div>
+                </div>
 
+
+             </div>
         </div>
-               
+ 
 
-	 </div>
-	      <!-- /. WRAPPER  -->
+     </div>
+          <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
     <script src="assets/js/jquery-1.10.2.js"></script>

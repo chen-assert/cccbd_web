@@ -15,6 +15,7 @@
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
      <!-- TABLE STYLES-->
     <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
 
 <script>
 
@@ -22,12 +23,15 @@
     function buildHtmlTable(selector) {
         $(selector).empty();
         let xmlhttp = new XMLHttpRequest();
-        let url = "http://cccbd.top:8080/RESTHello/account?limit=10";
+        let url = "http://cccbd.top:8080/RESTHello/policy/my_policies";
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
         xmlhttp.onreadystatechange = function () {
             if(xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+
+                
                 let myArr = JSON.parse(xmlhttp.responseText);
+                console.log(myArr);
                 console.log(xmlhttp.responseText);
                 var columns = addAllColumnHeaders(myArr, selector);
                 for (var i = 0; i < myArr.length; i++) {
@@ -36,7 +40,9 @@
                         var cellValue = myArr[i][columns[colIndex]];
                         if (cellValue == null) cellValue = "";
                         row$.append($('<td/>').html(cellValue));
+                        
                 }
+                row$.append($('<td/>').html("<a href=\"www.baidu.com?name=\">hhh</a>"));
                 $(selector).append(row$);
             }
             }
@@ -59,11 +65,11 @@
                 }
             }
         }
+        headerTr$.append($('<th/>').html("button"));
         $(selector).append(headerTr$);
         return columnSet;
     }
 </script>
-<script src="jquery-3.3.1.js"></script>
 
 </head>
 <body onload="buildHtmlTable('#dataTables-example')">
@@ -108,16 +114,30 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
-                    <li>
-                        <a href="employee_dashboard1.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                     <li>
+                        <a href="homepage_customer.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
-                    <li>
-                        <a href="employee_unprocessed.html" class="active-menu"><i class="fa fa-edit"></i> Unprocessed</a>
-                    </li>
+					
 					<li>
-                        <a href="employee_processed.html"><i class="fa fa-fw fa-file"></i> Processed</a>
+                        <a href="Lost-custo.html"><i class="fa fa-dashboard"></i> Lost luggage</a>
                     </li>
-                    
+					
+					<li>
+                        <a href="process.html" ><i class="fa fa-dashboard"></i> Process Procedure</a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="customer_processed.html" >Processed claim</a>
+                            </li>
+                            <li>
+                                <a href="customer_unprocessed.html" class="active-menu">Unprocessed claim</a>
+                            </li>
+						</ul>	
+					</li>
+					
+					<li>
+                        <a href="policy.html"><i class="fa fa-dashboard"></i>Policies</a>
+                    </li>
+					
                 </ul>
 
             </div>
@@ -130,7 +150,7 @@
 			 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            Unprocessed Claims<small>       Please be fair and professional</small>
+                            Unprocessed claim<small>       Please be fair and professional</small>
                         </h1>
                     </div>
                 </div> 
