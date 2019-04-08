@@ -42,7 +42,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="/C:/Bitnami/wampstack-7.1.21-0/apache2/htdocs/interface课设/login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -59,7 +59,7 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="homepage_customer.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a href="/C:/Bitnami/wampstack-7.1.21-0/apache2/htdocs/interface课设/homepage_customer.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
 					
 					<li>
@@ -67,10 +67,10 @@
                     </li>
 					
 					<li>
-                        <a href="process.html"><i class="fa fa-dashboard"></i> Process Procedure</a>
+                        <a href="process.html" ><i class="fa fa-dashboard"></i> Process Procedure</a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="customer_processed.html">Processed claim</a>
+                                <a href="customer_processed.html" >Processed claim</a>
                             </li>
                             <li>
                                 <a href="customer_unprocessed.html">Unprocessed claim</a>
@@ -79,34 +79,117 @@
 					</li>
 					
 					<li>
-                        <a href="policy.html" class="active-menu"><i class="fa fa-dashboard"></i>Policies</a>
+                        <a href="policy.html"  class="active-menu"><i class="fa fa-dashboard"></i>Policies</a>
                     </li>
-                    
                     
                 </ul>
 
             </div>
 
         </nav>
-		
-		
-<!-- /. WRAPPER  -->
-<!-- JS Scripts-->
-<!-- jQuery Js -->
-<script src="assets/js/jquery-1.10.2.js"></script>
-<!-- Bootstrap Js -->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- Metis Menu Js -->
-<script src="assets/js/jquery.metisMenu.js"></script>
-<!-- DATA TABLE SCRIPTS -->
-<script src="assets/js/dataTables/jquery.dataTables.js"></script>
-<script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#dataTables-example').dataTable();
-    });
-</script>
-<!-- Custom Js -->
-<script src="assets/js/custom-scripts.js"></script>
-		
-	</body>	
+
+
+        <div id="page-wrapper" >
+            <div id="page-inner">
+             <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            Policy Purchased<small> ( lost-baggage claims not included )    </small>
+                        </h1>
+                    </div>
+                </div> 
+                 <!-- /. ROW  -->
+               
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             Advanced Tables
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th >ClaimNo</th>
+                                            
+                                            <th>Type</th>
+                                            <th>Detail</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeA" >
+                                            <td >500000</td>
+                                            
+                                            <td>Accident</td>
+                                            <td>Global;50years;flight limited ...<button type="button" class="btn btn-default" onclick="window.location.href='customer_policydetails.html'">More</button></td>
+                                        
+                                           
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>500001</td>
+                                            
+                                            <td>Delay</td>
+                                            <td>Global;1years;flight unlimited ...</td>
+                                           
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>500002</td>
+                                           
+                                            <td>Baggage</td>
+                                            <td>Domestic;2months;flight limited...</td>
+                                          
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>500003</td>
+                                            
+                                            <td>Accident</td>
+                                            <td>Domestic;2months;flight unlimited...</td>
+                                          
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>500004</td>
+                                           
+                                            <td>Baggage</td>
+                                            <td>Domestic;1months;flight unlimited...</td>
+                                           
+                                       
+                                       
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
+
+        </div>
+               
+
+     </div>
+          <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+     <!-- DATA TABLE SCRIPTS -->
+    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+         <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+    
+   
+</body>

@@ -20,14 +20,10 @@
      <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><i class="fa fa-comments"></i> <strong>Hibernia-Sino</strong></a>
+                
+                <a class="navbar-brand" ><i class="fa fa-comments"></i> <strong>Hibernia-Sino</strong></a>
             </div>
+			
 
             <ul class="nav navbar-top-links navbar-right">
               
@@ -49,6 +45,7 @@
                 </li>
                 <!-- /.dropdown -->
             </ul>
+			
         </nav>
 
 
@@ -79,56 +76,68 @@
         </nav>
         <!--/. NAV side  -->
         <div id="page-wrapper" >
+		 <button type="button" class="btn btn-default" style="margin-left:-30px;margin-top:-10px;" onclick="window.location.href='customer_processed.html'">Back</button>
+			
              <div id="page-inner">
+			    
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            Claim Details <small>detail information</small>
+                            Processing Details <small>detail information</small>
                         </h1>
                     </div>
                 </div> 
                 <!-- /. ROW  -->
+				
                 <div class="row">
+				
                     <div class="col-md-4 col-sm-4" style="size: height:100%;width:100%;">
 
                         <div class="panel panel-primary">
-                            <div class="panel-heading">
-                            Name
+                            
+							 <div class="panel-heading">
+                            ClaimNo<p></p>
+                            </div>
+							<div class="panel-heading">
+                            Set Date<p></p>
                             </div>
                         </div>
                         <div class="panel panel-info" >
-                            <div class="panel-heading">
-                            ClaimNo
+                            
+							<div class="panel-heading">
+                            Detail<p></p>
                             </div>
                             <div class="panel-body">
                             <p id="ddetails">detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail detail.</p>
                             </div>
-                            <div class="panel-footer">
-                      
-                                Instruction:<textarea class="form-control" placeholder="   details about requirement " rows="3"></textarea>
-                        
+						</div>
+						
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+                            <p id="state" style="color:black; font-size:20px; text-align:center;background-color:#C1FFC1">State</p>
                             </div>
-                        </div>
+							<div class="panel-heading">
+                            Instruction
+                            </div>
+                            <div class="panel-body">
+							<p id="instruct">
+							Feedbacks
+							</p>
+							</div>
+                        </div>    
+                        
                     </div>
                 </div>
-                <!-- /. ROW  -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <button type="button" class="btn btn-danger btn-circle" style="position: absolute;margin-left: 40%"><i class="fa fa-times fa-2x"></i>
-                        </button>
-                        <button type="button" class="btn btn-success btn-circle" style="position:absolute;margin-left: 80%"><i class="fa fa-check fa-2x"></i>
-                        </button>
-                        <button type="button" class="btn btn-info btn-circle" style="position: absolute;margin-left: 120%"><i class="fa fa-info fa-2x"></i>
-                        </button>
-                    </div>
-                </div>
+                
 
 
              </div>
         </div>
  
 
-     </div>
+ 
+
+    </div>
           <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->

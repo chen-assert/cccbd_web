@@ -3,10 +3,10 @@
 <html>
   <head>
     <title>Login</title>
-	
+	<meta charset="UTF-8">
 	<style type="text/css">
 	body{
-		background-image:url('login.jpg');
+		background-image:url('image/login.jpg');
 		background-position:0px 120px;
 		background-size:100%,100% ;
 		background-position:0px 80px;
@@ -171,13 +171,67 @@
 	    window.location.href='login_ch.html';
 	 }
 	 
+	 function logincust(){
+	    let mydata = new FormData();
+        mydata.append("username", document.getElementById('cu').value);
+        mydata.append("password", document.getElementById('cp').value);
+		var xhr = new XMLHttpRequest();
+		xhr.open('POST', 'http://cccbd.top:8080/RESTHello/login/send', true);
+		xhr.withCredentials = true;	//!!
+		xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+		xhr.onload = function () {
+			console.log(this.responseText);
+			//document.getElementById('result').innerHTML=this.responseText;
+			if(this.status!=200){
+			   document.getElementById('result').innerHTML="Incorrect username or password";
+		
+			}else{
+			   window.location.href='homepage_customer.html';
+			}
+			
+		};
+		
+		xhr.send(urlencodeFormData(mydata));
+	 }
+	 
+	 function loginstaf(){
+	    let mydata = new FormData();
+        mydata.append("username", document.getElementById('su').value);
+        mydata.append("password", document.getElementById('sp').value);
+		var xhr = new XMLHttpRequest();
+		xhr.open('POST', 'http://cccbd.top:8080/RESTHello/login/send_employee', true);
+		xhr.withCredentials = true;	//!!
+		xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+		xhr.onload = function () {
+			console.log(this.responseText);
+			//document.getElementById('result').innerHTML=this.responseText;
+			if(this.status!=200){
+			   document.getElementById('results').innerHTML="Incorrect username or password";
+		
+			}else{
+			   window.location.href='employee_dashboard.html';
+			}
+			
+		};
+		
+		xhr.send(urlencodeFormData(mydata));
+	 }
+	 
+	function urlencodeFormData(fd){
+    var params = new URLSearchParams();
+    for(var pair of fd.entries()){
+        typeof pair[1]=='string' && params.append(pair[0], pair[1]);
+    }
+    return params.toString();
+    }
+	 
 	</script>
 	
 
   </head>
   
   <body id="bod">
-    <img src="icon.jpg" width="75px" height="75px" style="left:2px;top:2px;position:absolute;">
+    <img src="image/icon.png" width="75px" height="75px" style="left:2px;top:2px;position:absolute;">
 	<b style="font-size: 30px; left:90px;top:25px;position:absolute;">Hibernia-Sino Travel Insurance Company</b>
 	
 	<input style="color:white;background-color:#BEBEBE;font-size:18px;top:65px;position:absolute;left:800px" type="button" value="Customer" onclick="changec(0)">
@@ -196,8 +250,9 @@
              <p>Username <input type="text" name="user" id="cu"/></p>
              <br/>
              <p>Password <input type="text" name="password"id="cp"/></p>
-             <br/>
-             <input id="cb"style="color:white;background-color:#FF8247;font-size:18px;" type="button" value="Enter"></br>
+             
+			 <small id="result" style="color:#FF6347;font-size:10px;"></small><br/>
+             <input id="cb" style="color:white;background-color:#FF8247;font-size:18px;" type="button" value="Enter" onclick="logincust()"></br>
 			 <a href="reset_page_Eng.html" style="text-align:left;font-size:15px;" id="cl1" >Forget the password?</a >
 			 <a href="register_page_Eng" id="ar" style="text-align:right;font-size:15px;" id="cl2">New user?</a >
          </fieldset>
@@ -212,8 +267,8 @@
              <p>Username <input type="text" id="su" name="user" ></p>
              <br/>
              <p>Password <input type="text" id="sp" name="password" ></p>
-             <br/>
-             <input style="color:white;background-color:lightblue;font-size:18px;" type="button" id="sb" value="Enter" ></br>
+             <small id="results" style="color:#FF6347;font-size:10px;"></small><br/>
+             <input style="color:white;background-color:lightblue;font-size:18px;" type="button" id="sb" value="Enter" onclick="loginstaf()" ></br>
 			 <a href="reset_page_Eng.html" style="text-align:left;font-size:15px;" id="sl" >Forget the password?</a >
 			
          </fieldset>
