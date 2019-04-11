@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
-    <script src="../jquery-3.3.1.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title></title>
     <!-- Bootstrap Styles-->
@@ -16,24 +15,21 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <!-- TABLE STYLES-->
     <link href="../assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-
+    <script src="../jquery-3.3.1.js"></script>
     <script>
 
         // Builds the HTML Table out of myList.
         function buildHtmlTable(selector) {
             $(selector).empty();
             let xmlhttp = new XMLHttpRequest();
-            let url = "http://cccbd.top:8080/RESTHello/claim/waiting_claims_user";
-            xmlhttp.withCredentials = true;
+            let url = "http://cccbd.top:8080/RESTHello/claim/waiting_claims";
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
-            let myArr = '';
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                    myArr = JSON.parse(xmlhttp.responseText);
-                    console.log(myArr);
-                    console.log(xmlhttp.responseText);
+                    let myArr = JSON.parse(xmlhttp.responseText);
                     var columns = addAllColumnHeaders(myArr, selector);
+                    var lie = 1;
                     for (var i = 0; i < myArr.length; i++) {
                         var row$ = $('<tr class="gradeA"/>');
                         var index = 0;
@@ -43,12 +39,13 @@
                             if (index != 0) {
                                 row$.append($('<td class ="id' + index + '"/>').html(cellValue));
                             } else {
-                                row$.append($("<td><a href=\"customer_claimdetails.html?id=" + cellValue + "\">" + cellValue + "</a></td"));
+                                row$.append($("<td><a href=\"employee_processing.html?id=" + cellValue + "\">" + cellValue + "</a></td"));
                             }
-                            index++;
 
+                            index++;
                         }
 
+                        // row$.append($("<a href=\"employee_processing.html?id="+value+"\">detail</a>"));
                         $(selector).append(row$);
                     }
                 }
@@ -76,7 +73,14 @@
             $(selector).append(headerTr$);
             return columnSet;
         }
+
+        // $(document).ready(function(){
+        // 	$("#getId").click(function(){
+        // 		alert($('.id0:eq(1)').html());
+        // 	});
+        // });
     </script>
+
 
 </head>
 <body onload="buildHtmlTable('#dataTables-example')">
@@ -121,27 +125,13 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="homepage_customer.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    <a href="employee_dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                 </li>
-
                 <li>
-                    <a href="Lost-custo.html"><i class="fa fa-dashboard"></i> Lost luggage</a>
+                    <a href="employee_unprocessed.html" class="active-menu"><i class="fa fa-edit"></i> Unprocessed</a>
                 </li>
-
                 <li>
-                    <a href="customer_process.html"><i class="fa fa-dashboard"></i> Process Procedure</a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="customer_processed.html">Processed claim</a>
-                        </li>
-                        <li>
-                            <a href="customer_unprocessed.html" class="active-menu">Unprocessed claim</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="policy.html"><i class="fa fa-dashboard"></i>Policies</a>
+                    <a href="employee_processed.html"><i class="fa fa-fw fa-file"></i> Processed</a>
                 </li>
 
             </ul>
@@ -150,13 +140,13 @@
 
     </nav>
 
-
+    <p class="id0"></p>
     <div id="page-wrapper">
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        Unprocessed claim
+                        Unprocessed Policy
                         <small> Please be fair and professional</small>
                     </h1>
                 </div>
@@ -209,5 +199,52 @@
 <!-- Custom Js -->
 <script src="../assets/js/custom-scripts.js"></script>
 
-
 </body>
+
+
+$(document).ready(function () {
+$("#button1").click(function () {
+let mydata = new FormData();
+mydata.append("username", "testuser");
+mydata.append("password", "123456");
+$.ajax({
+url: 'http://cccbd.top:8080/RESTHello/login/send',
+data: urlencodeFormData(mydata),
+type: 'POST',
+xhrFields: {
+withCredentials: true
+//这个很重要,否则无法设置cookie
+},
+complete: function (jqXHR) {
+$("#result").html(jqXHR.responseText);
+},
+success:function () {
+
+},
+fail:function () {
+
+}
+});
+});
+$("#button2").click(function () {
+$.ajax({
+//url: 'http://cccbd.top:8080/RESTHello/hello/test',
+url: 'http://cccbd.top:8080/RESTHello/claim/new_claim',
+data: $("#form2").serialize(),
+type: 'POST',
+xhrFields: {
+withCredentials: true
+},
+complete: function (jqXHR) {
+$("#result2").html(jqXHR.responseText);
+}
+});
+});
+});
+function urlencodeFormData(fd){
+var params = new URLSearchParams();
+for(var pair of fd.entries()){
+typeof pair[1]=='string' && params.append(pair[0], pair[1]);
+}
+return params.toString();
+}

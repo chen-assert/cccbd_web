@@ -1,77 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Reset</title>
-	<style type="text/css">
-		.background{
-			background-image: url(image/resetpassword_back.jpg);
-			background-size: 1400px 800px;
-			background-repeat: no-repeat;
-		}
-		.content{
-			filter:alpha(opacity=20);  
-			-moz-opacity:0.2;  
-			-khtml-opacity: 0.2;  
-			opacity: 0.7;
-			height:100%;
-			width:100%;
-			position: absolute;
-			left: 30%;
-			top: 40%;
-		}
-		input[type="text"],#btn1,#btn2{
-		  box-sizing: border-box;
-		  text-align:center;
-		  font-size:1.4em;
-		  height:2.7em;
-		  border-radius:4px;
-		  border:1px solid #c8cccf;
-		  color:#6a6f77;
-		  -webkit-appearance:none;
-		  -moz-appearance: none;
-		  display:block;
-		  outline:0;
-		  padding:0 1em;
-		  text-decoration:none;
-		  width:40%;
+    <title>Reset</title>
+    <style type="text/css">
+        .background {
+            background-image: url(image/resetpassword_back.jpg);
+            background-size: 1400px 800px;
+            background-repeat: no-repeat;
+        }
 
-		}
-	</style>
-	<script type="text/javascript">
-		function checkId(){
-			var x = document.getElementById("identification").value;
-			var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
-			if (!x.match(reg)) {
-				alert("illegal input");
-			}
-		}
-		function checkEmail(){
-			var x = document.getElementById("email").value;
-			var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-			if (!x.match(reg)) {
-				alert("illegal input");
-			}
-		}
-		function click1(){
-			document.getElementById("identification").value = "";
-		}
-		function click2(){
-			document.getElementById("email").value = "";
-		}
-	</script>
+        .content {
+            filter: alpha(opacity=20);
+            -moz-opacity: 0.2;
+            -khtml-opacity: 0.2;
+            opacity: 0.7;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 30%;
+            top: 40%;
+        }
+
+        input[type="text"], #btn1, #btn2 {
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 1.4em;
+            height: 2.7em;
+            border-radius: 4px;
+            border: 1px solid #c8cccf;
+            color: #6a6f77;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            display: block;
+            outline: 0;
+            padding: 0 1em;
+            text-decoration: none;
+            width: 40%;
+
+        }
+    </style>
+    <script type="text/javascript">
+        function checkId() {
+            var x = document.getElementById("identification").value;
+            var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if (!x.match(reg)) {
+                alert("illegal input");
+            }
+        }
+
+        function checkEmail() {
+            var x = document.getElementById("email").value;
+            var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+            if (!x.match(reg)) {
+                alert("illegal input");
+            }
+        }
+
+        function click1() {
+            document.getElementById("identification").value = "";
+        }
+
+        function click2() {
+            document.getElementById("email").value = "";
+        }
+    </script>
 </head>
 <body>
-	<img src="image/icon.PNG" width="60px" height="60px">
-	<b style="font-size: 30px; ">the Hibernia-Sino Travel Insurance Company</b>
-	<a href="" style="margin-left:550px;">log in</a>
-	<div class="background" style="height: 800px;">
-		<div class="content" style="height: 400px ;width: all;">
-			<form>
-				<input type="text" name="id" value="ID Number: 18 character" id="identification" onchange="checkId()"onclick="click1()"><br>
-				<input type="text" name="email" value="Email" id="email" onchange="checkEmail()"onclick="click2()"><br>
+<img src="image/icon.PNG" width="60px" height="60px">
+<b style="font-size: 30px; ">the Hibernia-Sino Travel Insurance Company</b>
+<a href="" style="margin-left:550px;">log in</a>
+<div class="background" style="height: 800px;">
+    <div class="content" style="height: 400px ;width: all;">
+        <form>
+            <input type="text" name="id" value="ID Number: 18 character" id="identification" onchange="checkId()"
+                   onclick="click1()"><br>
+            <input type="text" name="email" value="Email" id="email" onchange="checkEmail()" onclick="click2()"><br>
 
-			</form>
-		</div>
-	</div>
+        </form>
+    </div>
+</div>
 </body>
 </html>

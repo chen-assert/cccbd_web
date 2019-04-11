@@ -1,148 +1,179 @@
 <!DOCTYPE html>
 <head>
-      <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../jquery-3.3.1.js"></script>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title></title>
     <!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-     <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-     <!-- Morris Chart Styles-->
-   
-        <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet" />
-     <!-- Google Fonts-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-     <!-- TABLE STYLES-->
-    <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="../assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="../assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+
+    <!-- Custom Styles-->
+    <link href="../assets/css/custom-styles.css" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <!-- TABLE STYLES-->
+    <link href="../assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
+
+    <script type="text/javascript">
+        let w;
+        $(document).ready(function () {
+            $("#button2").click(function () {
+                $.ajax({
+                    url: 'http://cccbd.top:8080/RESTHello/claim/new_claim',
+                    data: $("#form1").serialize(),
+                    type: 'POST',
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    success: function (data, textStatus, jqXHR) {
+                        //$("#result2").html(jqXHR.responseText);
+                        alert('success');
+                        window.location.href = 'customer_process.html';
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert(jqXHR["responseJSON"]["message"]);
+                    }
+
+                });
+            });
+        });
+    </script>
 </head>
 <body>
-     <div id="wrapper">
-        <nav class="navbar navbar-default top-navbar" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><i class="fa fa-comments"></i> <strong>Hibernia-Sino</strong></a>
-            </div>
+<div id="wrapper">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><i class="fa fa-comments"></i> <strong>Hibernia-Sino</strong></a>
+        </div>
 
-            <ul class="nav navbar-top-links navbar-right">
-              
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="/C:/Bitnami/wampstack-7.1.21-0/apache2/htdocs/interface课设/login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-        </nav>
+        <ul class="nav navbar-top-links navbar-right">
 
-
-
-        <!--/. NAV TOP  -->
-         <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a href="/C:/Bitnami/wampstack-7.1.21-0/apache2/htdocs/interface课设/homepage_customer.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+            <!-- /.dropdown -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                     </li>
-					
-					<li>
-                        <a href="Lost-custo.html" class="active-menu"><i class="fa fa-dashboard"></i> Lost luggage</a>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
-					
-					<li>
-                        <a href="process.html" ><i class="fa fa-dashboard"></i> Process Procedure</a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="customer_processed.html" >Processed claim</a>
-                            </li>
-                            <li>
-                                <a href="customer_unprocessed.html">Unprocessed claim</a>
-                            </li>
-						</ul>	
-					</li>
-					
-					<li>
-                        <a href="policy.html"><i class="fa fa-dashboard"></i>Policies</a>
+                    <li class="divider"></li>
+                    <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
-                    
-                    
                 </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        </ul>
+    </nav>
 
+
+    <!--/. NAV TOP  -->
+    <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+
+                <li>
+                    <a href="homepage_customer.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                </li>
+
+                <li>
+                    <a href="Lost-custo.html" class="active-menu"><i class="fa fa-dashboard"></i> Lost luggage</a>
+
+                </li>
+
+                <li>
+                    <a href="customer_process.html"><i class="fa fa-dashboard"></i> Process Procedure</a>
+                </li>
+
+                <li>
+                    <a href="policy.html"><i class="fa fa-dashboard"></i>Policies</a>
+                </li>
+
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- /. NAV SIDE  -->
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header">
+                        Lost luggage
+                    </h1>
+                    <!--
+                    <button id="button1" >log in</button>
+                    -->
+                    <span id="result"></span>
+                </div>
             </div>
-
-        </nav>
-		
-		<!-- /. NAV SIDE  -->
-        <div id="page-wrapper" >
-            <div id="page-inner">
-			 <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="page-header">
-                            Lost luggage 
-                        </h1>
-                    </div>
-                </div> 
-                 <!-- /. ROW  -->
-              <div class="row">
+            <!-- /. ROW  -->
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                       
+
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">
-                                       
-										<div class="form-group">
-										    <p>Date：<input id="d" class="form-control" type="date" required="required" value="2019-04-02"/></p>
-											<p>Name [real]: <input id="name" class="form-control" required="required"></p>
-											<p>Loss Date：<input id="ld" class="form-control" type="date" required="required" value="2019-04-02"/></p>
-											<p>Policy number: <input id="pn" class="form-control" required="required"></p>
-											
+                                    <form role="form" id="form1">
+
+                                        <div class="form-group">
+                                            <p>Date：<input id="d" class="form-control" type="date" required="required"
+                                                           value="2019-04-02" name="claim_date"/></p>
+                                            <p>Name [real]: <input id="name" class="form-control" required="required"
+                                                                   name="real_name"></p>
+                                            <p>Loss Date：<input id="ld" class="form-control" type="date"
+                                                                required="required" value="2019-04-02"
+                                                                name="loss_date"/></p>
+                                            <p>Policy number: <input id="pn" class="form-control" required="required"
+                                                                     name="policyNo"></p>
+
                                         </div>
-								</div>		
-								
-								<div class="col-lg-6">
-								    <form role="form">
-                                       
-										<div class="form-group">
-								             <p>Flight number: <input id="fn" class="form-control"></p>
-										     <p>baggage check number: <input id="bn" class="form-control"></p>
-										</div>	
-										
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <form role="form" id="form2">
+
+                                        <div class="form-group">
+                                            <p>Flight number: <input id="fn" class="form-control"></p>
+                                            <p>baggage check number: <input id="bn" class="form-control"></p>
+                                        </div>
+
                                         <div class="form-group">
                                             <label>Receipt ( if you have )</label>
                                             <input type="file">
                                         </div>
-										
-										<div class="form-group">
+
+                                        <div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" placeholder="     baggage details ( color,type,size,number etc. )" rows="8"></textarea>
-                        
-                                        </div>										
-								</div>
-			                              
-                                        <button type="submit" class="btn btn-default" style="top:420px; left:200px;position:absolute;">Submit</button>
-                                        
-                                    </form>
-                                
-                                
+                                            <textarea class="form-control"
+                                                      placeholder="     baggage details ( color,type,size,number etc. )"
+                                                      rows="8" name="detail"></textarea>
+
+                                        </div>
+                                </div>
+
+                                <button type="button" class="btn btn-default" id="button2"
+                                        style="top:420px; left:200px;position:absolute;">Submit
+                                </button>
+
+                                </form>
+
+                                <span id="result2"></span>
                             </div>
                             <!-- /.row (nested) -->
                         </div>
@@ -152,34 +183,31 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-			</div>
-             <!-- /. PAGE INNER  -->
-            </div>
-         <!-- /. PAGE WRAPPER  -->
+        </div>
+        <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
 
 
-       
-               
+</div>
+<!-- /. WRAPPER  -->
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<script src="../assets/js/jquery-1.10.2.js"></script>
+<!-- Bootstrap Js -->
+<script src="../assets/js/bootstrap.min.js"></script>
+<!-- Metis Menu Js -->
+<script src="../assets/js/jquery.metisMenu.js"></script>
+<!-- DATA TABLE SCRIPTS -->
+<script src="../assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="../assets/js/dataTables/dataTables.bootstrap.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#dataTables-example').dataTable();
+    });
+</script>
+<!-- Custom Js -->
+<script src="../assets/js/custom-scripts.js"></script>
 
-     </div>
-          <!-- /. WRAPPER  -->
-    <!-- JS Scripts-->
-    <!-- jQuery Js -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
-      <!-- Bootstrap Js -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- Metis Menu Js -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-     <!-- DATA TABLE SCRIPTS -->
-    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#dataTables-example').dataTable();
-            });
-    </script>
-         <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script>
-    
-   
+
 </body>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
-    <script src="../jquery-3.3.1.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title></title>
     <!-- Bootstrap Styles-->
@@ -16,24 +15,19 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <!-- TABLE STYLES-->
     <link href="../assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-
-    <script>
-
+    <script type="text/javascript">
         // Builds the HTML Table out of myList.
         function buildHtmlTable(selector) {
             $(selector).empty();
             let xmlhttp = new XMLHttpRequest();
-            let url = "http://cccbd.top:8080/RESTHello/claim/waiting_claims_user";
-            xmlhttp.withCredentials = true;
+            let url = "http://cccbd.top:8080/RESTHello/claim/processed_claims";
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
-            let myArr = '';
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                    myArr = JSON.parse(xmlhttp.responseText);
-                    console.log(myArr);
-                    console.log(xmlhttp.responseText);
+                    let myArr = JSON.parse(xmlhttp.responseText);
                     var columns = addAllColumnHeaders(myArr, selector);
+                    var lie = 1;
                     for (var i = 0; i < myArr.length; i++) {
                         var row$ = $('<tr class="gradeA"/>');
                         var index = 0;
@@ -43,12 +37,13 @@
                             if (index != 0) {
                                 row$.append($('<td class ="id' + index + '"/>').html(cellValue));
                             } else {
-                                row$.append($("<td><a href=\"customer_claimdetails.html?id=" + cellValue + "\">" + cellValue + "</a></td"));
+                                row$.append($("<td><a href=\"employee_processing.html?id=" + cellValue + "\">" + cellValue + "</a></td"));
                             }
-                            index++;
 
+                            index++;
                         }
 
+                        // row$.append($("<a href=\"employee_processing.html?id="+value+"\">detail</a>"));
                         $(selector).append(row$);
                     }
                 }
@@ -76,8 +71,13 @@
             $(selector).append(headerTr$);
             return columnSet;
         }
-    </script>
 
+        // $(document).ready(function(){
+        //  $("#getId").click(function(){
+        //      alert($('.id0:eq(1)').html());
+        //  });
+        // });
+    </script>
 </head>
 <body onload="buildHtmlTable('#dataTables-example')">
 <div id="wrapper">
@@ -121,27 +121,13 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="homepage_customer.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    <a href="employee_dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                 </li>
-
                 <li>
-                    <a href="Lost-custo.html"><i class="fa fa-dashboard"></i> Lost luggage</a>
+                    <a href="employee_unprocessed.html"><i class="fa fa-edit"></i> Unprocessed</a>
                 </li>
-
                 <li>
-                    <a href="customer_process.html"><i class="fa fa-dashboard"></i> Process Procedure</a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="customer_processed.html">Processed claim</a>
-                        </li>
-                        <li>
-                            <a href="customer_unprocessed.html" class="active-menu">Unprocessed claim</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="policy.html"><i class="fa fa-dashboard"></i>Policies</a>
+                    <a href="employee_processed.html" class="active-menu"><i class="fa fa-fw fa-file"></i> Processed</a>
                 </li>
 
             </ul>
@@ -156,8 +142,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        Unprocessed claim
-                        <small> Please be fair and professional</small>
+                        Processed Policy
+                        <small> ...</small>
                     </h1>
                 </div>
             </div>
@@ -175,39 +161,36 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
 
                                 </table>
+                            </div>
 
-</body>
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
 
-</div>
-
-</div>
-</div>
-<!--End Advanced Tables -->
-</div>
-</div>
-
-</div>
+        </div>
 
 
-</div>
-<!-- /. WRAPPER  -->
-<!-- JS Scripts-->
-<!-- jQuery Js -->
-<script src="../assets/js/jquery-1.10.2.js"></script>
-<!-- Bootstrap Js -->
-<script src="../assets/js/bootstrap.min.js"></script>
-<!-- Metis Menu Js -->
-<script src="../assets/js/jquery.metisMenu.js"></script>
-<!-- DATA TABLE SCRIPTS -->
-<script src="../assets/js/dataTables/jquery.dataTables.js"></script>
-<script src="../assets/js/dataTables/dataTables.bootstrap.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#dataTables-example').dataTable();
-    });
-</script>
-<!-- Custom Js -->
-<script src="../assets/js/custom-scripts.js"></script>
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="../assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="../assets/js/jquery.metisMenu.js"></script>
+    <!-- DATA TABLE SCRIPTS -->
+    <script src="../assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="../assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });
+    </script>
+    <!-- Custom Js -->
+    <script src="../assets/js/custom-scripts.js"></script>
 
 
 </body>

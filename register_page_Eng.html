@@ -1,184 +1,209 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
-	</script>
-	<style type="text/css">
-		div{
-			background-image:url('image/registerBack.jpg');
-			background-size: 1400px 800px;
-			/*background-position:0px 75px;*/
-			background-repeat:no-repeat;
-		}
-		.bodystyle{
-			filter:alpha(opacity=20);  
-			-moz-opacity:0.2;  
-			-khtml-opacity: 0.2;  
-			opacity: 0.7;
-			height:100%;
-			width:100%;
-			position:absolute;
-		}
+    <script src="jquery-3.3.1.js">
+    </script>
+    <style type="text/css">
+        div {
+            background-image: url('image/registerBack.jpg');
+            background-size: 1400px 800px;
+            /*background-position:0px 75px;*/
+            background-repeat: no-repeat;
+        }
 
-		form{
-			-webkit-appearance:none;
-  			-moz-appearance: none;
-  			font-size:1em;
-			height:2.7em;
-			width: 20em;
-			border-radius:4px;
-			border:1px solid #c8cccf;
-			color:#6a6f77;
-			outline:0;
-			position:absolute;
-			top: 30%;
-			left: 40%;
-		}
-		select{
-			position: absolute;
-			left: 40%;
-		}
-		.input_control{
-		  width:100px;
-		  margin:20px auto;
-		}
-		p{
-			margin-left: 40px;
-		}
-		input[type="text"],#btn1,#btn2{
-		  box-sizing: border-box;
-		  text-align:center;
-		  font-size:1.4em;
-		  height:2.7em;
-		  border-radius:4px;
-		  border:1px solid #c8cccf;
-		  color:#6a6f77;
-		  -webkit-appearance:none;
-		  -moz-appearance: none;
-		  display:block;
-		  outline:0;
-		  padding:0 1em;
-		  text-decoration:none;
-		  width:100%;
-		}
-		input[type="text"]:focus{
-		  border:1px solid #ff7496;
-		}
-		input[type="button"]{
-			background-repeat:no-repeat;
-			background-image:url("submitSmile0.png");
-			width: 6em;
-			height: 6em;
-			background-color: transparent;
-			border-style: none;
-			position: absolute;
-			left: 40%
-		}
-		input[type="button"]:hover{
-			background-repeat:no-repeat;
-			background-image:url("submitSmile1.png");
-			width: 6em;
-			height: 6em;
-			background-color: transparent;
-			border-style: none;
-		}
-	</style>
-	<script type="text/javascript">
-		function register(){
-			$.ajax({
-				type:'post',
-				url:'http://cccbd.top:8080/RESTHello/register/send',
-				data:$('#myform').serialize()
-			}).done(function (data){
-				console.log(data);
-				alert(data);
-				$(location).attr("href","reset_page_Eng.html");
-			}).fail(function(jqXHR, textStatus, errorThrown){
-    	    	// $('#result').html(jqXHR.responseText);
-    	    	console.log("erro");
-    	    	alert("illegal input please comfirm your information again.");
-    	    	window.location.reload();
-   			})
+        .bodystyle {
+            filter: alpha(opacity=20);
+            -moz-opacity: 0.2;
+            -khtml-opacity: 0.2;
+            opacity: 0.7;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
 
-		}
-		function checkId(){
-			var x = document.getElementById("identification").value;
-			var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
-			if (!x.match(reg)) {
-				alert("illegal input");
-			}
-		}
-		function checkName(){
-			var x = document.getElementById("username").value;
-			var reg = /^[A-Za-z0-9]+$/;
-			if (!x.match(reg)) {
-				alert("illegal input");
-			}
-		}
-		function checkEmail(){
-			var x = document.getElementById("email").value;
-			var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-			if (!x.match(reg)) {
-				alert("illegal input");
-			}
-		}
-		function checkPassword(){
-			var x = document.getElementById("password").value;
-			var reg = /^\w+$/;
-			if (!x.match(reg)) {
-				alert("illegal input");
-			}
-		}
-		function clickkkkk(){
-			document.getElementById("username").value = "";
-		}
-		function click1(){
-			document.getElementById("identification").value = "";
-		}
-		function click2(){
-			document.getElementById("email").value = "";
-		}
-		function click3(){
-			document.getElementById("password").value = "";
-		}
-		var colorTag = 1;
-		var colors = ["url(submitSmile0.png)", "url(submitSmile1.png)"];
-		function mychange(){
-			colorTag = 1 - colorTag;
-			// document.getElementById("submit").background-image = "url(submitSmile0.png)";
-		}
-		function  detectCapsLock(e){  
-		   valueCapsLock  =  e.keyCode ? e.keyCode:e.which; // Caps Lock　是否打开   
-		   valueShift  =  e.shiftKey ? e.shiftKey:((valueCapsLock  ==   16 ) ? true : false ); // shift键是否按住  
-			if (((valueCapsLock >=   65   &&  valueCapsLock  <=   90 )  &&   ! valueShift) // Caps Lock 打开，并且 shift键没有按住   
-		    || ((valueCapsLock >=   97   &&  valueCapsLock  <=   122 )  &&  valueShift)) // Caps Lock 打开，并且按住 shift键   
-		       document.getElementById('capStatus').style.visibility  =  'visible';  
-		    else   
-		    	document.getElementById('capStatus').style.visibility  =  'hidden';  
-		}
-	</script>
-	<title>Register</title>
+        form {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            font-size: 1em;
+            height: 2.7em;
+            width: 20em;
+            border-radius: 4px;
+            border: 1px solid #c8cccf;
+            color: #6a6f77;
+            outline: 0;
+            position: absolute;
+            top: 30%;
+            left: 40%;
+        }
+
+        select {
+            position: absolute;
+            left: 40%;
+        }
+
+        .input_control {
+            width: 100px;
+            margin: 20px auto;
+        }
+
+        p {
+            margin-left: 40px;
+        }
+
+        input[type="text"], #btn1, #btn2 {
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 1.4em;
+            height: 2.7em;
+            border-radius: 4px;
+            border: 1px solid #c8cccf;
+            color: #6a6f77;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            display: block;
+            outline: 0;
+            padding: 0 1em;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        input[type="text"]:focus {
+            border: 1px solid #ff7496;
+        }
+
+        input[type="button"] {
+            background-repeat: no-repeat;
+            background-image: url("submitSmile0.png");
+            width: 6em;
+            height: 6em;
+            background-color: transparent;
+            border-style: none;
+            position: absolute;
+            left: 40%
+        }
+
+        input[type="button"]:hover {
+            background-repeat: no-repeat;
+            background-image: url("submitSmile1.png");
+            width: 6em;
+            height: 6em;
+            background-color: transparent;
+            border-style: none;
+        }
+    </style>
+    <script type="text/javascript">
+        function register() {
+            $.ajax({
+                type: 'post',
+                url: 'http://cccbd.top:8080/RESTHello/register/send',
+                data: $('#myform').serialize()
+            }).done(function (data) {
+                console.log(data);
+                alert(data);
+                $(location).attr("href", "reset_page_Eng.html");
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                // $('#result').html(jqXHR.responseText);
+                console.log("erro");
+                alert("illegal input please comfirm your information again.");
+                window.location.reload();
+            })
+
+        }
+
+        function checkId() {
+            var x = document.getElementById("identification").value;
+            var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if (!x.match(reg)) {
+                alert("illegal input");
+            }
+        }
+
+        function checkName() {
+            var x = document.getElementById("username").value;
+            var reg = /^[A-Za-z0-9]+$/;
+            if (!x.match(reg)) {
+                alert("illegal input");
+            }
+        }
+
+        function checkEmail() {
+            var x = document.getElementById("email").value;
+            var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+            if (!x.match(reg)) {
+                alert("illegal input");
+            }
+        }
+
+        function checkPassword() {
+            var x = document.getElementById("password").value;
+            var reg = /^\w+$/;
+            if (!x.match(reg)) {
+                alert("illegal input");
+            }
+        }
+
+        function clickkkkk() {
+            document.getElementById("username").value = "";
+        }
+
+        function click1() {
+            document.getElementById("identification").value = "";
+        }
+
+        function click2() {
+            document.getElementById("email").value = "";
+        }
+
+        function click3() {
+            document.getElementById("password").value = "";
+        }
+
+        var colorTag = 1;
+        var colors = ["url(submitSmile0.png)", "url(submitSmile1.png)"];
+
+        function mychange() {
+            colorTag = 1 - colorTag;
+            // document.getElementById("submit").background-image = "url(submitSmile0.png)";
+        }
+
+        function detectCapsLock(e) {
+            valueCapsLock = e.keyCode ? e.keyCode : e.which; // Caps Lock　是否打开
+            valueShift = e.shiftKey ? e.shiftKey : ((valueCapsLock == 16) ? true : false); // shift键是否按住
+            if (((valueCapsLock >= 65 && valueCapsLock <= 90) && !valueShift) // Caps Lock 打开，并且 shift键没有按住
+                || ((valueCapsLock >= 97 && valueCapsLock <= 122) && valueShift)) // Caps Lock 打开，并且按住 shift键
+                document.getElementById('capStatus').style.visibility = 'visible';
+            else
+                document.getElementById('capStatus').style.visibility = 'hidden';
+        }
+    </script>
+    <title>Register</title>
 </head>
 <body>
-	<img src="image/icon.PNG" width="60px" height="60px">
-	<b style="font-size: 30px; ">the Hibernia-Sino Travel Insurance Company</b>
-	<a href="" style="margin-left:550px;">log in</a>
-	<div style="height: 500px;">
-		<div class="bodystyle">
-			<form id="myform" >
-				<input type="text" name="username" id = "username" value="name: only 0-9 a-z A-Z" onclick ="clickkkkk()" onchange="checkName()"onkeypress ="detectCapsLock(event)"><br>
-				<!-- Gender:<input type="checkbox" name="gender" value="male" checked="true">Male<br>
-					   <input type="checkbox" name="gender" value="female" style="margin-left: 53px;">Female<br> -->
-				<p>Gender:<select name = "gender">
-					   		<option vlaue = "femal">Female</option>
-					   		<option vlaue = "male">Male</option>
-					   </select></p><br>
-				<input type="text" name="id" value="ID Number: 18 character" id="identification" onchange="checkId()"onclick="click1()"onkeypress ="detectCapsLock(event)"><br>
-				<input type="text" name="password" id = "password" value="password:0-9 a-z A-Z _ " onclick ="click3()" onchange="checkPassword()"onkeypress ="detectCapsLock(event)"><br>
-				<input type="text" name="email" value="Email" id="email" onchange="checkEmail()"onclick="click2()"onkeypress ="detectCapsLock(event)"><br>
-				<div  id ="capStatus"  style ="visibility:hidden"><font  color =red> Caps Lock is on. <font></div> 
-				<input type="button" name="submit" id="submit"  value="" onclick="register()">
-			</form>
-		</div>
-	</div>
+<img src="image/icon.PNG" width="60px" height="60px">
+<b style="font-size: 30px; ">the Hibernia-Sino Travel Insurance Company</b>
+<a href="index.html" style="margin-left:550px;">log in</a>
+<div style="height: 500px;">
+    <div class="bodystyle">
+        <form id="myform">
+            <input type="text" name="username" id="username" value="name: only 0-9 a-z A-Z" onclick="clickkkkk()"
+                   onchange="checkName()" onkeypress="detectCapsLock(event)"><br>
+            <!-- Gender:<input type="checkbox" name="gender" value="male" checked="true">Male<br>
+                   <input type="checkbox" name="gender" value="female" style="margin-left: 53px;">Female<br> -->
+            <p>Gender:<select name="gender">
+                <option vlaue="femal">Female</option>
+                <option vlaue="male">Male</option>
+            </select></p>
+            <br>
+            <input type="text" name="id" value="ID Number: 18 character" id="identification" onchange="checkId()"
+                   onclick="click1()" onkeypress="detectCapsLock(event)"><br>
+            <input type="text" name="password" id="password" value="password:0-9 a-z A-Z _ " onclick="click3()"
+                   onchange="checkPassword()" onkeypress="detectCapsLock(event)"><br>
+            <input type="text" name="email" value="Email" id="email" onchange="checkEmail()" onclick="click2()"
+                   onkeypress="detectCapsLock(event)"><br>
+            <div id="capStatus" style="visibility:hidden"><font color=red> Caps Lock is on. </font></div>
+            <input type="button" name="submit" id="submit" value="" onclick="register()">
+        </form>
+    </div>
+</div>
+</body>
 </html>
