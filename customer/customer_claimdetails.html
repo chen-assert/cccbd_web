@@ -36,6 +36,7 @@
             let xmlhttp = new XMLHttpRequest();
             let url = "http://cccbd.top:8080/RESTHello/claim/detail?claimNo=" + getUrlParameter('id');
             xmlhttp.open("GET", url, true);
+            xmlhttp.withCredentials = true;
             xmlhttp.send();
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
