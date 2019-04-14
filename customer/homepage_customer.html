@@ -37,7 +37,7 @@
         }
 
         .hhhhh {
-            width: 600px;
+            width: 200%;
             height: 100px;
             margin: 100px auto;
             background-color: #ccc;
@@ -46,7 +46,7 @@
 
         ul {
             width: 200%;
-            animation: moveLeft 6s linear 0s infinite;
+            animation: moveLeft 20s linear 2s infinite;
         }
 
         ul > li {
@@ -59,9 +59,22 @@
             height: 100px;
         }
 
+        .hhhhh >ul{
+            width: 200%;
+            list-style: none;
+            animation-name: move;/*1.设置的名称*/
+            animation-duration: 12s;/*2.设置动画的耗时*/
+            animation-iteration-count: infinite;/*3.市场无限循环*/
+            animation-timing-function: linear 2s;/*4.设置时间函数*/
+
+        } 
         .hhhhh:hover > ul {
             cursor: pointer;
             animation-play-state: paused;
+
+        }
+        .hhhhh > ul > li　> img{
+            width:100%;
         }
 
         @keyframes moveLeft {
@@ -69,35 +82,29 @@
                 transform: translateX(0);
             }
             to {
-                transform: translateX(-600px);
+                transform: translateX(-150%);
             }
         }
     </style>
 
 
 </head>
-<body>
+<body style="background-color: #ff8844">
 <section class="HomePage">
     <img src="../image/icon.PNG" width="120px" height="120px">
     <b style="font-size: 30px; position: absolute; top: 35px">Hibernia-Sino Travel Insurance Company</b>
-    <a href="" style="float:right;">log out</a>
+    <a href="../index.html" style="float:right;">log out</a>
 
-    <!--
-        <div class="hhhhh">
+    
+        <div class="hhhhh" style="width: 800px;height: 400px;position: absolute; top: 0px; left: 20%">
 
             <ul>
-                <li><img src="icon.png" alt=""></li>
-                <li><img src="buy.png" alt=""></li>
-                <li><img src="access.png" alt=""></li>
-                 复制的一份图片
-
-                <li><img src="icon.png" alt=""></li>
-                <li><img src="buy.png" alt=""></li>
-                <li><img src="access.png" alt=""></li>
+                <li><img src="../image/ad5.JPG" alt="" style="width:3200px; height: 400px "></li>
+               
             </ul>
 
         </div>
-    -->
+    
     <div>
         <form>
             <a href="" style="font-size: 15px; position: absolute; right: 30%;top: 80px;font-weight:bolder;">About
@@ -118,24 +125,24 @@
     <button class="btn btn-block btn-info">Info</button>
     -->
     <div class="bodystyle">
-        <img src="../image/white.png" width=100% height=240px" style="position: absolute; top: 180px; ">
+        <img src="../image/white.png" width=100% height=240px" style="position: absolute; top: 370px; ">
     </div>
 
     <div>
         <form>
             <a href="Lost-custo.html">
                 <img id="" src="../image/luggage.png"
-                     style="CURSOR: hand; position:absolute; left:17%; top:350px;width: 100px;height: 120px"
+                     style="CURSOR: hand; position:absolute; left:20%; top:502px;width: 100px;height: 120px"
                 >
             </a>
             <a href="" onclick="developing();return false;">
                 <img src="../image/buy.png"
-                     style="CURSOR: hand; position:absolute; left:45%; top:350px;width: 110px;height: 110px"
+                     style="CURSOR: hand; position:absolute; left:49%; top:502px;width: 110px;height: 110px"
                 >
             </a>
             <a href="policy.html">
                 <img src="../image/access.png"
-                     style="CURSOR: hand; position:absolute; right:17%; top:350px;width: 80px;height: 110px "
+                     style="CURSOR: hand; position:absolute; right:17%; top:502px;width: 80px;height: 110px "
                 >
             </a>
 
@@ -144,13 +151,13 @@
         <div>
             <form>
                 <a href="Lost-custo.html"
-                   style="font-size: 20px; position: absolute; left: 16%;top: 490px;font-weight:bolder;">Luggage
+                   style="font-size: 20px; position: absolute; left: 19%;top: 625px;font-weight:bolder;">Luggage
                     Lost</a>
                 <a href="" onclick="developing();return false;"
-                   style="font-size: 20px; position: absolute; left: 40%;top: 490px;font-weight:bolder;">Select
+                   style="font-size: 20px; position: absolute; left: 45%;top: 625px;font-weight:bolder;">Select
                     Insurance Product</a>
                 <a href="policy.html"
-                   style="font-size: 20px; position: absolute; right: 13%;top: 490px;font-weight:bolder;">Access
+                   style="font-size: 20px; position: absolute; right: 13%;top: 625px;font-weight:bolder;">Access
                     Your Policy</a>
             </form>
         </div>
