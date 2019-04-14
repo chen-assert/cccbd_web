@@ -73,7 +73,6 @@
             let mydata = new FormData();
             var $textArea = $('#instruction'),
                 textArea = $textArea.val();
-
             mydata.append("appendage", textArea);
             mydata.append("claimNo", getUrlParameter('id'));
             var xhr = new XMLHttpRequest();
@@ -174,9 +173,7 @@
                             ClaimNo
                         </div>
                         <div class="panel-body">
-                            <p id="detail">detail detail detail detail detail detail detail detail detail detail detail
-                                detail detail detail detail detail detail detail detail detail detail detail detail
-                                detail detail.</p>
+                            <p id="detail"></p>
                         </div>
                         <div class="panel-footer">
 

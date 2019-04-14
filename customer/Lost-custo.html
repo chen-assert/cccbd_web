@@ -55,7 +55,7 @@
                     var columns = addAllColumnHeaders(myArr, selector);
                     var row$ = $('<select/>');
                     for (var i = 0; i < myArr.length; i++) {
-                        row$.append($('<option/>').html(myArr[i][columns[0]]+myArr[i][columns[1]]).attr('value',myArr[i][columns[0]]));
+                        row$.append($('<option/>').html(myArr[i][columns[0]]+" "+myArr[i][columns[1]]).attr('value',myArr[i][columns[0]]));
                         // for (var colIndex = 0; colIndex < columns.length; colIndex++) {
                         //     var cellValue = myArr[i][columns[colIndex]];
                         //     if (cellValue == null) cellValue = "";
