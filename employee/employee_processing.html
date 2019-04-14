@@ -59,32 +59,18 @@
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                     myArr = JSON.parse(xmlhttp.responseText);
                     document.getElementById('name').innerHTML = myArr['real_name'];
-                    document.getElementById('detail').innerHTML = myArr['claim_date'] + "<br>" + myArr['detail'];
+                    document.getElementById('ClaimNo').innerHTML = "ClaimNo:"+myArr['ClaimNo'];
+                    if(myArr['feedback']!=null){
+                        document.getElementById('detail').innerHTML = "Claim Date:"+myArr['claim_date']+"<br>"+"Loss date:"+myArr['loss_date']+"<br>"+"Policy Number:"+myArr['policyNo']+"<br>"+"Details:"+myArr['detail']+"<br>"+"Feedback:"+myArr['feedback'];
+                    }else{
+                        document.getElementById('detail').innerHTML = "Claim Date:"+myArr['claim_date']+"<br>"+"Loss date:"+myArr['loss_date']+"<br>"+"Policy Number:"+myArr['policyNo']+"<br>"+"Details:"+myArr['detail'];
+                    }
+                    
                 }
 
             };
         }
 
-        // Adds a header row to the table and returns the set of columns.
-        // Need to do union of keys from all records as some records may not contain
-        // all records.
-        function addAllColumnHeaders(myList, selector) {
-            var columnSet = [];
-            var headerTr$ = $('<thead/>')
-            var headerTr1$ = $('<tr role="row"/>');
-            for (var i = 0; i < myList.length; i++) {
-                var rowHash = myList[i];
-                for (var key in rowHash) {
-                    if ($.inArray(key, columnSet) === -1) {
-                        columnSet.push(key);
-                        headerTr1$.append($('<th/>').html(key));
-                    }
-                }
-            }
-            headerTr$.append(headerTr1$)
-            $(selector).append(headerTr$);
-            return columnSet;
-        }
 
         $(document).ready(function () {
             $("#button1").click(function () {
@@ -201,7 +187,7 @@
                         </div>
                     </div>
                     <div class="panel panel-info">
-                        <div class="panel-heading">
+                        <div class="panel-heading" id="ClaimNo">
                             PolicyNo
                         </div>
                         <div class="panel-body" id="detail">
