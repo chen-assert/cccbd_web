@@ -1,0 +1,16 @@
+{
+  "name": "cccbd_web",
+  "version": "0.9.9",
+  "description": "no description",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "cccbd",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^4.1.4",
+    "electron-packager": "^13.1.1"
+  }
+}
