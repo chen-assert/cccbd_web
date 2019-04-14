@@ -6,7 +6,7 @@
     <style type="text/css">
         div {
             background-image: url('image/registerBack.jpg');
-            background-size: 1400px 800px;
+            background-size: 100% 100%;
             /*background-position:0px 75px;*/
             background-repeat: no-repeat;
             background-position: 0px -50px;
@@ -109,6 +109,11 @@
                 alert("illegal input please comfirm your information again.");
                 window.location.reload();
             })
+			
+			
+		    window.location.href='login.html';
+		
+			
 
         }
 
@@ -201,8 +206,13 @@
                    onclick="click1()" onkeypress="detectCapsLock(event)"><br>
             <input type="text" name="password" id="password" value="password:0-9 a-z A-Z _ " onclick="click3()"
                    onchange="checkPassword()" onkeypress="detectCapsLock(event)"><br>
+		    <input type="text" name="passwordr" id="passwordr" value="input password again" onclick=""
+                   onchange="" onkeypress="detectCapsLock(event)"><br>		   
             <input type="text" name="email" value="Email" id="email" onchange="checkEmail()" onclick="click2()"
+                   onkeypress="detectCapsLock(event)"> <input type="submit" name="submite" id="submite" value="send email" onclick=""><br>
+			 <input type="text" name="emailr" value="Security Code" id="emailr" onchange="" onclick=""
                    onkeypress="detectCapsLock(event)"><br>
+				   
             <div id="capStatus" style="visibility:hidden"><font color=red> Caps Lock is on. </font></div>
             <input type="button" name="submit" id="submit" value="" onclick="register()">
         </form>
