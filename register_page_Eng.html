@@ -95,21 +95,26 @@
     </style>
     <script type="text/javascript">
         function register() {
-            $.ajax({
-                type: 'post',
-                url: 'http://cccbd.top:8080/RESTHello/register/send',
-                data: $('#myform').serialize()
-            }).done(function (data) {
-                console.log(data);
-                alert(data);
-                $(location).attr("href", "reset_page_Eng.html");
-            }).fail(function (jqXHR, textStatus, errorThrown) {
-                // $('#result').html(jqXHR.responseText);
-                console.log("erro");
-                alert("illegal input please comfirm your information again.");
-                window.location.reload();
-            })
-
+            if (checkId()&&checkName()&&checkEmail()&&checkPassword()) {
+                alert("checked");
+                $.ajax({
+                type:'post',
+                url:'http://cccbd.top:8080/RESTHello/register/send',
+                data:$('#myform').serialize()
+                }).done(function (data){
+                    console.log(data);
+                    alert(data);
+                    $(location).attr("href","reset_page_Eng.html");
+                }).fail(function(jqXHR, textStatus, errorThrown){
+                    // $('#result').html(jqXHR.responseText);
+                    console.log("erro");
+                    alert("illegal input please comfirm your information again.");
+                    window.location.reload();
+                })
+            }else{
+                alert("please check again");
+            }
+            
 
         }
 
@@ -133,39 +138,42 @@
             }
             return params.toString();
         }
-
-        function checkId() {
+        function checkId(){
             var x = document.getElementById("identification").value;
             var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
             if (!x.match(reg)) {
                 alert("illegal input");
+                return false;
             }
+            return true;
         }
-
-        function checkName() {
+        function checkName(){
             var x = document.getElementById("username").value;
             var reg = /^[A-Za-z0-9]+$/;
             if (!x.match(reg)) {
                 alert("illegal input");
+                return false;
             }
+            return true;
         }
-
-        function checkEmail() {
+        function checkEmail(){
             var x = document.getElementById("email").value;
             var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
             if (!x.match(reg)) {
                 alert("illegal input");
+                return false;
             }
+            return true;
         }
-
-        function checkPassword() {
+        function checkPassword(){
             var x = document.getElementById("password").value;
             var reg = /^\w+$/;
             if (!x.match(reg)) {
                 alert("illegal input");
+                return false;
             }
+            return true;
         }
-
         function clickkkkk() {
             document.getElementById("username").value = "";
         }
