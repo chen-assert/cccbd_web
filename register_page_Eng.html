@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="jquery-3.3.1.js">
+    <script src="jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="bootstrap-select-1.13.9/dist/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap-select-1.13.9/dist/js/bootstrap-select.min.js"></script>
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>-->
+    <link rel="stylesheet" href="bootstrap-4.1.3/css/bootstrap.min.css">
+    <script src="popper.min.js"></script>
+    <script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>
+    <script src="i18next.min.js"></script>
+    <script src="jquery-i18next.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('select').selectpicker();
+        });
     </script>
     <style type="text/css">
-        div {
+
+        .bodystyle {
+            filter: alpha(opacity=20);
+            -moz-opacity: 0.2;
+            opacity: 0.9;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+
             background-image: url('image/registerBack.jpg');
             background-size: 100% 100%;
             /*background-position:0px 75px;*/
             background-repeat: no-repeat;
             background-position: 0px -50px;
-
-        }
-
-        .bodystyle {
-            filter: alpha(opacity=20);
-            -moz-opacity: 0.2;
-            -khtml-opacity: 0.2;
-            opacity: 0.7;
-            height: 100%;
-            width: 100%;
-            position: absolute;
         }
 
         form {
@@ -106,7 +118,7 @@
                     alert(data);
                     $(location).attr("href", "index.html");
                 }).fail(function (jqXHR, textStatus, errorThrown) {
-                    alert("jqXHR.responseText");
+                    alert(jqXHR.responseText);
                     //window.location.reload();
                     //为什么要刷新?
                 })
@@ -143,6 +155,9 @@
         }
 
         function checkId() {
+            //for test
+            return true;
+
             var x = document.getElementById("identification").value;
             var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
             if (!x.match(reg)) {
@@ -208,35 +223,40 @@
 <a href="index.html"><img src="image/icon.png" width="120px" alt="icon"></a>
 <b style="font-size: 30px; position: absolute; top: 35px">Hibernia-Sino Travel Insurance Company</b>
 <!--<a href="index.html" style="float:right;font-size: 20px;">log in</a>-->
-<div style="height: 500px;">
-    <div class="bodystyle">
-        <form id="myform" onsubmit="event.preventDefault();">
-            <input type="text" name="username" id="username" placeholder="name: only 0-9 a-z A-Z"
-                   onchange="checkName()" onkeypress="detectCapsLock(event)"><br>
-            <!-- Gender:<input type="checkbox" name="gender" value="male" checked="true">Male<br>
-                   <input type="checkbox" name="gender" value="female" style="margin-left: 53px;">Female<br> -->
-            <p><b>Gender:</b><select name="gender">
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-            </select></p>
-            <br>
-            <input type="text" name="id" placeholder="ID Number: 18 character" id="identification" onchange="checkId()"
-                    onkeypress="detectCapsLock(event)"><br>
-            <input type="text" name="password" id="password" placeholder="password"
-                   onchange="checkPassword()" onkeypress="detectCapsLock(event)"><br>
-            <input type="text" name="passwordr" id="passwordr" placeholder="input password again"
-                   onchange="" onkeypress="detectCapsLock(event)"><br>
-            <input type="text" name="email" placeholder="email address" id="email" onchange="checkEmail()"
-                   onkeypress="detectCapsLock(event)">
-            <input type="submit" name="submite" id="submite" value="send email" onclick="send_email();">
-            <span id="email_output"></span>
-            <br>
-            <input type="text" name="verified_code" placeholder="Security Code" id="verified_code" onchange=""
-                   onkeypress="detectCapsLock(event)"><br>
-            <div id="capStatus" style="visibility:hidden"><span style="color: red; "> Caps Lock is on. </span></div>
-            <input type="button" name="submit" id="submit" value="" onclick="register()">
-        </form>
-    </div>
+<div class="bodystyle">
+    <form id="myform" onsubmit="event.preventDefault();">
+        <input type="text" name="username" id="username" placeholder="name: only 0-9 a-z A-Z"
+               onchange="checkName()" onkeypress="detectCapsLock(event)"><br>
+        <!-- Gender:<input type="checkbox" name="gender" value="male" checked="true">Male<br>
+               <input type="checkbox" name="gender" value="female" style="margin-left: 53px;">Female<br> -->
+        <p><b>Gender:</b><select name="gender">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+        </select></p>
+        <br>
+        <input type="text" name="id" placeholder="ID Number: 18 character" id="identification" onchange="checkId()"
+               onkeypress="detectCapsLock(event)"><br>
+        <input type="text" name="password" id="password" placeholder="password"
+               onchange="checkPassword()" onkeypress="detectCapsLock(event)"><br>
+        <input type="text" name="passwordr" id="passwordr" placeholder="input password again"
+               onchange="" onkeypress="detectCapsLock(event)"><br>
+        <input type="text" name="email" placeholder="email address" id="email" onchange="checkEmail()"
+               onkeypress="detectCapsLock(event)">
+        <input type="submit" name="submite" id="submite" value="send email" onclick="send_email();">
+        <span id="email_output"></span>
+        <br>
+        <input type="text" name="verified_code" placeholder="Security Code" id="verified_code" onchange=""
+               onkeypress="detectCapsLock(event)"><br>
+        <div id="capStatus" style="visibility:hidden"><span style="color: red; "> Caps Lock is on. </span></div>
+        <input type="button" name="submit" id="submit" value="" onclick="register()">
+    </form>
+</div>
+
+<div style="top:30px;position:fixed;right:300px">
+    <select class="selectpicker" data-width="fit">
+        <option data-content='English'>English</option>
+        <option data-content='Chinese'>Chinese</option>
+    </select>
 </div>
 </body>
 </html>
