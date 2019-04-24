@@ -38,7 +38,8 @@
             width: 40%;
 
         }
-		input[type="button"] {
+
+        input[type="button"] {
             background-repeat: no-repeat;
             background-image: url("image/submitSmile0.png");
             width: 6em;
@@ -82,7 +83,8 @@
         function click2() {
             document.getElementById("email").value = "";
         }
-		function detectCapsLock(e) {
+
+        function detectCapsLock(e) {
             valueCapsLock = e.keyCode ? e.keyCode : e.which; // Caps Lock　是否打开
             valueShift = e.shiftKey ? e.shiftKey : ((valueCapsLock == 16) ? true : false); // shift键是否按住
             if (((valueCapsLock >= 65 && valueCapsLock <= 90) && !valueShift) // Caps Lock 打开，并且 shift键没有按住
@@ -91,17 +93,18 @@
             else
                 document.getElementById('capStatus').style.visibility = 'hidden';
         }
-		
-		function checkPassword() {
+
+        function checkPassword() {
             var x = document.getElementById("password").value;
             var reg = /^\w+$/;
             if (!x.match(reg)) {
                 alert("illegal input");
             }
         }
-		function reset(){
-		window.location.href='index.html';
-		}
+
+        function reset() {
+            window.location.href = 'index.html';
+        }
     </script>
 </head>
 <body style="background-color: #ff8844">
@@ -111,17 +114,19 @@
 <div class="background" style="height: 800px;">
     <div class="content" style="height: 400px ;width: 100%;">
         <form>
-            <input type="text" name="id" value="ID Number: 18 character" id="identification" onchange="checkId()"onkeypress="detectCapsLock(event)"
+            <input type="text" name="id" value="ID Number: 18 character" id="identification" onchange="checkId()"
+                   onkeypress="detectCapsLock(event)"
                    onclick="click1()"><br>
-		    <input type="text" name="password" id="password" value="new password" onclick=""
+            <input type="text" name="password" id="password" value="new password" onclick=""
                    onchange="checkPassword()" onkeypress="detectCapsLock(event)"><br>
-		    <input type="text" name="passwordr" id="passwordr" value="input password again" onclick=""
-                   onchange="" onkeypress="detectCapsLock(event)"><br>	
-            <input type="text" name="email" value="Email" id="email" onchange="checkEmail()" onclick="" onkeypress="detectCapsLock(event)"><br>
- <input type="submit" name="submite" id="submite" value="send email" onclick=""><br>
-			 <input type="text" name="emailr" value="Security Code" id="emailr" onchange="" onclick=""
+            <input type="text" name="passwordr" id="passwordr" value="input password again" onclick=""
+                   onchange="" onkeypress="detectCapsLock(event)"><br>
+            <input type="text" name="email" value="Email" id="email" onchange="checkEmail()" onclick=""
                    onkeypress="detectCapsLock(event)"><br>
-		    <input type="button" name="submit" id="submit" value="" onclick="reset()">
+            <input type="submit" name="submite" id="submite" value="send email" onclick=""><br>
+            <input type="text" name="emailr" value="Security Code" id="emailr" onchange="" onclick=""
+                   onkeypress="detectCapsLock(event)"><br>
+            <input type="button" name="submit" id="submit" value="" onclick="reset()">
         </form>
     </div>
 </div>
