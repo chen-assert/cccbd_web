@@ -53,7 +53,7 @@ i18next.init({
                     luggage_lost:'行李丢失',
                     select_insurance:'购买保险',
                     access_policy:'已购保险',
-                    logout:'退出登录'
+                    logout:'退出'
                 }
             }
         }
