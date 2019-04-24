@@ -43,9 +43,11 @@
                     myArr = JSON.parse(xmlhttp.responseText);
                     document.getElementById('name').innerHTML = "Name:" + myArr['real_name'];
                     if(myArr['feedback']!=null){
-                        document.getElementById('detail').innerHTML = "Claim Date:"+myArr['claim_date']+"<br>"+"Loss date:"+myArr['loss_date']+"<br>"+"Policy Number:"+myArr['policyNo']+"<br>"+"Details:"+myArr['detail']+"<br>"+"Feedback:"+myArr['feedback'];
+                        document.getElementById('detail').innerHTML = "Claim Date:"+myArr['claim_date']+"<br>"+"Loss date:"+
+                            myArr['loss_date']+"<br>"+"Policy Number:"+myArr['policyNo']+"<br>"+"Details:"+myArr['detail']+"<br>"+"Feedback:"+myArr['feedback'];
                     }else{
-                        document.getElementById('detail').innerHTML = "Claim Date:"+myArr['claim_date']+"<br>"+"Loss date:"+myArr['loss_date']+"<br>"+"Policy Number:"+myArr['policyNo']+"<br>"+"Details:"+myArr['detail'];
+                        document.getElementById('detail').innerHTML = "Claim Date:"+myArr['claim_date']+"<br>"+"Loss date:"+
+                            myArr['loss_date']+"<br>"+"Policy Number:"+myArr['policyNo']+"<br>"+"Details:"+myArr['detail'];
                     }
                     document.getElementById('claimNo').innerHTML = "ClaimNo:" + myArr['ClaimNo'];
                 }

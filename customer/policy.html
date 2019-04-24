@@ -32,10 +32,16 @@
                     var columns = addAllColumnHeaders(myArr, selector);
                     for (var i = 0; i < myArr.length; i++) {
                         var row$ = $('<tr class="gradeA"/>');
+                        var index = 0;
                         for (var colIndex = 0; colIndex < columns.length; colIndex++) {
                             var cellValue = myArr[i][columns[colIndex]];
                             if (cellValue == null) cellValue = "";
-                            row$.append($('<td/>').html(cellValue));
+                            if(index == 0){
+                                row$.append($("<td><a href=\"?id=" + cellValue + "\">" + cellValue + "</a></td"));
+                            }else{
+                                row$.append($('<td/>').html(cellValue));
+                            }
+                            index++;
                         }
 
                         $(selector).append(row$);

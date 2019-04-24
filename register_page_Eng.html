@@ -119,15 +119,20 @@
         }
 
         function send_email() {
-            let mydata = new FormData();
-            mydata.append("address", $("#email").val());
-            $.ajax({
-                type: 'post',
-                url: 'http://cccbd.top:8080/RESTHello/verify_code',
-                data: urlencodeFormData(mydata)
-            }).done(function (data) {
-            }).fail(function (jqXHR, textStatus, errorThrown) {
-            });
+            if(checkEmail()){
+                let mydata = new FormData();
+                mydata.append("address", $("#email").val());
+                $.ajax({
+                    type: 'post',
+                    url: 'http://cccbd.top:8080/RESTHello/verify_code',
+                    data: urlencodeFormData(mydata)
+                }).done(function (data) {
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                });
+            }else{
+                alert("please check Email.")
+            }
+
 
         }
 
@@ -218,7 +223,7 @@
 <div style="height: 500px;">
     <div class="bodystyle">
         <form id="myform" onsubmit="event.preventDefault();">
-            <input type="text" name="username" id="username" value="name: only 0-9 a-z A-Z" onclick="clickkkkk()"
+            <input type="text" name="username" id="username" placeholder="name: only 0-9 a-z A-Z" onclick="clickkkkk()"
                    onchange="checkName()" onkeypress="detectCapsLock(event)"><br>
             <!-- Gender:<input type="checkbox" name="gender" value="male" checked="true">Male<br>
                    <input type="checkbox" name="gender" value="female" style="margin-left: 53px;">Female<br> -->
@@ -227,17 +232,16 @@
                 <option vlaue="male">Male</option>
             </select></p>
             <br>
-            <input type="text" name="id" value="ID Number: 18 character" id="identification" onchange="checkId()"
+            <input type="text" name="id" placeholder="ID Number: 18 character" id="identification" onchange="checkId()"
                    onclick="click1()" onkeypress="detectCapsLock(event)"><br>
-            <input type="text" name="password" id="password" value="password:0-9 a-z A-Z _ " onclick="click3()"
+            <input type="text" name="password" id="password" placeholder="password:0-9 a-z A-Z _ " onclick="click3()"
                    onchange="checkPassword()" onkeypress="detectCapsLock(event)"><br>
-            <input type="text" name="passwordr" id="passwordr" value="input password again" onclick=""
+            <input type="text" name="passwordr" id="passwordr" placeholder="input password again" onclick=""
                    onchange="" onkeypress="detectCapsLock(event)"><br>
-            <input type="text" name="email" value="Email" id="email" onchange="checkEmail()" onclick="click2()"
-                   onkeypress="detectCapsLock(event)"> <input type="submit" name="submite" id="submite"
-                                                              value="send email" onclick="send_email();"><br>
-            <input type="text" name="emailr" value="Security Code" id="emailr" onchange="" onclick=""
-                   onkeypress="detectCapsLock(event)"><br>
+            <input type="text" name="email" id="email" onchange="checkEmail()" placeholder="input email"
+                   onkeypress="detectCapsLock(event)">
+            <input type="submit" name="submite" id="submite"value="send email" onclick="send_email();"><br>
+            <input type="text" name="verifi_code" placeholder="Security Code" id="emailr"><br>
 
             <div id="capStatus" style="visibility:hidden"><font color=red> Caps Lock is on. </font></div>
             <input type="button" name="submit" id="submit" value="" onclick="register()">
