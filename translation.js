@@ -19,6 +19,8 @@ i18next.init({
                     gender:'Gender',
                     male:'Male',
                     female:'Female',
+                    about_us:'About Us',
+                    contact_us:'Contact Us'
                 }
             }
         },
@@ -40,6 +42,8 @@ i18next.init({
                     gender:'性别',
                     male:'男性',
                     female:'女性',
+                    about_us:'关于我们',
+                    contact_us:'联系我们'
                 }
             }
         }

@@ -2,6 +2,11 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <script src="../i18next.min.js"></script>
+    <script src="../jquery-i18next.min.js"></script>
+    <script src="../jquery-3.3.1.js"></script>
+    <script src="../translation.js"></script>
     <script>
         function developing() {
             window.alert("this function is developing");
@@ -89,7 +94,13 @@
 
 
 </head>
-<body style="background-color: #ff8844">
+<div class="translate" style="top:30px;position:absolute;right:200px">
+    <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)">
+        <option value="en" data-content='English' data-i18n="noun.english"></option>
+        <option value="ch" data-content='Chinese' data-i18n="noun.chinese"></option>
+    </select>
+</div>
+<body style="background-color: #ff8844" class="translate">
 <section class="HomePage">
     <img src="../image/icon.PNG" width="120px" height="120px">
     <b style="font-size: 30px; position: absolute; top: 35px">Hibernia-Sino Travel Insurance Company</b>
@@ -107,9 +118,8 @@
     
     <div>
         <form>
-            <a href="" style="font-size: 15px; position: absolute; right: 30%;top: 80px;font-weight:bolder;">About
-                Us</a>
-            <a href="" style="font-size: 15px; position: absolute; right: 20%;top: 80px;font-weight:bolder;">Contact
+            <a href="" style="font-size: 15px; position: absolute; right: 30%;top: 80px;font-weight:bolder;" data-i18n="noun.about_us">About Us</a>
+            <a href="" style="font-size: 15px; position: absolute; right: 20%;top: 80px;font-weight:bolder;" data-i18n="noun.contact_us">Contact
                 Us</a>
             <a href=""
                style="font-size: 15px; position: absolute; right: 10%;top: 80px;font-weight:bolder;">Language</a>
