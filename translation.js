@@ -14,7 +14,11 @@ i18next.init({
                     username: 'username',
                     password: 'password',
                     forget: 'Forget Password?',
-                    create: 'Create new account'
+                    create: 'Create new account',
+                    send_email:'Send Email',
+                    gender:'Gender',
+                    male:'Male',
+                    female:'Female',
                 }
             }
         },
@@ -31,7 +35,11 @@ i18next.init({
                     username: '用户名',
                     password: '密码',
                     forget: '忘记密码?',
-                    create: '创建新账号'
+                    create: '创建新账号',
+                    send_email:'发送邮件',
+                    gender:'性别',
+                    male:'男性',
+                    female:'女性',
                 }
             }
         }
@@ -41,13 +49,17 @@ i18next.init({
     $('.translate').localize();
 
 });
-
+function changeLanguage(selectObject) {
+    setLanguage(selectObject.value);
+}
 function setLanguage(lan) {
+    localStorage.setItem('language', lan);
     i18next.changeLanguage(lan);
     $('.translate').localize();
 }
 
 $(document).ready(function () {
+    i18next.changeLanguage(localStorage.getItem('language'));
     $('.translate').localize();
 });
 // $('.btnSubmit').addEventListener("click", function (event) {
