@@ -19,6 +19,13 @@ i18next.init({
                     gender:'Gender',
                     male:'Male',
                     female:'Female',
+                    about_us:'About Us',
+                    contact_us:'Contact Us',
+                    language:'Language',
+                    luggage_lost:'Luggage Lost',
+                    select_insurance:'Select Insurance Product',
+                    access_policy:'Access Your Policy',
+                    logout:'Log out'
                 }
             }
         },
@@ -40,6 +47,13 @@ i18next.init({
                     gender:'性别',
                     male:'男性',
                     female:'女性',
+                    about_us:'关于我们',
+                    contact_us:'联系我们',
+                    language:'语言',
+                    luggage_lost:'行李丢失',
+                    select_insurance:'购买保险',
+                    access_policy:'已购保险',
+                    logout:'退出'
                 }
             }
         }
