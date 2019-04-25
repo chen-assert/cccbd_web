@@ -59,22 +59,29 @@
             height: 100px;
         }
 
-        .hhhhh >ul{
-            width: 200%;
-            list-style: none;
-            animation-name: move;/*1.设置的名称*/
-            animation-duration: 12s;/*2.设置动画的耗时*/
-            animation-iteration-count: infinite;/*3.市场无限循环*/
-            animation-timing-function: linear 2s;/*4.设置时间函数*/
+        .hhhhh > ul {
+            width: 200%;
+            list-style: none;
+                       
+            animation-name: move; /*1.设置的名称*/
+                       
+            animation-duration: 12s; /*2.设置动画的耗时*/
+                       
+            animation-iteration-count: infinite; /*3.市场无限循环*/
+                       
+            -webkit-animation-timing-function:2s; /* Safari 和 Chrome */ /*4.设置时间函数*/
 
-        } 
+                   
+        }
+
         .hhhhh:hover > ul {
             cursor: pointer;
             animation-play-state: paused;
 
         }
-        .hhhhh > ul > li　> img{
-            width:100%;
+
+        .hhhhh > ul > li　 > img {
+            width: 100%;
         }
 
         @keyframes moveLeft {
@@ -95,16 +102,16 @@
     <b style="font-size: 30px; position: absolute; top: 35px">Hibernia-Sino Travel Insurance Company</b>
     <a href="../index.html" style="float:right;">log out</a>
 
-    
-        <div class="hhhhh" style="width: 800px;height: 400px;position: absolute; top: 0px; left: 20%">
 
-            <ul>
-                <li><img src="../image/ad5.JPG" alt="" style="width:3200px; height: 400px "></li>
-               
-            </ul>
+    <div class="hhhhh" style="width: 800px;height: 400px;position: absolute; top: 0px; left: 20%">
 
-        </div>
-    
+        <ul>
+            <li><img src="../image/ad5.JPG" alt="" style="width:3200px; height: 400px "></li>
+
+        </ul>
+
+    </div>
+
     <div>
         <form>
             <a href="" style="font-size: 15px; position: absolute; right: 30%;top: 80px;font-weight:bolder;">About
