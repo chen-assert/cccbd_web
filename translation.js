@@ -23,7 +23,7 @@ i18next.init({
                     contact_us:'Contact Us',
                     language:'Language',
                     luggage_lost:'Luggage Lost',
-                    select_insurance:'Select Insurance Product',
+                    select_insurance:'Buy Insurance',
                     access_policy:'Access Your Policy',
                     logout:'Log out'
                 }

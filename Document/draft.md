@@ -4,7 +4,7 @@
 
 # 1. ABSTRACT
 
-This document talk about 
+In this document, we talk about the detail about our Insurance project. It includes how our team to organize and how to teamwork and did the development process, and the technical detail behind the project. lastly, we do a brief conclusion about the project and analyze our gain and loss at this time.
 
 # 2. INTRODUCTION
 
