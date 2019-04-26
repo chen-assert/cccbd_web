@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <head>
     <script src="../jquery-3.3.1.js"></script>
+    <script src="../i18next.min.js"></script>
+    <script src="../jquery-i18next.min.js"></script>
+    <script src="../translation.js"></script>
     <meta charset="utf-8"/>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title></title>
     <!-- Bootstrap Styles-->
@@ -92,7 +96,9 @@
         }
     </script>
 </head>
-<body>
+
+
+<body class="translate">
 <div id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
         <div class="navbar-header">
@@ -130,11 +136,12 @@
 
     <!--/. NAV TOP  -->
     <nav class="navbar-default navbar-side" role="navigation">
+
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="homepage_customer.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    <a href="homepage_customer.html"><i class="fa fa-dashboard" data-i18n="noun.dashboard"></i> Dashboard</a>
                 </li>
 
                 <li>
@@ -158,7 +165,14 @@
     </nav>
 
     <!-- /. NAV SIDE  -->
+
     <div id="page-wrapper">
+        <div class="translate" style="top:30px;position:absolute;right:20px">
+            <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)">
+                <option value="en" data-content='English' data-i18n="noun.english"></option>
+                <option value="ch" data-content='Chinese' data-i18n="noun.chinese"></option>
+            </select>
+        </div>
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">

@@ -25,7 +25,8 @@ i18next.init({
                     luggage_lost:'Luggage Lost',
                     select_insurance:'Select Insurance Product',
                     access_policy:'Access Your Policy',
-                    logout:'Log out'
+                    logout:'Log out',
+                    dashboard:'Dashboard'
                 }
             }
         },
@@ -53,7 +54,8 @@ i18next.init({
                     luggage_lost:'行李丢失',
                     select_insurance:'购买保险',
                     access_policy:'已购保险',
-                    logout:'退出'
+                    logout:'退出',
+                    dashboard:'指示板'
                 }
             }
         }
