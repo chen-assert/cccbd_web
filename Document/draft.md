@@ -101,7 +101,7 @@ Our team divide the project basicaly into three main parts: front-end part, back
 
 ### 4.1.2 Connection between the front-end and the back-end
 
-####4.1.2.1 outline 
+#### 4.1.2.1 outline 
 
 ![Screen Shot 2019-04-25 at 4.22.05 PM](src/Screen Shot 2019-04-25 at 4.22.05 PM.png)
 
@@ -164,7 +164,7 @@ get product detail
 		let myArr;
         function buildHtmlTable() {
             let xmlhttp = new XMLHttpRequest();
-            let url = "http://cccbd.top:8080/RESTHello/transaction/product_detail?productNo=" + getUrlParameter('productNo');
+            let url = "https://cccbd.top:8443/RESTHello/transaction/product_detail?productNo=" + getUrlParameter('productNo');
             xmlhttp.withCredentials = true; //!!
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
@@ -206,7 +206,7 @@ Following is dynamic generate options to offer customer to select your policy in
  function addOptions(selector) {
             $(selector).empty();
             let xmlhttp = new XMLHttpRequest();
-            let url = "http://cccbd.top:8080/RESTHello/policy/my_policies";
+            let url = "https://cccbd.top:8443/RESTHello/policy/my_policies";
             xmlhttp.withCredentials = true;
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
@@ -250,7 +250,11 @@ Register are same as login. In html, getElementById the user input. In JSON, pac
 
 ## 4.2 Back-end
 
-### 4.2.1
+This section would describe the back-end's technology detail, the process about how we build this back-end server, and why we choose these technology stack.
+
+### 4.2.1 Technology overview about the back-end
+
+
 
 ### 4.2.2 
 
@@ -258,7 +262,7 @@ Register are same as login. In html, getElementById the user input. In JSON, pac
 
 ### 4.3.1
 
-###4.3.2
+### 4.3.2
 
 # 5. Conclusion
 

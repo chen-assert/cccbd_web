@@ -14,7 +14,7 @@
         }
         function buildHtmlTable() {
             let xmlhttp = new XMLHttpRequest();
-            let url = "http://cccbd.top:8080/RESTHello/claim/detail?claimNo=" + getUrlParameter('id');
+            let url = "https://cccbd.top:8443/RESTHello/claim/detail?claimNo=" + getUrlParameter('id');
             xmlhttp.withCredentials = true; //!!
             xmlhttp.open("GET", url, true);
             xmlhttp.send();

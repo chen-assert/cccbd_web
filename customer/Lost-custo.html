@@ -25,7 +25,7 @@
             $("#button2").click(function () {
                 // todo:需要阻止没填写完的情况下就进行的提交
                 $.ajax({
-                    url: 'http://cccbd.top:8080/RESTHello/claim/new_claim',
+                    url: 'https://cccbd.top:8443/RESTHello/claim/new_claim',
                     data: $("#form1").serialize() + "&" + $("#form2").serialize(),
                     type: 'POST',
                     xhrFields: {
@@ -47,7 +47,7 @@
         function addOptions(selector) {
             $(selector).empty();
             let xmlhttp = new XMLHttpRequest();
-            let url = "http://cccbd.top:8080/RESTHello/policy/my_policies";
+            let url = "https://cccbd.top:8443/RESTHello/policy/my_policies";
             xmlhttp.withCredentials = true;
             xmlhttp.open("GET", url, true);
             xmlhttp.send();

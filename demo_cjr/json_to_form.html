@@ -4,7 +4,7 @@
     function buildHtmlTable(selector) {
         $(selector).empty();
         let xmlhttp = new XMLHttpRequest();
-        let url = "http://cccbd.top:8080/RESTHello/account?limit=10";
+        let url = "https://cccbd.top:8443/RESTHello/account?limit=10";
         xmlhttp.open("GET", url, true);
         xmlhttp.send();
 		xmlhttp.onreadystatechange = function () {

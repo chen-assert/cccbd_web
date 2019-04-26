@@ -4,7 +4,7 @@ $(document).ready(function () {
         mydata.append("username", "testuser");
         mydata.append("password", "123456");
         $.ajax({
-            url: 'http://cccbd.top:8080/RESTHello/login/send',
+            url: 'https://cccbd.top:8443/RESTHello/login/send',
             data: urlencodeFormData(mydata),
             type: 'POST',
             xhrFields: {
@@ -24,8 +24,8 @@ $(document).ready(function () {
     });
     $("#button2").click(function () {
         $.ajax({
-            //url: 'http://cccbd.top:8080/RESTHello/hello/test',
-            url: 'http://cccbd.top:8080/RESTHello/claim/new_claim',
+            //url: 'https://cccbd.top:8443/RESTHello/hello/test',
+            url: 'https://cccbd.top:8443/RESTHello/claim/new_claim',
             data: $("#form2").serialize(),
             type: 'POST',
             xhrFields: {

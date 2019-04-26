@@ -51,7 +51,7 @@
         function buildHtmlTable(selector) {
             $(selector).empty();
             let xmlhttp = new XMLHttpRequest();
-            let url = "http://cccbd.top:8080/RESTHello/claim/detail?claimNo=" + getUrlParameter('id');
+            let url = "https://cccbd.top:8443/RESTHello/claim/detail?claimNo=" + getUrlParameter('id');
             xmlhttp.withCredentials = true;
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
@@ -100,7 +100,7 @@
             mydata.append("feedback", textArea);
             mydata.append("claimNo", getUrlParameter('id'));
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://cccbd.top:8080/RESTHello/manage/process', true);
+            xhr.open('POST', 'https://cccbd.top:8443/RESTHello/manage/process', true);
             xhr.withCredentials = true; //!!
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function () {

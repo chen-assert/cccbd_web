@@ -19,7 +19,7 @@
         function buildHtmlTable(selector) {
             $(selector).empty();
             let xmlhttp = new XMLHttpRequest();
-            let url = "http://cccbd.top:8080/RESTHello/policy/my_policies";
+            let url = "https://cccbd.top:8443/RESTHello/policy/my_policies";
             xmlhttp.withCredentials = true;
             xmlhttp.open("GET", url, true);
             xmlhttp.send();

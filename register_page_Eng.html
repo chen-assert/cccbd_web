@@ -112,7 +112,7 @@
             //alert("checked");
             $.ajax({
                 type: 'post',
-                url: 'http://cccbd.top:8080/RESTHello/register/send',
+                url: 'https://cccbd.top:8443/RESTHello/register/send',
                 data: $('#myform').serialize()
             }).done(function (data) {
                 console.log(data);
@@ -135,7 +135,7 @@
         mydata.append("address", $("#email").val());
         $.ajax({
             type: 'post',
-            url: 'http://cccbd.top:8080/RESTHello/verify_code/new_account',
+            url: 'https://cccbd.top:8443/RESTHello/verify_code/new_account',
             data: urlencodeFormData(mydata)
         }).done(function (data) {
             $('#email_output').html(data)

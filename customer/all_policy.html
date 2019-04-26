@@ -15,7 +15,7 @@
         function buildHtmlTable(selector) {
             $(selector).empty();
             let xmlhttp = new XMLHttpRequest();
-            let url = "http://cccbd.top:8080/RESTHello/transaction/products_list";
+            let url = "https://cccbd.top:8443/RESTHello/transaction/products_list";
             xmlhttp.withCredentials = true;
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
