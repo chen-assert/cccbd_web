@@ -26,7 +26,7 @@ i18next.init({
                     select_insurance:'Buy Insurance',
                     access_policy:'Access Your Policy',
                     logout:'Log out',
-                    dashboard:'Dashboard'
+                    dashboard:"Dashboard"
                 }
             }
         },
@@ -75,8 +75,10 @@ function setLanguage(lan) {
 }
 
 $(document).ready(function () {
-    i18next.changeLanguage(localStorage.getItem('language'));
-    $('.translate').localize();
+    lan=localStorage.getItem('language');
+    $('#lan_selecter').val('ch').change();
+    // i18next.changeLanguage(lan);
+    // $('.translate').localize();
 });
 // $('.btnSubmit').addEventListener("click", function (event) {
 //     event.preventDefault()

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <head>
-    <script src="../jquery-3.3.1.js"></script>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script src="../i18next.min.js"></script>
     <script src="../jquery-i18next.min.js"></script>
+    <script src="../jquery-3.3.1.js"></script>
     <script src="../translation.js"></script>
-    <meta charset="utf-8"/>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title></title>
     <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet"/>
@@ -59,7 +58,7 @@
                     var columns = addAllColumnHeaders(myArr, selector);
                     var row$ = $('<select/>');
                     for (var i = 0; i < myArr.length; i++) {
-                        row$.append($('<option/>').html(myArr[i][columns[0]]+" "+myArr[i][columns[1]]).attr('value',myArr[i][columns[0]]));
+                        row$.append($('<option/>').html(myArr[i][columns[0]] + " " + myArr[i][columns[1]]).attr('value', myArr[i][columns[0]]));
                         // for (var colIndex = 0; colIndex < columns.length; colIndex++) {
                         //     var cellValue = myArr[i][columns[colIndex]];
                         //     if (cellValue == null) cellValue = "";
@@ -108,7 +107,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../index.html"><i class="fa fa-comments"></i> <strong>Hibernia-Sino</strong></a>
+            <a class="navbar-brand" href="../index.html"><i class="fa fa-comments"></i>
+                <strong>Hibernia-Sino</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -141,7 +141,10 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="homepage_customer.html"><i class="fa fa-dashboard" data-i18n="noun.dashboard"></i> Dashboard</a>
+                    <a href="homepage_customer.html"><i class="fa fa-dashboard"></i>
+                        <mylable data-i18n="noun.dashboard">Dashboard</mylable>
+                    </a>
+
                 </li>
 
                 <li>
@@ -167,12 +170,6 @@
     <!-- /. NAV SIDE  -->
 
     <div id="page-wrapper">
-        <div class="translate" style="top:30px;position:absolute;right:20px">
-            <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)">
-                <option value="en" data-content='English' data-i18n="noun.english"></option>
-                <option value="ch" data-content='Chinese' data-i18n="noun.chinese"></option>
-            </select>
-        </div>
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
@@ -196,7 +193,8 @@
                                     <form role="form" id="form1">
 
                                         <div class="form-group">
-                                            <p>Date：<input id="d" class="form-control datePicker" type="date" required="required"
+                                            <p>Date：<input id="d" class="form-control datePicker" type="date"
+                                                           required="required"
                                                            name="claim_date"/></p>
                                             <p>Name [real]: <input id="name" class="form-control" required="required"
                                                                    name="real_name"></p>
@@ -234,9 +232,8 @@
                                 </div>
 
                                 <button type="button" class="btn btn-default" id="button2"
-                                        style="top:420px; left:200px;position:absolute;">Submit
+                                        style="display:block;margin:0 auto">Submit
                                 </button>
-
                                 </form>
 
                                 <span id="result2"></span>
@@ -251,15 +248,19 @@
             </div>
         </div>
         <!-- /. PAGE INNER  -->
+        <div class="translate" style="top:30px;position:absolute;right:20px">
+            <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)" id="lan_selecter">
+                <option value="en" data-content='English' data-i18n="noun.english"></option>
+                <option value="ch" data-content='Chinese' data-i18n="noun.chinese"></option>
+            </select>
+        </div>
     </div>
     <!-- /. PAGE WRAPPER  -->
-
-
 </div>
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->
-<script src="assets/js/jquery-1.10.2.js"></script>
+<!--<script src="assets/js/jquery-1.10.2.js"></script>-->
 <!-- Bootstrap Js -->
 <script src="assets/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
@@ -268,19 +269,18 @@
 <script src="assets/js/dataTables/jquery.dataTables.js"></script>
 <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
 <script>
-    Date.prototype.toDateInputValue = (function() {
+    Date.prototype.toDateInputValue = (function () {
         var local = new Date(this);
         local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-        return local.toJSON().slice(0,10);
+        return local.toJSON().slice(0, 10);
     });
     $(document).ready(function () {
         $('#dataTables-example').dataTable();
-        addOptions('#anchor1')
+        addOptions('#anchor1');
         $('.datePicker').val(new Date().toDateInputValue());
     });
 </script>
 <!-- Custom Js -->
-<script src="assets/js/custom-scripts.js"></script>
-
-
+<!--what is that?-->
+<!--<script src="assets/js/custom-scripts.js"></script>-->
 </body>
