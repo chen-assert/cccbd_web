@@ -2,11 +2,11 @@
 
 [TOC]
 
-# 1. ABSTRACT
+# 1. ABSTRACT(睿)
 
-This document talk about 
 
-# 2. INTRODUCTION
+
+# 2. INTRODUCTION(玥)
 
 ## 2.1 What does the system do
 
@@ -14,7 +14,7 @@ This document talk about
 
 # 3. GROUPWORK
 
-## 3.1 How to achieve the goals together
+## 3.1 How to achieve the goals together(杜)
 
 As for the teamwork, we intend to have a high-efficient teamwork. To achieve this, we have three aspects of how to reach the goals together.
 
@@ -29,8 +29,11 @@ As for the teamwork, we intend to have a high-efficient teamwork. To achieve thi
   At each meeting, we always discuss these aspects as flowing:
 
   - Conclude from last week’s work or presentation, and find ways to overcome.
+
   - Set goals of this week, including the integral goal and each team members’s goal for this week.
+
   - Solve some difficult problems those cannot be solved by one team member.
+
   - Write the meeting agenda.
 
 - Appropriate Tools
@@ -45,11 +48,31 @@ As for the teamwork, we intend to have a high-efficient teamwork. To achieve thi
 
 The team is an integrity , not a set of individuals, we should always remember that the ultimate effectiveness of the team depends on the lowest efficiency of the team. Reasonable division of labor is the prerequisite to prevent the occurrence of problems, and establishing of efficient communication mechanism is an effective way to find problems.
 
-## 3.2 Divide of work
+##3.2 Divide of work(杜)
 
-## 3.3 Problems
+Our team divide the project basicaly into three main parts: front-end part, back-end part and mobile-end.
 
-## 3.4 Solutions
+* Front-end
+
+  Contributors: Bi Yue, Du Xuanxuan, Cao Ziyi
+
+  Main work: The design of the interfaces and the logic of the system, for example, what information does a customer need to apply for an account, what should a customer do if he/she forgets his/her password, what are the steps when a customer apply for a lost luggage and so on.
+
+* Back-end
+
+  Contributor: Chen Jingrui
+
+  Main work: 
+
+* Mobile-end
+
+  Contributor: Chen Jin
+
+  Main work: 
+
+## 3.3 Problems(玥)
+
+## 3.4 Solutions(玥)
 
 # 4. TECHNICAL IMPLEMENTATION
 
@@ -57,15 +80,31 @@ The team is an integrity , not a set of individuals, we should always remember t
 
 ### 4.1.1 Logic
 
+- Logic of customer-end.
+
+  First the customer need to sign in, if the customer doesn’t have an account he/she can apply for one in the applying interface. The system will send an Ajax to the back-end for login request, and then the back-end will return a state code. In the customer_homepage interface customers can apply for lost luggage, buy new policies and check all the policies they have already bought. 
+
+  In the lost luggage interface, customers can write claims by fill the forms, they need to input the date when they lost it, their real name, and their policy number. Also they can find the processing policies if they have more than one claim.
+
+  <font color=#FF0000>  In the select product interface, </font> 
+
+   
+
+- Logic of the employee-end.
+
+  Every employee will be given an account at the very beginning when they work in the company. Like the customer-end, they need to sign in and the system will send an Ajax to the back-end for login request, and then the back-end will return a state code. 
+
+  In the dashboard the employee can see the number of processed and unprocessed claims. To achieve this, unprocessed will get the number of all the claims which state is ‘waiting’, and processed will get the number of the rest of them. To process the claims, the employee need to click the policyNo and then it will skip to the processing interface. In this interface, the whole details will be displayed to the employee and there are three buttons under the details, approve, deny, and ask for more information. Click the button and then will set the state to this claim, then skip to the Unprocessed interface, the number of unprocessed will minus one.   
+
+  
+
 ### 4.1.2 Connection between the front-end and the back-end
 
-4.1.2.1 outline 
+####4.1.2.1 outline 
 
 ![Screen Shot 2019-04-25 at 4.22.05 PM](src/Screen Shot 2019-04-25 at 4.22.05 PM.png)
 
-the connection between front-end and back-end we divide funtions into 3 different case, just like the diagram shows above. get objects with parameters, no parameters, and return a message.
-
-4.1.2.2 functions that contains parameters and return a list of objects.
+The connection between front-end and back-end we divide funtions into 3 different case, just like the diagram shows above. get objects with parameters, no parameters, and return a message.
 
 ![Screen Shot 2019-04-23 at 8.43.44 PM](src/Screen Shot 2019-04-23 at 8.43.44 PM.png)
 
@@ -140,27 +179,27 @@ get product detail
         }
 ```
 
-4.1.2.3 functions that has no parameters, and only request for database information.
+####4.1.2.2 Functions that has no parameters, and only request for database information.
 
 In order to get many list. we send request to url and return a list that contains all the objects satisfy the constraints. ![Screen Shot 2019-04-25 at 10.03.59 AM](src/Screen Shot 2019-04-25 at 10.03.59 AM.png)
 
 ![Screen Shot 2019-04-24 at 11.18.07 PM](src/Screen Shot 2019-04-24 at 11.18.07 PM.png)
 
-Get products lists.
+* Get products lists.
 
 ![Screen Shot 2019-04-25 at 9.55.55 AM](src/Screen Shot 2019-04-25 at 9.55.55 AM.png)
 
-Get account lists.
+* Get account lists.
 
 ![Screen Shot 2019-04-25 at 9.56.04 AM](src/Screen Shot 2019-04-25 at 9.56.04 AM.png)
 
-get all claims.
+* Get all claims.
 
 ![Screen Shot 2019-04-25 at 9.56.42 AM](src/Screen Shot 2019-04-25 at 9.56.42 AM.png)
 
-above functions are get lists. And almost same jquery code.
+Above functions are get lists. And almost same jquery code.
 
-following is dynamic generate options to offer customer to select your policy in create a new claim. 
+Following is dynamic generate options to offer customer to select your policy in create a new claim. 
 
 ```javascript
  function addOptions(selector) {
@@ -192,13 +231,13 @@ following is dynamic generate options to offer customer to select your policy in
 
 ![Screen Shot 2019-04-25 at 4.35.09 PM](src/Screen Shot 2019-04-25 at 4.35.09 PM.png)
 
-4.1.2.3 return a message telling us whether succsss.
+####4.1.2.3 return a message telling us whether succsss.
 
 Here are our send function, different from before. we need to send informations to database, username and password. database executeQuery and check whether this user have registered. 
 
 ![Screen Shot 2019-04-25 at 3.36.41 PM](src/Screen Shot 2019-04-25 at 3.36.41 PM.png)
 
-register are same as login. In html, getElementById the user input. In JSON, package information as value with specific key name. Add a new claim, process claim(emoployee check claim), after read employee feedback, user append more information to the detail.
+Register are same as login. In html, getElementById the user input. In JSON, package information as value with specific key name. Add a new claim, process claim(emoployee check claim), after read employee feedback, user append more information to the detail.
 
 ![Screen Shot 2019-04-25 at 3.40.53 PM](src/Screen Shot 2019-04-25 at 3.40.53 PM.png)
 
@@ -216,9 +255,13 @@ register are same as login. In html, getElementById the user input. In JSON, pac
 
 ## 4.3 Mobile-end(金)
 
+### 4.3.1
+
+###4.3.2
+
 # 5. Conclusion
 
-above are all of the porject informations that CCCBD company apply for Hibernia-sino Company. According to our group condition, we seperate into three group. All of us were done ourself job well and on time. 
+Above are all of the porject information that CCCBD company apply for Hibernia-sino Company. According to our group condition, we seperate into three groups. All of us were done ourself job well and on time. 
 
 
 
