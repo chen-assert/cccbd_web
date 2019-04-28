@@ -252,11 +252,24 @@ Register are same as login. In html, getElementById the user input. In JSON, pac
 
 This section would describe the back-end's technology detail, the process about how we build this back-end server, and why we choose these technology stack.
 
-### 4.2.1 Technology overview about the back-end
+### 4.2.1 Technology overview
+
+In the back-end, the main design rule we followed is the microservices architecture, and the core concept is that we only build a series RESTful API provided to front-end, and let the front-end decide how to use them. 
+![](src/rest-apis-fig2.png)
+With access control to every API, this design pattern give the the ability to let front-end decide how to process the business logic, hugely reduce server compute load, clearly delimit the edge between front-end and back-end (and delimit the developing process, so we can separate the back-end and front-end into two different project folder). Besides, this design symbol gives front-end application freely scalability, we can even use different languages to implement the client logic without change the back-end, and this trait make the multi-platform develop become much easier.
 
 
+### 4.2.2 System architecture detail
 
-### 4.2.2 
+In specific practice, we decide 
+
+### 4.2.3 Develop process
+
+At the starting of the project, we firstly want to cooperate in the back-end development, 
+
+### 4.2.4 The reason for choosing these technology stacks
+
+Before we starting to
 
 ## 4.3 Mobile-end(金)
 
