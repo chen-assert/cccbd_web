@@ -107,98 +107,17 @@ Our team divide the project basicaly into three main parts: front-end part, back
 
 The connection between front-end and back-end we divide funtions into 3 different case, just like the diagram shows above. get objects with parameters, no parameters, and return a message.
 
+#### 4.1.2.2 functions has parameters. 
+
 ![Screen Shot 2019-04-23 at 8.43.44 PM](src/Screen Shot 2019-04-23 at 8.43.44 PM.png)
 
+we usally use this functions to get one object contains our desired informations. in the client-side we need specific different claims, quantity of claims and product's details. the problem in this stage, is we should hava correct api and clearly thought, using console.log print out the object to check. others funcitions, we only implement this function and using in corrent div to get we goal.
 
-
-![Screen Shot 2019-04-24 at 10.58.58 PM](src/Screen Shot 2019-04-24 at 10.58.58 PM.png)
-
-Get claims different from state.
-
-![Screen Shot 2019-04-25 at 9.56.32 AM](src/Screen%20Shot%202019-04-25%20at%209.56.32%20AM.png)
-
-And there the other functions using this pattern. To get product detail.
-
-```java
-get product detail
-
-@apiName get a product detail
-@apiPermission  all
-@api {get}   /transaction/product_detail
-@apiParam {Int} productNo
-@Produces("application/json")
-@apiSuccessExample (200) {json} Success-Response:
-{
-    "productNo": 1,
-    "productName": "Product1",
-    "content": "This is a really good insurance",
-    "price": 100
-}
-```
-
-
-
-```java
- 	@GET
-    @Path("/product_detail")
-    public Response product_detail(@QueryParam("productNo") int productNo) throws SQLException {
-        Connection conn;
-        try {
-            conn = new sqlpool().getSingletons().getConnection();
-        } catch (Exception e) {
-            MyMessage m = new MyMessage("sql fail");
-            return Response.status(403).entity(m).build();
-        }
-        PreparedStatement ps = conn.prepareStatement("select * from Insurance_product where ProductNo=?");
-        ps.setInt(1, productNo);
-        ResultSet res = ps.executeQuery();
-        if (res.next()) {
-            Product product = new Product(res.getInt("productNo"), res.getString("productName"),
-                    res.getString("content"), res.getDouble("price"));
-            return Response.status(200).entity(product).build();
-        } else return Response.status(403).entity("this productNo don't exist").build();
-    }
-```
-
-```javascript
-		let myArr;
-        function buildHtmlTable() {
-            let xmlhttp = new XMLHttpRequest();
-            let url = "https://cccbd.top:8443/RESTHello/transaction/product_detail?productNo=" + getUrlParameter('productNo');
-            xmlhttp.withCredentials = true; //!!
-            xmlhttp.open("GET", url, true);
-            xmlhttp.send();
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                    myArr = JSON.parse(xmlhttp.responseText);
-                    document.getElementById('productName').innerHTML = "Name:" + myArr['productName'];
-                    document.getElementById('price').innerHTML = "Price:" + myArr['price'];
-                    document.getElementById('content').innerHTML = "Content:" + myArr['content']+"<br>"+"ProductNo:"+myArr['productNo'];
-                }
-
-            };
-        }
-```
-
-####4.1.2.2 Functions that has no parameters, and only request for database information.
+####4.1.2.3 Functions that has no parameters, and only request for database information.
 
 In order to get many list. we send request to url and return a list that contains all the objects satisfy the constraints. ![Screen Shot 2019-04-25 at 10.03.59 AM](src/Screen Shot 2019-04-25 at 10.03.59 AM.png)
 
-![Screen Shot 2019-04-24 at 11.18.07 PM](src/Screen Shot 2019-04-24 at 11.18.07 PM.png)
-
-* Get products lists.
-
-![Screen Shot 2019-04-25 at 9.55.55 AM](src/Screen Shot 2019-04-25 at 9.55.55 AM.png)
-
-* Get account lists.
-
-![Screen Shot 2019-04-25 at 9.56.04 AM](src/Screen Shot 2019-04-25 at 9.56.04 AM.png)
-
-* Get all claims.
-
-![Screen Shot 2019-04-25 at 9.56.42 AM](src/Screen Shot 2019-04-25 at 9.56.42 AM.png)
-
-Above functions are get lists. And almost same jquery code.
+in this function, we create list to store the information we selected and send to url. After receive lists in html, first we generate thead, and append tbody, dynamic generate in table.
 
 Following is dynamic generate options to offer customer to select your policy in create a new claim. 
 
@@ -232,7 +151,7 @@ Following is dynamic generate options to offer customer to select your policy in
 
 ![Screen Shot 2019-04-25 at 4.35.09 PM](src/Screen Shot 2019-04-25 at 4.35.09 PM.png)
 
-####4.1.2.3 return a message telling us whether succsss.
+####4.1.2.4 return a message telling us whether succsss.
 
 Here are our send function, different from before. we need to send informations to database, username and password. database executeQuery and check whether this user have registered. 
 
@@ -240,28 +159,17 @@ Here are our send function, different from before. we need to send informations 
 
 Register are same as login. In html, getElementById the user input. In JSON, package information as value with specific key name. Add a new claim, process claim(emoployee check claim), after read employee feedback, user append more information to the detail.
 
-![Screen Shot 2019-04-25 at 3.40.53 PM](src/Screen Shot 2019-04-25 at 3.40.53 PM.png)
 
-![Screen Shot 2019-04-25 at 3.41.31 PM](src/Screen Shot 2019-04-25 at 3.41.31 PM.png)
-
-![Screen Shot 2019-04-25 at 3.41.52 PM](src/Screen Shot 2019-04-25 at 3.41.52 PM.png)
-
-![Screen Shot 2019-04-25 at 3.42.00 PM](src/Screen Shot 2019-04-25 at 3.42.00 PM.png)
 
 ## 4.2 Back-end
 
-This section would describe the back-end's technology detail, the process about how we build this back-end server, and why we choose these technology stack.
+This section would describe the back-end's 
 
-### 4.2.1 Technology overview
-
-In the back-end, the main design rule we followed is the microservices architecture, and the core concept is that we only build a series RESTful API provided to front-end, and let the front-end decide how to use them. 
-![](src/rest-apis-fig2.png)
-With access control to every API, this design pattern give the the ability to let front-end decide how to process the business logic, hugely reduce server compute load, clearly delimit the edge between front-end and back-end (and delimit the developing process, so we can separate the back-end and front-end into two different project folder). Besides, this design symbol gives front-end application freely scalability, we can even use different languages to implement the client logic without change the back-end, and this trait make the multi-platform develop become much easier.
-
-
-### 4.2.2 System architecture detail
-
-In specific practice, we decide 
+“Login” page which will be common for the Common Reporting
+Gateway, the Authorities Info Exchange and the Resource Management Web applications
+(that constitute the NSW Web interfaces). The main component is the login form, where
+user needs to provide the credentials in order to be authorized to use the web
+application.
 
 ### 4.2.3 Develop process
 
