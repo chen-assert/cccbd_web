@@ -14,15 +14,15 @@
 
 ### Register
 
-###Apply for lost luggage
+### Apply for lost luggage
 
-###Check the state of processing claims
+### Check the state of processing claims
 
 ### Check my policies
 
 ### <font color=#FF0000>Third party login</font>
 
-###<font color=#FF0000>Share policies to social media</font>
+### <font color=#FF0000>Share policies to social media</font>
 
 ## 2. Employee
 

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="bootstrap-select-1.13.9/dist/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap-select-1.13.9/dist/js/bootstrap-select.min.js"></script>
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>-->
+    <link rel="stylesheet" href="bootstrap-4.1.3/css/bootstrap.min.css">
+    <script src="popper.min.js"></script>
+    <script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>
+    <script src="i18next.min.js"></script>
+    <script src="jquery-i18next.min.js"></script>
+    <script src="translation.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('select').selectpicker();
+        });
+    </script>
+    <title>Reset</title>
+    <style type="text/css">
+        .background {
+            background-image: url(image/resetpassword_back.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .content {
+            filter: alpha(opacity=20);
+            -moz-opacity: 0.2;
+            -khtml-opacity: 0.2;
+            opacity: 0.7;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 30%;
+            top: 40%;
+        }
+
+        input[type="text"], #btn1, #btn2 {
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 1.4em;
+            height: 2.7em;
+            border-radius: 4px;
+            border: 1px solid #c8cccf;
+            color: #6a6f77;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            display: block;
+            outline: 0;
+            padding: 0 1em;
+            text-decoration: none;
+            width: 40%;
+
+        }
+
+        input[type="button"] {
+            background-repeat: no-repeat;
+            background-image: url("image/submitSmile0.png");
+            width: 6em;
+            height: 6em;
+            background-color: transparent;
+            border-style: none;
+            position: absolute;
+            left: 16%
+        }
+
+        input[type="button"]:hover {
+            background-repeat: no-repeat;
+            background-image: url("image/submitSmile1.png");
+            width: 6em;
+            height: 6em;
+            background-color: transparent;
+            border-style: none;
+        }
+    </style>
+    <script type="text/javascript">
+        function checkName() {
+            var x = document.getElementById("username").value;
+            var reg = /^[A-Za-z0-9]+$/;
+            if (!x.match(reg)) {
+                alert("illegal input1");
+                return false;
+            }
+            return true;
+        }
+
+        function checkEmail() {
+            var x = document.getElementById("email").value;
+            var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+            if (!x.match(reg)) {
+                alert("illegal input2");
+                return false;
+            }
+            return true;
+        }
+
+
+        function detectCapsLock(e) {
+            valueCapsLock = e.keyCode ? e.keyCode : e.which; // Caps Lock　是否打开
+            valueShift = e.shiftKey ? e.shiftKey : ((valueCapsLock == 16) ? true : false); // shift键是否按住
+            if (((valueCapsLock >= 65 && valueCapsLock <= 90) && !valueShift) // Caps Lock 打开，并且 shift键没有按住
+                || ((valueCapsLock >= 97 && valueCapsLock <= 122) && valueShift)) // Caps Lock 打开，并且按住 shift键
+                document.getElementById('capStatus').style.visibility = 'visible';
+            else
+                document.getElementById('capStatus').style.visibility = 'hidden';
+        }
+
+        function checkPassword() {
+            var x = document.getElementById("password").value;
+            var reg = /^\w+$/;
+            if (!x.match(reg)) {
+                alert("illegal input3");
+                return false;
+            }
+            return true;
+        }
+
+        function checkPasswordr() {
+            var x = document.getElementById("password").value;
+            var y = document.getElementById("passwordr").value;
+            if (x === y) {
+                return true;
+            }
+            alert("illegal input4");
+            return false;
+        }
+
+        function resetPass() {
+            if (checkName() && checkEmail() && checkPassword() && checkPasswordr()) {
+                //alert("checked");
+                let mydata = new FormData();
+                mydata.append("username", $("#username").val());
+                mydata.append("password", $("#password").val());
+                mydata.append("email", $("#email").val());
+                mydata.append("verified_code", $("#verify_code").val());
+                $.ajax({
+                    type: 'post',
+                    url: 'https://cccbd.top:8443/RESTHello/verify_code/reset_employee',
+                    data: urlencodeFormData(mydata)
+                }).done(function (data) {
+                    console.log(data);
+                    alert(data);
+                    $(location).attr("href", "index.html");
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    alert(jqXHR.responseText);
+                })
+            } else {
+                alert("illegal input5");
+            }
+        }
+
+        function send_email() {
+            let mydata = new FormData();
+            mydata.append("address", $("#email").val());
+            $.ajax({
+                type: 'post',
+                url: 'https://cccbd.top:8443/RESTHello/verify_code/email_employee',
+                data: urlencodeFormData(mydata)
+            }).done(function (data) {
+                $('#email_output').html(data)
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                $('#email_output').html(jqXHR.responseText)
+            }).always(function (jqXHR, textStatus, errorThrown) {
+                //$('#email_output').html(jqXHR.responseText)
+            });
+        }
+
+        function urlencodeFormData(fd) {
+            var params = new URLSearchParams();
+            for (var pair of fd.entries()) {
+                typeof pair[1] == 'string' && params.append(pair[0], pair[1]);
+            }
+            return params.toString();
+        }
+    </script>
+</head>
+<body style="background-color: #ff8844">
+<a href="index.html"><img src="image/icon.png" width="120px" alt="icon"></a>
+<b style="font-size: 30px; position: absolute; top: 35px">Hibernia-Sino Travel Insurance Company</b>
+<div class="background" style="height: 800px;width: 100%;">
+    <div class="content" style="height: 400px;width: 100%;">
+        <form onsubmit="event.preventDefault();">
+            <input type="text" name="username" placeholder="username" id="username" onchange=""
+                   onkeypress="detectCapsLock(event)"><br>
+            <input type="text" name="password" id="password" placeholder="new password"
+                   onchange="checkPassword()" onkeypress="detectCapsLock(event)"><br>
+            <input type="text" name="passwordr" id="passwordr" placeholder="input password again"
+                   onchange="checkPasswordr()" onkeypress="detectCapsLock(event)"><br>
+            <input type="text" name="email" placeholder="Email" id="email" onchange="checkEmail()"
+                   onkeypress="detectCapsLock(event)"><br>
+            <input type="submit" name="submite" id="submite" placeholder="send email" onclick="send_email()">
+            <span id="email_output"></span>
+            <input type="text" name="verified_code" placeholder="Security Code" id="verify_code" onchange=""
+                   onkeypress="detectCapsLock(event)"><br>
+            <input type="button" name="submit" id="submit" onclick="resetPass()">
+        </form>
+    </div>
+</div>
+<div class="translate" style="top:30px;position:absolute;right:200px">
+    <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)" id="lan_selecter">
+        <option value="en" data-content='English' data-i18n="noun.english"></option>
+        <option value="ch" data-content='Chinese' data-i18n="noun.chinese"></option>
+    </select>
+</div>
+</body>
+</html>
