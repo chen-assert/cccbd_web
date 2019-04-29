@@ -8,81 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="index.css">
     <script src="jquery-3.3.1.js"></script>
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="bootstrap-select-1.13.9/dist/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap-select-1.13.9/dist/js/bootstrap-select.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap-4.1.3/css/bootstrap.min.css">
     <script src="popper.min.js"></script>
     <script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>
     <script src="i18next.min.js"></script>
     <script src="jquery-i18next.min.js"></script>
-
+    <script src="translation.js"></script>
     <style type="text/css">
         body {
             background-image: url('image/login.jpg');
-            background-position: 0px 120px;
-            background-size: 100%, 100%;
             background-position: 0px 80px;
+            background-size: 100%, 100%;
             background-repeat: no-repeat;
-
         }
-
-        #cust {
-            -moz-appearance: none;
-            border-radius: 4px;
-            border: 3px solid #FF8247;
-            outline: 0;
-            opacity: 0.7;
-            height: 245px;
-            width: 270px;
-
-            position: absolute;
-            left: 400px;
-            top: 150px;
-            background-color: #FFDEAD;
-        }
-
-        #staf {
-            -moz-appearance: none;
-            border-radius: 4px;
-            border: 3px solid #1CC09F;
-            outline: 0;
-            opacity: 0.7;
-            height: 245px;
-            width: 270px;
-
-            position: absolute;
-            left: 1100px;
-            top: 150px;
-            background-color: lightblue;
-
-        }
-
-        .formstylec {
-            border: 2px solid #ff8844;
-            border-radius: 4px;
-            text-align: center;
-            position: absolute;
-            height: 250px;
-            width: 250px;
-            left: -20px;
-            top: -38px;
-            margin: 15px;
-
-
-        }
-
-        .formstyles {
-            border: 2px solid #1CC09F;
-            border-radius: 4px;
-            text-align: center;
-            position: absolute;
-            height: 250px;
-            width: 250px;
-            left: -20px;
-            top: -38px;
-            margin: 15px;
-        }
-
 
         p {
             margin: 1px;
@@ -104,75 +46,19 @@
         }
 
         body {
-            background-color: #ff8844
+            background-color: #ff8844;
         }
 
 
     </style>
 
     <script type="text/javascript">
-        function changec(sum) {
-            var obj = document.getElementById("cust");
-            obj.style.transition = "-webkit-transform 500ms ease-out";
-            obj.style.webkitTransform = "translate(" + sum + "px,0px) scale(1) translateZ(0px)";
-
-            var sss = document.getElementById('staf');
-            sss.style.transition = "-webkit-transform 500ms ease-out";
-            sss.style.webkitTransform = "translate(" + sum + "px,0px) scale(1) translateZ(0px)";
-
-            document.getElementById('bod').style.backgroundColor == '#FF8247';
-
-
-            document.getElementById('su').disabled = true;
-            document.getElementById('sp').disabled = true;
-            document.getElementById('sb').disabled = true;
-            document.getElementById('sl').disabled = true;
-
-            document.getElementById('cu').disabled = false;
-            document.getElementById('cp').disabled = false;
-            document.getElementById('cb').disabled = false;
-            document.getElementById('cl1').disabled = false;
-            document.getElementById('cl2').disabled = false;
-
-
-        }
-
-        function changes(sum) {
-            var obj = document.getElementById("cust");
-            obj.style.transition = "-webkit-transform 500ms ease-out";
-            obj.style.webkitTransform = "translate(" + sum + "px,0px) scale(1) translateZ(0px)";
-
-            var sss = document.getElementById('staf');
-            sss.style.transition = "-webkit-transform 500ms ease-out";
-            sss.style.webkitTransform = "translate(" + sum + "px,0px) scale(1) translateZ(0px)";
-
-            document.getElementById('bod').style.backgroundColor = '#1CC09F';
-
-            document.getElementById('cu').disabled = true;
-            document.getElementById('cp').disabled = true;
-            document.getElementById('cb').disabled = true;
-            document.getElementById('cl1').disabled = true;
-            document.getElementById('cl2').disabled = true;
-
-            document.getElementById('su').disabled = false;
-            document.getElementById('sp').disabled = false;
-            document.getElementById('sb').disabled = false;
-            document.getElementById('sl').disabled = false;
-
-
-        }
-
-
-        function changeLanguage(selectObject) {
-            setLanguage(selectObject.value);
-        }
-
         function logincust() {
             let mydata = new FormData();
             mydata.append("username", document.getElementById('cu').value);
             mydata.append("password", document.getElementById('cp').value);
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://cccbd.top:8080/RESTHello/login/send', true);
+            xhr.open('POST', 'https://cccbd.top:8443/RESTHello/login/send', true);
             xhr.withCredentials = true;	//!!
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function () {
@@ -193,7 +79,7 @@
             mydata.append("username", document.getElementById('su').value);
             mydata.append("password", document.getElementById('sp').value);
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://cccbd.top:8080/RESTHello/login/send_employee', true);
+            xhr.open('POST', 'https://cccbd.top:8443/RESTHello/login/send_employee', true);
             xhr.withCredentials = true;	//!!
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function () {
@@ -220,31 +106,20 @@
         }
 
     </script>
-
-
 </head>
-
-<body id="bod">
+<body id="bod" style="padding:1px;">
 <img src="image/icon.png" width="75px" height="75px" style="left:2px;top:2px;position:absolute;">
 <b style="font-size: 30px; left:90px;top:25px;position:absolute;">Hibernia-Sino Travel Insurance Company</b>
-<div class="translate">
-    <!---->
-    <!--<button style="color:white;background-color:#BEBEBE;font-size:18px;top:65px;position:absolute;left:800px"-->
-    <!--onclick="changec(0)" data-i18n="noun.customer">Customer-->
-    <!--</button>-->
-    <!--<button style="color:white;background-color:#BEBEBE;font-size:18px;top:65px;position:absolute;left:890px"-->
-    <!--onclick="changes(-600)" data-i18n="noun.employee">Employee-->
-    <!--</button>-->
-
-    <p><select id="language" style="top:70px;position:absolute;left:1000px" onchange="changeLanguage(this)">
-        <option value="en" selected="selected" data-i18n="noun.english">English</option>
-        <option value="ch" data-i18n="noun.chinese">Chinese</option>
-    </select></p>
+<div class="translate" style="top:30px;position:absolute;right:200px">
+    <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)" id="lan_selecter">
+        <option value="en" data-i18n="noun.english"></option>
+        <option value="ch" data-i18n="noun.chinese"></option>
+    </select>
 </div>
 <div class="translate">
     <div class="container login-container">
         <div class="row">
-            <div class="col-md-6 login-form-1">
+            <div class="col-md-6 login-form-2">
                 <h3 data-i18n="noun.userlogin">User login</h3>
                 <form onsubmit="event.preventDefault();">
                     <div class="form-group">
@@ -260,14 +135,14 @@
                                onclick="logincust()" data-i18n="[value]noun.login"/>
                     </div>
                     <div class="form-group">
-                        <a href="reset_page_Eng.html" class="ForgetPwd" data-i18n="noun.forget">Forget Password?</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="register_page_Eng.html" class="ForgetPwd" data-i18n="noun.create">Create new
                             account</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="reset_page_Eng.html" class="ForgetPwd" data-i18n="noun.forget">Forget Password?</a>
                     </div>
                 </form>
             </div>
-            <div class="col-md-6 login-form-2">
+            <div class="col-md-6 login-form-1">
                 <h3 data-i18n="noun.employeelogin">Employee login</h3>
                 <form onsubmit="event.preventDefault();">
                     <div class="form-group">
@@ -290,44 +165,8 @@
         </div>
     </div>
 </div>
-<!--<form id="cust">-->
 
-<!--<fieldset class=formstylec>-->
-<!--<legend id="leg1">Log in</legend>-->
-<!--<small>[customer]</small>-->
-
-<!--<p>Username <input type="text" name="user" id="cu"/></p>-->
-<!--<br/>-->
-<!--<p>Password <input type="text" name="password" id="cp"/></p>-->
-
-<!--<small id="result1" style="color:#FF6347;font-size:10px;"></small>-->
-<!--<br/>-->
-<!--<input id="cb" style="color:white;background-color:#FF8247;font-size:18px;" type="button" value="Enter"-->
-<!--onclick="logincust()"></br>-->
-<!--<a href="reset_page_Eng.html" style="text-align:left;font-size:15px;" id="cl1">Forget the password?</a>-->
-<!--<a href="register_page_Eng.html" id="ar" style="text-align:right;font-size:15px;" id="cl2">New user?</a>-->
-<!--</fieldset>-->
-<!--</form>-->
-
-<!--<form id="staf">-->
-
-<!--<fieldset class=formstyles>-->
-<!--<legend id="leg2">Log in</legend>-->
-<!--<small>[staff]</small>-->
-
-<!--<p>Username <label for="su"></label><input type="text" name="user" id="su"></p>-->
-<!--<br/>-->
-<!--<p>Password <input type="text" name="password" id="sp"></p>-->
-<!--<small id="result2" style="color:#FF6347;font-size:10px;"></small>-->
-<!--<br/>-->
-<!--<input style="color:white;background-color:lightblue;font-size:18px;" type="button" id="sb" value="Enter"-->
-<!--onclick="loginstaf()"></br>-->
-<!--<a href="reset_page_Eng.html" style="text-align:left;font-size:15px;" id="sl">Forget the password?</a>-->
-
-<!--</fieldset>-->
-
-<!--</form>-->
-
+<script color="0,0,0" opacity='0.75' count="128"  src="lib/canvas-nest.js"></script>
 </body>
 
 </html>

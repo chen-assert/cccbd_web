@@ -5,7 +5,7 @@ $(document).ready(function () {
         mydata.append("username", "testuser");
         mydata.append("password", "123456");
         $.ajax({
-            url: 'http://cccbd.top:8080/RESTHello/login/send',
+            url: 'https://cccbd.top:8443/RESTHello/login/send',
             data: urlencodeFormData(mydata),
             type: 'POST',
             xhrFields: {
@@ -23,7 +23,7 @@ $(document).ready(function () {
         mydata.append("username", $("#username").val());
         mydata.append("password", $("#password").val());
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://cccbd.top:8080/RESTHello/login/send', true);
+        xhr.open('POST', 'https://cccbd.top:8443/RESTHello/login/send', true);
         xhr.withCredentials = true;	//!!
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.onload = function () {

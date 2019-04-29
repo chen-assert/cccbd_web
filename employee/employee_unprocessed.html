@@ -22,7 +22,7 @@
         function buildHtmlTable(selector) {
             $(selector).empty();
             let xmlhttp = new XMLHttpRequest();
-            let url = "http://cccbd.top:8080/RESTHello/claim/waiting_claims";
+            let url = "https://cccbd.top:8443/RESTHello/claim/waiting_claims";
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = function () {
@@ -208,7 +208,7 @@ let mydata = new FormData();
 mydata.append("username", "testuser");
 mydata.append("password", "123456");
 $.ajax({
-url: 'http://cccbd.top:8080/RESTHello/login/send',
+url: 'https://cccbd.top:8443/RESTHello/login/send',
 data: urlencodeFormData(mydata),
 type: 'POST',
 xhrFields: {
@@ -228,8 +228,8 @@ fail:function () {
 });
 $("#button2").click(function () {
 $.ajax({
-//url: 'http://cccbd.top:8080/RESTHello/hello/test',
-url: 'http://cccbd.top:8080/RESTHello/claim/new_claim',
+//url: 'https://cccbd.top:8443/RESTHello/hello/test',
+url: 'https://cccbd.top:8443/RESTHello/claim/new_claim',
 data: $("#form2").serialize(),
 type: 'POST',
 xhrFields: {
