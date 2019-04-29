@@ -4,7 +4,11 @@
 
 ### Overview
 
+In this document, we will tell customers and employees how to use our application step by step. Our application is designed for customers and employees separately, each of them have their own login entrance and different system logic.
+
 ### Install
+
+To install our application, each customer and employee will be given to a link to download the installation package of our application. And it is very easy to install on their computers,
 
 ## 1. Customer
 
