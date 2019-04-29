@@ -10,19 +10,25 @@
 
 ### Login
 
-### <font color=#FF0000>Forget password</font>
+The customer input specific username and password which are set previously.
+
+### Forget password
 
 ### Register
 
-###Apply for lost luggage
+### Apply for lost luggage
 
-###Check the state of processing claims
+### Check the state of processing claims
 
 ### Check my policies
 
-### <font color=#FF0000>Third party login</font>
+### Third party login
 
-###<font color=#FF0000>Share policies to social media</font>
+Customers can login using the third party account.
+
+### Share policies to social media
+
+Customers can share their policies to social media such as WeChat
 
 ## 2. Employee
 

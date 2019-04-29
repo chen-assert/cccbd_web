@@ -2,16 +2,30 @@
 
 [TOC]
 
-# 1. ABSTRACT(睿)
+# 1. ABSTRACT
 
 In this document, we talk about the detail about our Insurance project. It includes how our team to organize and how to teamwork and did the development process, and the technical detail behind the project. lastly, we do a brief conclusion about the project and analyze our gain and loss at this time.
 
 
-# 2. INTRODUCTION(玥)
+# 2. INTRODUCTION
 
 ## 2.1 What does the system do
 
+The system constructs an on-line platform for Hibernia-Sino Travel Insurance Company, which reduct the work-flow from dated desktop software systems to the cloud and develops on-line user interface for operations of customers and employees.  This allows customers to update their details, check all policies, register claims on-line and so on. The system can also work on multiple platforms applying different kinds of language with good security, reliability and ease of use.
+
 ## 2.2 The plan of the system
+
+Firstly, we design and work out 4 work packages and each group member is package manager of different package. After discussion, we generally determine the gantt chart for the system which presents the divided work we should finish each week as planned. 
+
+As for PC desktop terminal, we plan to construct the framework of cloud end and databases first, and make web pages for login interface and register etc at the same time. Then, after finishing correct connection of front end and back end, we do the elementary functional construction---Lost baggage claim processing. After that, we will add more functions like purchasing policies, check policies, changing language and so on. At last, we will do some testing and enhance the security. 
+
+As for the packing project, we decide to use Electron for cross-platform presentation. 
+
+<font color=#FF0000> As for phone terminal, we plan to attempt for two ways and compare the more effective method ---adaptive screen resolution and independent framework of android side.</font> 
+
+![1556525524458](D:\cccbd_web\Document\src\gantt)
+
+
 
 # 3. GROUPWORK
 
@@ -49,7 +63,7 @@ As for the teamwork, we intend to have a high-efficient teamwork. To achieve thi
 
 The team is an integrity , not a set of individuals, we should always remember that the ultimate effectiveness of the team depends on the lowest efficiency of the team. Reasonable division of labor is the prerequisite to prevent the occurrence of problems, and establishing of efficient communication mechanism is an effective way to find problems.
 
-##3.2 Divide of work(杜)
+3.2 Divide of work
 
 Our team divide the project basicaly into three main parts: front-end part, back-end part and mobile-end.
 
@@ -71,9 +85,31 @@ Our team divide the project basicaly into three main parts: front-end part, back
 
   Main work: 
 
-## 3.3 Problems(玥)
+## 3.3 Problems
 
-## 3.4 Solutions(玥)
+Rather than individuals who can decide all choices by themselves, we work as a group which means we have to make almost all decisions after getting everyone's approval in order to get the success of the whole system.  Many people participating in the discussion represents more collision among different opinions, which will create a lot of problems. Although effective division, communication and tools has avoided many problems, we still confront several some issues. 
+
+- Lack of communication between weekly meeting
+
+  We have fully communication during group meeting every week, dividing tasks, dealing with difficult problems together. However, we hardly discussed the process of work during that week (between weekly meeting) at first. We initially thought that we needed to give everyone independent time to do their work because they had other things to do besides the project, but things went wrong. Some members maybe encountered difficulties in their work, but they kept the question to themselves and couldn't solve it out until next weekly meeting, which leads to delays of the task and the group efficiency would be reduced. 
+
+- Mistakes about merge of git
+
+  During the development of the system, we found files in each member's local git repository of git were different from each other, some were not updated to the latest and some files even lost in contributors' computer. We were confused about this chaos and feared that our efforts will be in vain and influenced the final version of the system. 
+
+## 3.4 Solutions
+
+In group work, we need to constantly solve problems. In view of the above two problems, we have come up with solutions.
+
+- Helping and monitoring mechanism 
+
+  In order to solve the problem of someone delaying work or not solving the problem in time, we adopt the Helping and monitoring mechanism between several group members.  We divide the group into several small groups such as, front end for 2 people, back end for two people etc and assign tasks to each small groups. In this way, people responsible for the same task can not only monitor and urge others to do the work, but help each other deal with problems as well.  In other words, people who have the same goal for the whole task can solve more problems and thus improve their work efficiency.
+
+- Good solution about git merge in Webstorm/GitKraken
+
+  Considering the drawback in primary cmd command line, we choose to use other better softwares to do git operations. Webstorm or GitKraken are good choices, which can not only upload files, modify content to remote git repository and update the local git repository, but also present the process flow and chart of each modification, which is clear and concise. This approach addresses the difficulty of seeing the process in each merging. Besides, Webstorm can also adjust cut and overwritten coverage to avoid the computer directly selecting the merged content by default and carrying out internal operation to get the result we do not want. In this way, files can be synchronized among members' local repository and git can merge correctly.
+
+  ![1556544296718](D:\cccbd_web\Document\src\kk)
 
 # 4. TECHNICAL IMPLEMENTATION
 
