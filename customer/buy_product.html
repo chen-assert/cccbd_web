@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <script src="jquery-3.3.1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title></title>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link href='open+sans.css' rel='stylesheet' type='text/css'/>
+    <!-- TABLE STYLES-->
+    <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
+    <script type="text/javascript">
+        function developing() {
+            window.alert("this function is developing");
+            return false;
+        }
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+        let myArr;
+        function buildHtmlTable() {
+            let xmlhttp = new XMLHttpRequest();
+            let url = "http://cccbd.top:8080/RESTHello/transaction/product_detail?productNo=" + getUrlParameter('productNo');
+            xmlhttp.withCredentials = true; //!!
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                    myArr = JSON.parse(xmlhttp.responseText);
+                    document.getElementById('productName').innerHTML = "Name:" + myArr['productName'];
+                    document.getElementById('price').innerHTML = "Price:" + myArr['price'];
+                    document.getElementById('content').innerHTML = "Content:" + myArr['content']+"<br>"+"ProductNo:"+myArr['productNo'];
+                }
+
+            };
+        }
+        function buy() {
+            let mydata = new FormData();
+            mydata.append("productNo", getUrlParameter('productNo'));
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://cccbd.top:8080/RESTHello/transaction/buy_product', true);
+            xhr.withCredentials = true; //!!
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.onload = function () {
+                console.log(this.responseText);
+                alert('success');
+                window.location.href = "policy.html";
+            };
+            xhr.send(urlencodeFormData(mydata));
+        }
+        function urlencodeFormData(fd) {
+            var params = new URLSearchParams();
+            for (var pair of fd.entries()) {
+                typeof pair[1] == 'string' && params.append(pair[0], pair[1]);
+            }
+            return params.toString();
+        }
+    </script>
+    <title>HomePage</title>
+    <style type="text/css">
+        body {
+            background-image: url('../image/background.jpeg');
+            background-position: 0px 100px;
+            background-repeat: no-repeat;
+            background-size: 100% 550px;
+        }
+    </style>
+
+    <style type="text/css">
+        .bodystyle {
+            filter: alpha(opacity=20);
+            -moz-opacity: 0.2;
+            -khtml-opacity: 0.2;
+            opacity: 0.7;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+        #table1{
+            position:absolute;
+            z-index:3;
+            text-align: center;
+            font-size: 20px;
+            margin-left:25%;
+            width: 50%;
+            top: 200px;
+
+        }
+    </style>
+
+</head>
+<body style="background-color: #ff8844" onload="buildHtmlTable('#table1')">
+<section class="HomePage">
+    <img src="../image/icon.PNG" width="120px" height="120px">
+    <b style="font-size: 30px; position: absolute; top: 35px">Hibernia-Sino Travel Insurance Company</b>
+    <a href="../index.html" style="float:right;">log out</a>
+
+
+
+
+    <div>
+        <form>
+            <a href="" style="font-size: 15px; position: absolute; right: 30%;top: 80px;font-weight:bolder;">About
+                Us</a>
+            <a href="" style="font-size: 15px; position: absolute; right: 20%;top: 80px;font-weight:bolder;">Contact
+                Us</a>
+            <a href=""
+               style="font-size: 15px; position: absolute; right: 10%;top: 80px;font-weight:bolder;">Language</a>
+        </form>
+    </div>
+    <div class="bodystyle">
+        <img src="../image/white.png" width=98% height=800px" style="position: absolute; top: 100px;z-index:2;">
+        <div style="position: absolute;z-index: 3;text-align: center;margin-left: 35%;top: 200px;">
+            <h1 id="productName"></h1>
+            <h2 id="price"></h2>
+            <p id="content"></p>
+            <div class="col-md-6">
+
+                <button type="button" class="btn btn-success btn-circle" style="position:absolute;margin-left: 40%"
+                        id="button2"><i class="fa fa-shopping-cart fa-2x" onclick="buy()"></i>
+                </button>
+                <!-- <button type="button" class="btn btn-info btn-circle" style="position: absolute;margin-left: 120%"><i class="fa fa-info fa-2x"></i> -->
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</section>
+
+<!-- /. WRAPPER  -->
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<script src="assets/js/jquery-1.10.2.js"></script>
+<!-- Bootstrap Js -->
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- Metis Menu Js -->
+<script src="assets/js/jquery.metisMenu.js"></script>
+<!-- DATA TABLE SCRIPTS -->
+<script src="assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#dataTables-example').dataTable();
+    });
+</script>
+<!-- Custom Js -->
+<script src="assets/js/custom-scripts.js"></script>
+
+
+</body>
+</html>
