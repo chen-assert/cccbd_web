@@ -38,41 +38,24 @@
 
             };
         }
+
+
     </script>
 </head>
 <body onload="buildHtmlTable()">
 <div id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
-        <div class="navbar-header">
+        <div class="navbar-header" id="xiala1">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../index.html"><i class="fa fa-comments"></i> <strong>Hibernia-Sino</strong></a>
+            <a class="navbar-brand" href="../index.html" id="title1"><i class="fa fa-comments" id="title2"></i> <strong id="title3">Hibernia-Sino</strong></a>
         </div>
 
-        <ul class="nav navbar-top-links navbar-right">
-
-            <!-- /.dropdown -->
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="../index.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-user -->
-            </li>
-            <!-- /.dropdown -->
-        </ul>
+        <ul class="nav navbar-top-links navbar-right" id="xiala2"><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"><i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i></a><ul class="dropdown-menu dropdown-user"><li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a></li><li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li><li class="divider"></li><li><a href="../index.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li></ul></li></ul>
     </nav>
 
 
@@ -184,5 +167,30 @@
         </script>
         <!-- Custom Js -->
         <script src="assets/js/custom-scripts.js"></script>
-
+        <script type="text/javascript">
+            var s = "";
+            s += " 网页可见区域宽："+ document.body.clientWidth+"<br />";
+            s += " 网页可见区域高："+ document.body.clientHeight+"<br />";
+            s += " 网页可见区域宽："+ document.body.offsetWidth + " (包括边线和滚动条的宽)"+"<br />";
+            s += " 网页可见区域高："+ document.body.offsetHeight + " (包括边线的宽)"+"<br />";
+            s += " 网页正文全文宽："+ document.body.scrollWidth+"<br />";
+            s += " 网页正文全文高："+ document.body.scrollHeight+"<br />";
+            s += " 网页被卷去的高(ff)："+ document.body.scrollTop+"<br />";
+            s += " 网页被卷去的高(ie)："+ document.documentElement.scrollTop+"<br />";
+            s += " 网页被卷去的左："+ document.body.scrollLeft+"<br />";
+            s += " 网页正文部分上："+ window.screenTop+"<br />";
+            s += " 网页正文部分左："+ window.screenLeft+"<br />";
+            s += " 屏幕分辨率的高："+ window.screen.height+"<br />";
+            s += " 屏幕分辨率的宽："+ window.screen.width+"<br />";
+            s += " 屏幕可用工作区高度："+ window.screen.availHeight+"<br />";
+            s += " 屏幕可用工作区宽度："+ window.screen.availWidth+"<br />";
+            s += " 你的屏幕设置是 "+ window.screen.colorDepth +" 位彩色"+"<br />";
+            s += " 你的屏幕设置 "+ window.screen.deviceXDPI +" 像素/英寸"+"<br />";
+            if (document.body.clientWidth<400){
+                document.getElementById('title1').style.display='none';
+                document.getElementById('xiala2').style.display='none';
+                var a = document.getElementById('xiala1').innerHTML;
+                document.getElementById('xiala1').innerHTML = a+"<ul class=\"nav navbar-top-links navbar-right\" id=\"xiala2\"><li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" aria-expanded=\"false\"><i class=\"fa fa-user fa-fw\"></i> <i class=\"fa fa-caret-down\"></i></a><ul class=\"dropdown-menu dropdown-user\"><li><a href=\"#\"><i class=\"fa fa-user fa-fw\"></i> User Profile</a></li><li><a href=\"#\"><i class=\"fa fa-gear fa-fw\"></i> Settings</a></li><li class=\"divider\"></li><li><a href=\"../index.html\"><i class=\"fa fa-sign-out fa-fw\"></i> Logout</a></li></ul></li></ul>"
+            }
+        </script>
 </body>

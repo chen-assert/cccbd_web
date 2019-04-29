@@ -33,7 +33,7 @@
                             var cellValue = myArr[i][columns[colIndex]];
                             if (cellValue == null) cellValue = "";
                             if(index === 0){
-                                row$.append($("<td><a href=\"?id=" + cellValue + "\">" + cellValue + "</a></td"));
+                                row$.append($("<td><a href=\"buy_product.html?productNo=" + cellValue + "\">" + cellValue + "</a></td"));
                             }else{
                                 row$.append($('<td/>').html(cellValue));
                             }
