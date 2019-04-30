@@ -108,7 +108,7 @@
 </style>
 <script type="text/javascript">
     function register() {
-        if (checkId() && checkName() && checkEmail() && checkPassword()) {
+        if (checkId() && checkName() && checkEmail() && checkPassword() && checkPasswordr()) {
             //alert("checked");
             $.ajax({
                 type: 'post',
@@ -120,14 +120,10 @@
                 $(location).attr("href", "index.html");
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 alert(jqXHR.responseText);
-                //window.location.reload();
-                //为什么要刷新?
             })
         } else {
             alert("illegal input");
         }
-
-
     }
 
     function send_email() {
@@ -144,7 +140,6 @@
         }).always(function (jqXHR, textStatus, errorThrown) {
             //$('#email_output').html(jqXHR.responseText)
         });
-
     }
 
     function urlencodeFormData(fd) {
@@ -198,6 +193,16 @@
         return true;
     }
 
+    function checkPasswordr() {
+        var x = document.getElementById("password").value;
+        var y = document.getElementById("passwordr").value;
+        if (x === y) {
+            return true;
+        }
+        alert("illegal input");
+        return false;
+    }
+
     function clickkkkk() {
         document.getElementById("username").value = "";
     }
@@ -247,7 +252,7 @@
             <b data-i18n="noun.gender">Gender:</b>
             <select name="gender">
                 <option value="female" data-content='Female' data-i18n="noun.female"></option>
-                <option value="male"  data-content='Male' data-i18n="noun.male">Male</option>
+                <option value="male" data-content='Male' data-i18n="noun.male">Male</option>
             </select>
         </p>
         <input type="text" name="id" placeholder="ID Number: 18 character" id="identification" onchange="checkId()"
@@ -255,10 +260,11 @@
         <input type="text" name="password" id="password" placeholder="password"
                onchange="checkPassword()" onkeypress="detectCapsLock(event)"><br>
         <input type="text" name="passwordr" id="passwordr" placeholder="input password again"
-               onchange="" onkeypress="detectCapsLock(event)"><br>
+               onchange="checkPasswordr()" onkeypress="detectCapsLock(event)"><br>
         <input type="text" name="email" placeholder="email address" id="email" onchange="checkEmail()"
                onkeypress="detectCapsLock(event)">
-        <input type="submit" name="submite" id="submite" data-i18n="[value]noun.send_email" value="send email" onclick="send_email();">
+        <input type="submit" name="submite" id="submite" data-i18n="[value]noun.send_email" value="send email"
+               onclick="send_email();">
         <span id="email_output"></span>
         <input type="text" name="verified_code" placeholder="Security Code" id="verified_code" onchange=""
                onkeypress="detectCapsLock(event)"><br>
