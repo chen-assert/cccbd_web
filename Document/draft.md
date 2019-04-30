@@ -23,7 +23,7 @@ As for the packing project, we decide to use Electron for cross-platform present
 
 <font color=#FF0000> As for phone terminal, we plan to attempt for two ways and compare the more effective method ---adaptive screen resolution and independent framework of android side.</font> 
 
-![1556525524458](D:\cccbd_web\Document\src\gantt)
+![1556525524458](src\gantt.jpg)
 
 
 
@@ -105,11 +105,11 @@ In group work, we need to constantly solve problems. In view of the above two pr
 
   In order to solve the problem of someone delaying work or not solving the problem in time, we adopt the Helping and monitoring mechanism between several group members.  We divide the group into several small groups such as, front end for 2 people, back end for two people etc and assign tasks to each small groups. In this way, people responsible for the same task can not only monitor and urge others to do the work, but help each other deal with problems as well.  In other words, people who have the same goal for the whole task can solve more problems and thus improve their work efficiency.
 
-- Good solution about git merge in Webstorm/GitKraken
+- Good solution about git merge in WebStorm/GitKraken
 
-  Considering the drawback in primary cmd command line, we choose to use other better softwares to do git operations. Webstorm or GitKraken are good choices, which can not only upload files, modify content to remote git repository and update the local git repository, but also present the process flow and chart of each modification, which is clear and concise. This approach addresses the difficulty of seeing the process in each merging. Besides, Webstorm can also adjust cut and overwritten coverage to avoid the computer directly selecting the merged content by default and carrying out internal operation to get the result we do not want. In this way, files can be synchronized among members' local repository and git can merge correctly.
+  Considering the drawback in primary cmd command line, we choose to use other better softwires to do git operations. WebStorm or GitKraken are good choices, which can not only upload files, modify content to remote git repository and update the local git repository, but also present the process flow and chart of each modification, which is clear and concise. This approach addresses the difficulty of seeing the process in each merging. Besides, WebStorm can also adjust cut and overwritten coverage to avoid the computer directly selecting the merged content by default and carrying out internal operation to get the result we do not want. In this way, files can be synchronized among members' local repository and git can merge correctly.
 
-  ![1556544296718](D:\cccbd_web\Document\src\kk)
+  ![1556544296718](src\kk.jpg)
 
 # 4. TECHNICAL IMPLEMENTATION
 
@@ -149,7 +149,7 @@ The connection between front-end and back-end we divide funtions into 3 differen
 
 we usally use this functions to get one object contains our desired informations. in the client-side we need specific different claims, quantity of claims and product's details. the problem in this stage, is we should hava correct api and clearly thought, using console.log print out the object to check. others funcitions, we only implement this function and using in corrent div to get we goal.
 
-####4.1.2.3 Functions that has no parameters, and only request for database information.
+#### 4.1.2.3 Functions that has no parameters, and only request for database information.
 
 In order to get many list. we send request to url and return a list that contains all the objects satisfy the constraints. ![Screen Shot 2019-04-25 at 10.03.59 AM](src/Screen Shot 2019-04-25 at 10.03.59 AM.png)
 
@@ -187,7 +187,7 @@ Following is dynamic generate options to offer customer to select your policy in
 
 ![Screen Shot 2019-04-25 at 4.35.09 PM](src/Screen Shot 2019-04-25 at 4.35.09 PM.png)
 
-####4.1.2.4 return a message telling us whether succsss.
+#### 4.1.2.4 return a message telling us whether succsss.
 
 Here are our send function, different from before. we need to send informations to database, username and password. database executeQuery and check whether this user have registered. 
 
@@ -199,21 +199,26 @@ Register are same as login. In html, getElementById the user input. In JSON, pac
 
 ## 4.2 Back-end
 
-This section would describe the back-end's 
+This section would describe the back-end's technology detail, the process about how we build this back-end server, and why we choose these technology stack.
 
-“Login” page which will be common for the Common Reporting
-Gateway, the Authorities Info Exchange and the Resource Management Web applications
-(that constitute the NSW Web interfaces). The main component is the login form, where
-user needs to provide the credentials in order to be authorized to use the web
-application.
+### 4.2.1 Technology overview
 
-### 4.2.3 Develop process
+In the back-end, the main design rule we followed is the microservices architecture, and the core concept is that we only build a series RESTful API provided to front-end, and let the front-end decide how to use them. 
+![](src/rest-apis-fig2.png)
+With access control to every API, this design pattern gives the ability to front-end to decide how to process the business logic, hugely reduce server compute load, clearly delimit the edge between front-end and back-end (and delimit the developing process, so we can separate the back-end and front-end into two different project folder). Besides, this design symbol gives front-end application freely scalability, we can even use different languages to implement the client logic without change the back-end, and this trait make the multi-platform develop to become much easier.
 
-At the starting of the project, we firstly want to cooperate in the back-end development, 
 
-### 4.2.4 The reason for choosing these technology stacks
+### 4.2.2 System architecture detail
 
-Before we starting to
+In specific practice, we decide to use 
+
+### 4.2.3 The reason for choosing these technology stacks
+
+Before we start developing the 
+
+### 4.2.4 Develop process
+
+At the starting of the project, we firstly want to cooperate in the back-end development, but because the lacking of back-end develop experience, we finally decide to give one teammate the responsible to do technical choosing and back-end develop
 
 ## 4.3 Mobile-end(金)
 

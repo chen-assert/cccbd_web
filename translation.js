@@ -104,7 +104,7 @@ function setLanguage(lan) {
 
 $(document).ready(function () {
     lan=localStorage.getItem('language');
-    $('#lan_selecter').val('ch').change();
+    $('#lan_selecter').val(lan).change();
     // i18next.changeLanguage(lan);
     // $('.translate').localize();
 });
