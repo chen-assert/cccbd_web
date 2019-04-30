@@ -1,3 +1,15 @@
+<style>
+body
+h1
+{
+	text-align:center;
+}
+p
+{
+	font-family: Georgia, serif;
+}
+
+
 # Content
 
 [TOC]
@@ -207,14 +219,22 @@ In the back-end, the main design rule we followed is the microservices architect
 ![](src/rest-apis-fig2.png)
 With access control to every API, this design pattern gives the ability to front-end to decide how to process the business logic, hugely reduce server compute load, clearly delimit the edge between front-end and back-end (and delimit the developing process, so we can separate the back-end and front-end into two different project folder). Besides, this design symbol gives front-end application freely scalability, we can even use different languages to implement the client logic without change the back-end, and this trait make the multi-platform develop to become much easier.
 
+todo: API document example
 
 ### 4.2.2 System architecture detail
 
-In specific practice, we decide to use 
+In specific practice, we decide to use the RESTEasy framework to start the development of back-end
+
+![](src/architecture.png)
 
 ### 4.2.3 The reason for choosing these technology stacks
 
-Before we start developing the 
+Before we start developing the project, we firstly analyze the requirement of this system, and these features below we found are important in our project:
+
+* 
+
+* 
+* 
 
 ### 4.2.4 Develop process
 
@@ -228,7 +248,7 @@ At the starting of the project, we firstly want to cooperate in the back-end dev
 
 # 5. Conclusion
 
-Above are all of the porject information that CCCBD company apply for Hibernia-sino Company. According to our group condition, we seperate into three groups. All of us were done ourself job well and on time. 
+Above are all of the project information that CCCBD company apply for Hibernia-sino Company. According to our group condition, we separate into three groups. All of us were done ourselves job well and on time. 
 
 
 
