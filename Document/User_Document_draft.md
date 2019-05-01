@@ -14,7 +14,9 @@ To install our application, each customer and employee will be given to a link t
 
 ### Login
 
-### <font color=#FF0000>Forget password</font>
+The customer input specific username and password which are set previously.
+
+### Forget password
 
 ### Register
 
@@ -24,9 +26,13 @@ To install our application, each customer and employee will be given to a link t
 
 ### Check my policies
 
-### <font color=#FF0000>Third party login</font>
+### Third party login
 
 ### <font color=#FF0000>Share policies to social media</font>
+
+### Share policies to social media
+
+Customers can share their policies to social media such as WeChat
 
 ## 2. Employee
 
