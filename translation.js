@@ -40,7 +40,9 @@ i18next.init({
                     submit:'Submit',
                     profile:'User Profile',
                     setting:'Settings',
-                    Logout:'Logout'
+                    Logout:'Logout',
+                    processed_claim:'Processed Claims',
+                    unprocessed_claim:'Uprocessed Claims'
                 }
             }
         },
@@ -83,7 +85,9 @@ i18next.init({
                     submit:'提交',
                     profile:' 个人主页',
                     setting:' 设置',
-                    Logout:' 退出'
+                    Logout:' 退出',
+                    processed_claim:'已处理',
+                    unprocessed_claim:'未处理'
                 }
             }
         }

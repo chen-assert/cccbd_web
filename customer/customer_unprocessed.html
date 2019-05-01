@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
-    <script src="../jquery-3.3.1.js"></script>
+    <!--<script src="../jquery-3.3.1.js"></script>-->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="../i18next.min.js"></script>
+    <script src="../jquery-i18next.min.js"></script>
+    <script src="../translation.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title></title>
     <!-- Bootstrap Styles-->
@@ -79,8 +83,8 @@
     </script>
 
 </head>
-<body onload="buildHtmlTable('#dataTables-example')">
-<div id="wrapper">
+<body onload="buildHtmlTable('#dataTables-example')" class="translate">
+<ataT id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
@@ -89,7 +93,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../index.html"><i class="fa fa-comments"></i> <strong>Hibernia-Sino</strong></a>
+            <a class="navbar-brand" href="../index.html"><i class="fa fa-comments"></i>
+                <strong>Hibernia-Sino</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -100,12 +105,12 @@
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    <li><a href="#" ><i class="fa fa-user fa-fw" ></i><mylable data-i18n="noun.profile"> User Profile</mylable></a>
                     </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i><mylable data-i18n="noun.setting"> Settings</mylable></a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="../index.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="../index.html"><i class="fa fa-sign-out fa-fw"></i><mylable data-i18n="noun.logout"> Logout</mylable> </a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -121,27 +126,28 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="homepage_customer.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    <a href="homepage_customer.html"><i class="fa fa-dashboard"></i>  <mylable data-i18n="noun.dashboard">Dashboard</mylable></a>
                 </li>
 
                 <li>
-                    <a href="Lost-custo.html"><i class="fa fa-dashboard"></i> Lost luggage</a>
+                    <a href="Lost-custo.html"><i class="fa fa-suitcase"></i>  <mylable data-i18n="noun.lostluggage">Lost luggage</mylable>
+                    </a>
                 </li>
 
                 <li>
-                    <a href="customer_process.html"><i class="fa fa-dashboard"></i> Process Procedure</a>
+                    <a href="customer_process.html"><i class="fa fa-spinner"></i> <mylable data-i18n="noun.procedure">Process Procedure</mylable></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="customer_processed.html">Processed claim</a>
+                            <a href="customer_processed.html"><mylable data-i18n="noun.processed_claim">Processed claim</mylable></a>
                         </li>
                         <li>
-                            <a href="customer_unprocessed.html" class="active-menu">Unprocessed claim</a>
+                            <a href="customer_unprocessed.html" class="active-menu"><mylable data-i18n="noun.unprocessed_claim">Unprocessed claim</mylable></a>
                         </li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="policy.html"><i class="fa fa-dashboard"></i>Policies</a>
+                    <a href="policy.html"><i class="fa fa-list"></i><mylable data-i18n="noun.policies">Policies</mylable></a>
                 </li>
 
             </ul>
@@ -155,7 +161,7 @@
         <div id="page-inner">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-header">
+                    <h1 class="page-header" data-i18n="noun.unprocessed_claim">
                         Unprocessed claim
                         <small> Please be fair and professional</small>
                     </h1>
@@ -176,24 +182,31 @@
 
                                 </table>
 
-</body>
 
-</div>
+                            </div>
 
-</div>
-</div>
-<!--End Advanced Tables -->
-</div>
-</div>
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>
 
-</div>
+        </div>
 
+        <div class="translate" style="top:30px;position:absolute;right:20px">
+            <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)" id="lan_selecter">
+                <option value="en" data-content='English' data-i18n="noun.english"></option>
+                <option value="ch" data-content='Chinese' data-i18n="noun.chinese"></option>
+            </select>
+        </div>
 
-</div>
+    </div>
+
+</ataT>
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->
-<script src="assets/js/jquery-1.10.2.js"></script>
+<!--<script src="assets/js/jquery-1.10.2.js"></script>-->
 <!-- Bootstrap Js -->
 <script src="assets/js/bootstrap.min.js"></script>
 <!-- Metis Menu Js -->
@@ -208,6 +221,4 @@
 </script>
 <!-- Custom Js -->
 <script src="assets/js/custom-scripts.js"></script>
-
-
 </body>
