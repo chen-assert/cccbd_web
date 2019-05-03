@@ -34,7 +34,10 @@ To install our application, each customer and employee will be given to a link t
 
 The user login window is on the left of login interface. Customers input specific user-name and password set previously (registration) in enter the homepage and their account. Password can be modified later in their account.
 
-![1556551547484](src\login_user)
+<figure>
+  <img src="src\login_user"/>
+  <figcaption>Fig.1 User Login</figcaption>
+</figure>
 
 ### Forget password
 
@@ -42,7 +45,10 @@ If customers forget their password, they can click the link at the bottom right 
 
 Customers should input their identification number ( the system would check if the id is the same as when the account was registered to facilitate reset. ) and the new password for two times, the new passwords must be the same. And they also need to input their email to receive the security code that the system send to them. Then they input the security code and press the smile-face button. ( the system would check if the security code are correct and return reset state ) If correct, customers' new password is set successfully.
 
-![1556552091188](src\reset)
+<figure>
+  <img src="src\reset"/>
+  <figcaption>Fig.2 Reset Password</figcaption>
+</figure>
 
 ### Register
 
@@ -50,7 +56,18 @@ If customers are new user of the website, they can click "Create New Account" li
 
 Then customers should set their password for two times, the new passwords must be the same. And they also need to input their email to receive the security code that the system send to them. Then they input the security code and press the smile-face button. ( the system would check if the security code are correct and return reset state) If correct, the registration is finished successfully. (Each customer can only have one account)
 
-![1556553074720](src\register)
+<figure>
+  <img src="src\register"/>
+  <figcaption>Fig.3 Register</figcaption>
+</figure>
+
+
+
+
+
+
+
+
 
 ### Apply for lost luggage
 
@@ -58,41 +75,52 @@ After login, user can press the luggage icon with "Luggage Lost" link and enter 
 
 Customers can also input flight number and baggage check number, theses are optional. If customers have receipt or photos of the luggage,  they can upload it. And input more detailed description of the luggage will be better.
 
-![1556591226621](src\lost)
+<figure>
+  <img src="src\lost"/>
+  <figcaption>Fig.4 Lost Luggage</figcaption>
+</figure>
 
 ### Check the state of processing claims
 
 Customer can check the sate of processing claims of lost luggage by clicking "Process Procedure" in the drop-down list, then it will show the number of processed claims and unprocessed claims, customers can click each icon to enter each interface and check the details and state of the claim. (click the item in the drop-down list can also enter these interface)
 
-![1556591546575](src\process)
+<figure>
+  <img src="src\process"/>
+  <figcaption>Fig.5 Process Procedure</figcaption>
+</figure>
 
 In the processed/unprocessed claim interface, the customer can check all processed/unprocessed claim he/she submit before. All information the customer gave is presented in the table, including the processing state (accept -> accept the claim; refuse -> refuse to the claim; request -> request for more information from the customer; waiting -> waiting to be processed in unprocessed interface )
 
-![1556591727795](src\processed)
+<figure>
+  <img src="src\processed"/>
+  <figcaption>Fig.6 Processed Claims</figcaption>
+</figure>
 
-![1556592604803](src\unprocessed)
+<figure>
+  <img src="src\unprocessed"/>
+  <figcaption>Fig.7 Unprocessed Claims</figcaption>
+</figure>
 
 The customer can also click claimNo of each claim to check more details including all information filled before and feedback from the employee. Customers can also input some instrument or required information in the blank below and press the arrow button to submit. These information would be appended to the details.
 
-![1556592402109](src\detail)
+<figure>
+  <img src="src\detail"/>
+  <figcaption>Fig.8 Claim Details</figcaption>
+</figure>
 
 ### Check my policies
 
 Customers have two ways to check their policies bought before. In homepage, customer can press the "Access Your Policy" on the right to enter the interface. Or, if customers want to view policies when filling the lost-luggage claim, they can just click "Policies" in the drop-down list to enter the interface. 
 
-![1556593942396](src\home)
-![1556595099953](src\policy)
+<figure>
+  <img src="src\home"/>
+  <figcaption>Fig.9 Home</figcaption>
+</figure>
 
-<font color=#FF0000>The customer can also click policyNo in the form to check more details about the insurance policy. </font>
-
-### <font color=#FF0000>Third party login</font>
-
-<font color=#FF0000>Customers can login using the third party account.</font>
-Customers have two ways to check their policies bought before. In homepage, customer can press the "Access Your Policy" on the right to enter the interface. Or, if customers want to view policies when filling the lost-luggage claim, they can just click "Policies" in the drop-down list to enter the interface. 
-
-![1556593942396](src\home)
-
-![1556595099953](src\policy)
+<figure>
+  <img src="src\policy"/>
+  <figcaption>Fig.10 Purchased Policies</figcaption>
+</figure>
 
 <font color=#FF0000>The customer can also click policyNo in the form to check more details about the insurance policy. </font>
 
@@ -104,19 +132,53 @@ Customers have two ways to check their policies bought before. In homepage, cust
 
 <font color=#FF0000>Customers can share their policies to social media such as WeChat</font>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 2. Employee
 
 ### Login
 
 The employee login window is on the right of customer login window. Every employee will be given an account at the very beginning when they work in the company. The account number is their job number, and the original password is 123456 which they can modified by themselves later.
 
-![login](src/login.png)
+<figure>
+  <img src="src\login.png"/>
+  <figcaption>Fig.11 Login</figcaption>
+</figure>
 
 ### <font color=#FF0000>Forget Password</font>
 
 If employees forget their password, they can click the “Forget Password” link to reset the password. They need to input their ID number and new password double times, and they also need to input their email to receive the security code that the system send to them. Then they enter the security code, press the submit button and then the new password is set done.
 
-![reset](src/reset.png)
+<figure>
+  <img src="src\reset.png"/>
+  <figcaption>Fig.12 Reset password</figcaption>
+</figure>
 
 
 
@@ -126,7 +188,10 @@ If employees forget their password, they can click the “Forget Password” lin
 
 Enter the dashboard interface the employee will see the number of unprocessed claims and processed claims. They can see the table of each kind of claims by pressing the icons.
 
-![em_NumberOfClaim](src/em_NumberOfClaim.png)
+<figure>
+  <img src="src/em_NumberOfClaim.png"/>
+  <figcaption>Fig.13 Dashboard</figcaption>
+</figure>
 
 
 
@@ -136,7 +201,10 @@ Enter the dashboard interface the employee will see the number of unprocessed cl
 
 To process a claim, employees can press the claimNo of this claim, and then it will skip to the processing interface. In this interface, employees can see the whole details of this claim, including the customer’s name, claim date, loss date, policy number, and the describing details of his/her luggage. Then the employee can judge whether this claim could be approved or not, or maybe need more details. For the last option, employees can give some feedback to the customer to tell him/her what should him/her to add. 
 
-![em_processing](src/em_processing.png)
+<figure>
+  <img src="src/em_processing.png"/>
+  <figcaption>Fig.14 Processing Interface</figcaption>
+</figure>
 
 ## 3. Mobile Platform
 

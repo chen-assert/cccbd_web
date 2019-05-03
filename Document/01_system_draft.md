@@ -123,6 +123,14 @@ Rather than individuals who can decide all choices by themselves, we work as a g
 
   During the development of the system, we found files in each member's local git repository of git were different from each other, some were not updated to the latest and some files even lost in contributors' computer. We were confused about this chaos and feared that our efforts will be in vain and influenced the final version of the system. 
 
+
+
+
+
+
+
+
+
 ## 3.4 Solutions
 
 In group work, we need to constantly solve problems. In view of the above two problems, we have come up with solutions.
