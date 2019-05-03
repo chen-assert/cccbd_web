@@ -41,7 +41,7 @@ As for the packing project, we decide to use Electron for cross-platform present
 
 # 3. GROUPWORK
 
-## 3.1 How to achieve the goals together(杜)
+## 3.1 How to achieve the goals together
 
 As for the teamwork, we intend to have a high-efficient teamwork. To achieve this, we have three aspects of how to reach the goals together.
 
@@ -75,7 +75,7 @@ As for the teamwork, we intend to have a high-efficient teamwork. To achieve thi
 
 The team is an integrity , not a set of individuals, we should always remember that the ultimate effectiveness of the team depends on the lowest efficiency of the team. Reasonable division of labor is the prerequisite to prevent the occurrence of problems, and establishing of efficient communication mechanism is an effective way to find problems.
 
-3.2 Divide of work
+## 3.2 Divide of work
 
 Our team divide the project basicaly into three main parts: front-end part, back-end part and mobile-end.
 
@@ -95,7 +95,7 @@ Our team divide the project basicaly into three main parts: front-end part, back
 
   Contributor: Chen Jin
 
-  Main work: 
+  Main work: The design of web app by packaging the front-end web pages and system logic and modifying the layout to fit various phone screen resolutions
 
 ## 3.3 Problems
 
@@ -157,6 +157,8 @@ The connection between front-end and back-end we divide funtions into 3 differen
 
 #### 4.1.2.2 functions has parameters. 
 
+<!--todo:This pic need change-->
+
 ![Screen Shot 2019-04-23 at 8.43.44 PM](src/Screen Shot 2019-04-23 at 8.43.44 PM.png)
 
 we usally use this functions to get one object contains our desired informations. in the client-side we need specific different claims, quantity of claims and product's details. the problem in this stage, is we should hava correct api and clearly thought, using console.log print out the object to check. others funcitions, we only implement this function and using in corrent div to get we goal.
@@ -211,40 +213,76 @@ Register are same as login. In html, getElementById the user input. In JSON, pac
 
 ## 4.2 Back-end
 
-This section would describe the back-end's technology detail, the process about how we build this back-end server, and why we choose these technology stack.
+This section would describe the back-end's technology detail, the process about how we build this back-end server, and why we choose these technology stacks.
 
 ### 4.2.1 Technology overview
 
 In the back-end, the main design rule we followed is the microservices architecture, and the core concept is that we only build a series RESTful API provided to front-end, and let the front-end decide how to use them. 
 ![](src/rest-apis-fig2.png)
-With access control to every API, this design pattern gives the ability to front-end to decide how to process the business logic, hugely reduce server compute load, clearly delimit the edge between front-end and back-end (and delimit the developing process, so we can separate the back-end and front-end into two different project folder). Besides, this design symbol gives front-end application freely scalability, we can even use different languages to implement the client logic without change the back-end, and this trait make the multi-platform develop to become much easier.
+With access control to every API, this design pattern gives the ability to front-end to decide how to process the business logic, hugely reduce server compute load, clearly delimit the edge between front-end and back-end (and delimit the developing process, so we can separate the back-end and front-end into two different project folder). Besides, this design symbol gives front-end application freely scalability, we can even use different languages to implement the client logic without change the back-end, and this trait makes the multi-platform develop to become much easier.
 
 todo: API document example
 
 ### 4.2.2 System architecture detail
 
-In specific practice, we decide to use the RESTEasy framework to start the development of back-end
+In specific practice, we decide to use the RESTEasy framework to start the development of back-end, we build many necessary micro applications which provide different function interfaces, and use tomcat as container to running with Mysql in DigitalOcean could services, and then we through Cloudflare's global CDN to deliver services to everywhere in the world.
 
-![](src/architecture.png)
+System architecture graph:
+![](src/architecture.jpg)
 
 ### 4.2.3 The reason for choosing these technology stacks
 
 Before we start developing the project, we firstly analyze the requirement of this system, and these features below we found are important in our project:
 
 * Security
+  	As an insurance application and related to money, the security of this project is a major aspect we need to concern, we should never let user's information be leak or theft, so we need a good way to encrypt our information both in transmission and storage.
+
 * Reliability
+
+  ​	Because the application's sensitivity, we also need to keep the system's stability, that means the system needs to be high scalability and flexibility(can easily running on distributed services).
+
+* Ease of use
+
+  ​	We know that the man-machine interactive is a major point the nowadays application needs to consider, an elegant UI design is a key to attract users.
+
 * Portability
-* 
+
+  ​	With this project needs to work on both mobile and desktop, the portability is also a point we need to consider, writing code in two or more platform is not an easy task.
+
+* Globalization ability
+
+  ​	Because this application is mainly designed for transnational business, we should not only make the application can support multi-language but also need to make users everywhere could get good network linking.
 
 ### 4.2.4 Develop process
 
-At the starting of the project, we firstly want to cooperate in the back-end development, but because the lacking of back-end develop experience, we finally decide to give one teammate the responsible to do technical choosing and back-end develop
+At the starting of the project, we firstly want to work together in the back-end development, but because the lacking of back-end develops experience and for better divide the work, we finally decide to make an individual sub-group for the responsible to do technical choosing and back-end developing. And next, by follow the DevOps way, our team through continuous communication between front-end group and back-end group, and summarize the function required in the back-end. Then, we could build the required functions and provide them as APIs and write a document to let front-end group use these function and build the application.
 
-## 4.3 Mobile-end(金)
+Our project's API website build by APIdoc(<https://cccbd.top:8443/RESTHello/apidoc/index.html#api-Policy_and_Claim-PostClaimNew_claim>):
 
-### 4.3.1
+![](src/api_document.jpg)
 
-### 4.3.2
+
+
+## 4.3 Mobile-end
+
+This section introduces the mobile-end construction plan, as well as the technical details used to implement the mobile-end, and the fixes for the corresponding issues.
+
+### 4.3.1 Technical Overview
+
+The method of constructing mobile-end is using Cordova to package the front-end web files into the web app. Cordova is a platform for building mobile apps using HTML, CSS and JS. We can think of Cordova as a container for connecting our web applications to native mobile features. The construction progress of the mobile terminal follows the development progress of the front-end. As each front-end version is updated, the mobile-end will update and maintain accordingly, and make corresponding adjustments.
+![](src/mobile-end.png)
+
+Currently we have built a web app for the Android platform, and will create a web app for the IOS platform in the future.
+
+### 4.3.2 Cordova's environment configuration requirements
+
+Cordova's development environment requirements are quite demanding, in addition to JRE, JDK and other Java development requirements environment, also need NodeJS and NPM. NodeJS is the platform that Cordova needs to develop and package web files. For the development of the Android platform, you also need the corresponding Android SDK for the Cordova version. For the development of the future IOS platform, XCode configuration is also required.
+
+ 
+
+### 4.3.3 Mobile-end layout correction
+
+When testing the web file package completion, we encountered a problem that the layout could not be displayed properly, resulting in a disordered mobile interface. The reason for this is that the layout file required for the web version display does not apply to the mobile terminal. The solution to this is to modify the CSS layout file in the Cordova project to make it suitable for mobile platforms.
 
 # 5. Conclusion
 
