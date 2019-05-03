@@ -30,8 +30,6 @@ The customer input specific username and password which are set previously.
 
 ### <font color=#FF0000>Share policies to social media</font>
 
-### Share policies to social media
-
 Customers can share their policies to social media such as WeChat
 
 ## 2. Employee
@@ -67,6 +65,12 @@ Enter the dashboard interface the employee will see the number of unprocessed cl
 To process a claim, employees can press the claimNo of this claim, and then it will skip to the processing interface. In this interface, employees can see the whole details of this claim, including the customer’s name, claim date, loss date, policy number, and the describing details of his/her luggage. Then the employee can judge whether this claim could be approved or not, or maybe need more details. For the last option, employees can give some feedback to the customer to tell him/her what should him/her to add. 
 
 ![em_processing](src/em_processing.png)
+
+## 3. Mobile Platform
+
+### Mobile-end
+
+Customers can use all businesses of Hibernia-Sino Insurance Company abovementioned by smartphones. Customers using Android platform devices can login, change password, register, apply for lost luggage, and check claims or policies by proper app.<font color=#FF0000>IOS also have corresponding app with all of this features </font>
 
 
 

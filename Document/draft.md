@@ -75,7 +75,7 @@ As for the teamwork, we intend to have a high-efficient teamwork. To achieve thi
 
 The team is an integrity , not a set of individuals, we should always remember that the ultimate effectiveness of the team depends on the lowest efficiency of the team. Reasonable division of labor is the prerequisite to prevent the occurrence of problems, and establishing of efficient communication mechanism is an effective way to find problems.
 
-3.2 Divide of work
+## 3.2 Divide of work
 
 Our team divide the project basicaly into three main parts: front-end part, back-end part and mobile-end.
 
@@ -95,7 +95,7 @@ Our team divide the project basicaly into three main parts: front-end part, back
 
   Contributor: Chen Jin
 
-  Main work: 
+  Main work: The design of web app by packaging the front-end web pages and system logic and modifying the layout to fit various phone screen resolutions
 
 ## 3.3 Problems
 
@@ -223,28 +223,50 @@ todo: API document example
 
 ### 4.2.2 System architecture detail
 
-In specific practice, we decide to use the RESTEasy framework to start the development of back-end
+In specific practice, we decide to use the RESTEasy framework to start the development of back-end, and use tomcat as container to running in DigitalOcean could services, 
 
-![](src/architecture.png)
+System archicutre graph:
+![](src/architecture.jpg)
 
 ### 4.2.3 The reason for choosing these technology stacks
 
 Before we start developing the project, we firstly analyze the requirement of this system, and these features below we found are important in our project:
 
 * Security
+	As a insurance project, the security
 * Reliability
+	
 * Portability
-* 
+	With this project needs to work on both mobile and desktop, the portability is also a point we need to consider, writing code in in two or more platform is not a easy task.
+* Globalization capacity
+	Because
 
 ### 4.2.4 Develop process
 
-At the starting of the project, we firstly want to cooperate in the back-end development, but because the lacking of back-end develop experience, we finally decide to give one teammate the responsible to do technical choosing and back-end develop
+At the starting of the project, we firstly want to cooperate in the back-end development, but because the lacking of back-end develop experience, we finally decide to give one teammate the responsible to do technical choosing and back-end developing. Then refer to DevOps ,form the continous communication between front-end team, we can 
+
+Then we 
 
 ## 4.3 Mobile-end(金)
 
-### 4.3.1
+This section introduces the mobile-end construction plan, as well as the technical details used to implement the mobile-end, and the fixes for the corresponding issues.
 
-### 4.3.2
+### 4.3.1 Technical Overview
+
+The method of constructing mobile-end is using Cordova to package the front-end web files into the web app. Cordova is a platform for building mobile apps using HTML, CSS and JS. We can think of Cordova as a container for connecting our web applications to native mobile features. The construction progress of the mobile terminal follows the development progress of the front-end. As each front-end version is updated, the mobile-end will update and maintain accordingly, and make corresponding adjustments.
+![](src/mobile-end.png)
+
+Currently we have built a web app for the Android platform, and will create a web app for the IOS platform in the future.
+
+## 4.3.2 Cordova's environment configuration requirements
+
+Cordova's development environment requirements are quite demanding, in addition to JRE, JDK and other Java development requirements environment, also need NodeJS and NPM. NodeJS is the platform that Cordova needs to develop and package web files. For the development of the Android platform, you also need the corresponding Android SDK for the Cordova version. For the development of the future IOS platform, XCode configuration is also required.
+
+ 
+
+## 4.3.3 Mobile-end layout correction
+
+When testing the web file package completion, we encountered a problem that the layout could not be displayed properly, resulting in a disordered mobile interface. The reason for this is that the layout file required for the web version display does not apply to the mobile terminal. The solution to this is to modify the CSS layout file in the Cordova project to make it suitable for mobile platforms.
 
 # 5. Conclusion
 
