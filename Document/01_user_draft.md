@@ -1,3 +1,20 @@
+<style>
+body
+h1
+{
+	text-align:center;
+}
+p
+{
+	font-family: Times New Roman;
+    font-size: 12pt;
+    line-height:1.5;
+}
+em
+    {
+        text-align:right;
+    }
+
 # User Document
 
 ## 0. Getting Started
