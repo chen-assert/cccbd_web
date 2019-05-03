@@ -15,6 +15,12 @@ figcaption {
     padding: 3px;
     text-align: center;
 }
+.CodeMirror-code{
+        font-size: 8pt;
+}
+figure{
+    text-align:center;
+}
 
 # User Document
 
@@ -164,7 +170,7 @@ Customers have two ways to check their policies bought before. In homepage, cust
 
 ### Login
 
-The employee login window is on the right of customer login window. Every employee will be given an account at the very beginning when they work in the company. The account number is their job number, and the original password is 123456 which they can modified by themselves later.
+The employee login window is on the right of customer login window. Every employee will be given an account at the very beginning when they work in the company. The account number is their job number, and the original password is 123456 which they can modify by themselves later.
 
 <figure>
   <img src="src\login.png"/>
@@ -173,7 +179,7 @@ The employee login window is on the right of customer login window. Every employ
 
 ### <font color=#FF0000>Forget Password</font>
 
-If employees forget their password, they can click the “Forget Password” link to reset the password. They need to input their ID number and new password double times, and they also need to input their email to receive the security code that the system send to them. Then they enter the security code, press the submit button and then the new password is set done.
+If employees forget their password, they can click the “Forgot Password” link to reset the password. They need to input their ID number and new password double times, and they also need to input their email to receive the security code that the system sends to them. Then they enter the security code, press the submit button and then the new password is set done.
 
 <figure>
   <img src="src\reset.png"/>
