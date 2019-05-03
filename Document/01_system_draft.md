@@ -13,6 +13,7 @@ figcaption {
     font: italic smaller sans-serif;
     padding: 3px;
     text-align: center;
+    color: DarkGray;
 }
 .CodeMirror-code{
         font-size: 8pt;
@@ -20,6 +21,7 @@ figcaption {
 figure{
     text-align:center;
 }
+
 
 ​    
 
@@ -209,7 +211,7 @@ In order to get many lists. we send a request to url and return a list that cont
   <img src="src/Screen Shot 2019-04-25 at 10.03.59 AM.png"/>
   <figcaption>Fig.5 Functions without parameters</figcaption>
 </figure>
- 
+
 In this function, we create list to store the information we selected and send to url. After receive lists in html, first we generate thead, and append tbody, dynamic generate in table.
 
 Following is dynamic generate options to offer customer to select your policy in creating a new claim. 
@@ -251,7 +253,7 @@ Following is dynamic generate options to offer customer to select your policy in
   <img src="src/Screen Shot 2019-04-25 at 4.35.09 PM.png"/>
   <figcaption>Fig.7 Types of Policies</figcaption>
 </figure>
- 
+
 #### 4.1.2.4 Return a message telling us whether succsss.
 
 Here are our sending function, different from before. We need to send informations to database, username and password. Database executeQuery and check whether this user have registered. 

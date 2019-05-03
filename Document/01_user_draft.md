@@ -1,5 +1,4 @@
 <style>
-body
 h1
 {
 	text-align:center;
@@ -14,6 +13,7 @@ figcaption {
     font: italic smaller sans-serif;
     padding: 3px;
     text-align: center;
+    color: DarkGray;
 }
 .CodeMirror-code{
         font-size: 8pt;
