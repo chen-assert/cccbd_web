@@ -10,10 +10,12 @@ p
 }
 
 
-# Content
+
+<h1>CCCBD Group's Hibernia-Sino Travel Insurance System Document</h1>
+
 
 [TOC]
-
+# Content
 # 1. ABSTRACT
 
 In this document, we talk about the detail about our Insurance project. It includes how our team to organize and how to teamwork and did the development process, and the technical detail behind the project. lastly, we do a brief conclusion about the project and analyze our gain and loss at this time.
@@ -89,13 +91,13 @@ Our team divide the project basicaly into three main parts: front-end part, back
 
   Contributor: Chen Jingrui
 
-  Main work: 
+  Main work: The design of application's back-end services and bussiness logic and manage the whole system's architecture and technology.
 
 * Mobile-end
 
   Contributor: Chen Jin
 
-  Main work: The design of web app by packaging the front-end web pages and system logic and modifying the layout to fit various phone screen resolutions
+  Main work: The design of mobile app by packaging the front-end web pages and system logic and modifying the layout to fit various phone screen resolutions
 
 ## 3.3 Problems
 
@@ -156,8 +158,6 @@ In group work, we need to constantly solve problems. In view of the above two pr
 The connection between front-end and back-end we divide funtions into 3 different case, just like the diagram shows above. get objects with parameters, no parameters, and return a message.
 
 #### 4.1.2.2 functions has parameters. 
-
-<!--todo:This pic need change-->
 
 ![Screen Shot 2019-04-23 at 8.43.44 PM](src/Screen Shot 2019-04-23 at 8.43.44 PM.png)
 
@@ -287,8 +287,3 @@ When testing the web file package completion, we encountered a problem that the 
 # 5. Conclusion
 
 Above are all of the project information that CCCBD company apply for Hibernia-sino Company. According to our group condition, we separate into three groups. All of us were done ourselves job well and on time. 
-
-
-
-
-
