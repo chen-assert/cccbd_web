@@ -15,6 +15,12 @@ figcaption {
     padding: 3px;
     text-align: center;
 }
+.CodeMirror-code{
+        font-size: 8pt;
+}
+figure{
+    text-align:center;
+}
 
 # User Document
 

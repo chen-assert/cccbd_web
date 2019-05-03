@@ -1,5 +1,4 @@
 <style>
-body
 h1
 {
 	text-align:center;
@@ -15,6 +14,16 @@ figcaption {
     padding: 3px;
     text-align: center;
 }
+.CodeMirror-code{
+        font-size: 8pt;
+}
+figure{
+    text-align:center;
+}
+
+​    
+
+
 
 
 
@@ -34,13 +43,13 @@ In this document, we talk about the detail about our Insurance project. It inclu
 
 ## 2.1 What does the system do
 
-The system constructs an on-line platform for Hibernia-Sino Travel Insurance Company, which reduct the work-flow from dated desktop software systems to the cloud and develops on-line user interface for operations of customers and employees.  This allows customers to update their details, check all policies, register claims on-line and so on. The system can also work on multiple platforms applying different kinds of language with good security, reliability and ease of use.
+The system constructs an online platform for Hibernia-Sino Travel Insurance Company, which reduce the work-flow from dated desktop software systems to the cloud and develops online user interface for operations of customers and employees.  This allows customers to update their details, check all policies, register claims on-line and so on. The system can also work on multiple platforms applying different kinds of language with good security, reliability and ease of use.
 
 ## 2.2 The plan of the system
 
-Firstly, we design and work out 4 work packages and each group member is package manager of different package. After discussion, we generally determine the gantt chart for the system which presents the divided work we should finish each week as planned. 
+Firstly, we design and work out 4 work packages and each group member is package manager of a different package. After discussion, we generally determine the Gantt chart for the system which presents the divided work we should finish each week as planned. 
 
-As for PC desktop terminal, we plan to construct the framework of cloud end and databases first, and make web pages for login interface and register etc at the same time. Then, after finishing correct connection of front end and back end, we do the elementary functional construction---Lost baggage claim processing. After that, we will add more functions like purchasing policies, check policies, changing language and so on. At last, we will do some testing and enhance the security. 
+As for PC desktop terminal, we plan to construct the framework of cloud end and databases first and make web pages for login interface and register etc at the same time. Then, after finishing the correct connection of the front end and back end, we do the elementary functional construction---Lost baggage claim processing. After that, we will add more functions like purchasing policies, check policies, changing language and so on. At last, we will do some testing and enhance security. 
 
 As for the packing project, we decide to use Electron for cross-platform presentation. 
 
@@ -57,53 +66,53 @@ As for the packing project, we decide to use Electron for cross-platform present
 
 ## 3.1 How to achieve the goals together
 
-As for the teamwork, we intend to have a high-efficient teamwork. To achieve this, we have three aspects of how to reach the goals together.
+As for the teamwork, we intend to have high-efficient teamwork. To achieve this, we have three aspects of how to reach the goals together.
 
 - Clear Responsibility
 
-  A team is made up of individuals. Individuals in a team often have different experiences, personalities and programming levels. Before the official start, we firstly carry out a reasonable division of labor which combine each person's characteristics and hobbies, give full play to the strengths of each team member. If the work is not pleasant and smooth, the efficiency will be low. After the division of labor is completed, each team member's corresponding responsibilities are determined.
+  A team is made up of individuals. Individuals in a team often have different experiences, personalities and programming levels. Before the official start, we firstly carry out a reasonable division of labour which combines each person's characteristics and hobbies, give full play to the strengths of each team member. If the work is not pleasant and smooth, the efficiency will be low. After the division of labour is completed, each team member's corresponding responsibilities are determined.
 
 - Efficient Communication
 
-  After the completion of the division of work, the team will start to work, it must ensure the smooth flow of information within the whole team, especially among the team members whose work are related to each other. When problems are found, they need to be discussed in time to avoid unnecessary time waste. However, software development itself is a kind of work that needs to be focused and quiet, and many temporary interruptions will lead to the stagnation of development ideas, so our team have discussions at a fixed time every week. And fixed time will also let everyone form a habit, so that the efficiency can be improved.
+  After the completion of the division of work, the team will start to work, it must ensure the smooth flow of information within the whole team, especially among the team members whose work are related to each other. When problems are found, they need to be discussed in time to avoid unnecessary time waste. However, software development itself is a kind of work that needs to be focused and quiet, and many temporary interruptions will lead to the stagnation of development ideas, so our team have discussions at a fixed time every week. And fixed time will also let everyone form a habit so that the efficiency can be improved.
 
   At each meeting, we always discuss these aspects as flowing:
 
   - Conclude from last week’s work or presentation, and find ways to overcome.
 
-  - Set goals of this week, including the integral goal and each team members’s goal for this week.
+  - Set goals of this week, including the integral goal and each team members' goal for this week.
 
-  - Solve some difficult problems those cannot be solved by one team member.
+  - Solve some difficult problems that cannot be solved by one team member.
 
   - Write the meeting agenda.
 
 - Appropriate Tools
 
-  Tools are very important of an efficient teamwork.
+  Tools are very important for efficient teamwork.
 
   The approach that most teams are taking right now is to introduce collaborative software that works for the whole team. With clear responsibilities and efficient communications, if team members are supported and coordinated by appropriate team collaboration tools, this project will be carried out more smoothly.
 
-  So we use GitHub to develop the project as it can provide each members to contribute for their own part on their own computer and it is easy to solve the conflicts by merging the code. 
+  So we use GitHub to develop the project as it can provide each member to contribute for their own part on their own computer and it is easy to solve the conflicts by merging the code. 
 
-  Also we use MarkDown to write our documents, because it can be modified by more than one team member at the same time, and after everyone done their part just merge it on GitHub, it is very convenient for a team to write documents. As our project is a software project, we need to write some code in the document, and MarkDown makes it is extremely easy and straight to inset the code into the document.
+  Also, we use MarkDown to write our documents because it can be modified by more than one team member at the same time, and after everyone is done their part just merge it on GitHub, it is very convenient for a team to write documents. As our project is a software project, we need to write some code in the document, and MarkDown makes it is extremely easy and straightforward to insert the code into the document.
 
 The team is an integrity , not a set of individuals, we should always remember that the ultimate effectiveness of the team depends on the lowest efficiency of the team. Reasonable division of labor is the prerequisite to prevent the occurrence of problems, and establishing of efficient communication mechanism is an effective way to find problems.
 
 ## 3.2 Divide of work
 
-Our team divide the project basicaly into three main parts: front-end part, back-end part and mobile-end.
+Our team divided the project basically into three main parts: front-end part, back-end part and mobile-end.
 
 * Front-end
 
   Contributors: Bi Yue, Du Xuanxuan, Cao Ziyi
 
-  Main work: The design of the interfaces and the logic of the system, for example, what information does a customer need to apply for an account, what should a customer do if he/she forgets his/her password, what are the steps when a customer apply for a lost luggage and so on.
+  Main work: The design of the interfaces and the logic of the system, for example, what information does a customer need to apply for an account, what should a customer do if he/she forgets his/her password, what are the steps when a customer applies for a lost luggage and so on.
 
 * Back-end
 
   Contributor: Chen Jingrui
 
-  Main work: The design of application's back-end services and bussiness logic and manage the whole system's architecture and technology.
+  Main work: The design of the application's back-end services and business logic and manage the whole system's architecture and technology.
 
 * Mobile-end
 
@@ -113,11 +122,11 @@ Our team divide the project basicaly into three main parts: front-end part, back
 
 ## 3.3 Problems
 
-Rather than individuals who can decide all choices by themselves, we work as a group which means we have to make almost all decisions after getting everyone's approval in order to get the success of the whole system.  Many people participating in the discussion represents more collision among different opinions, which will create a lot of problems. Although effective division, communication and tools has avoided many problems, we still confront several some issues. 
+Rather than individuals who can decide all choices by themselves, we work as a group which means we have to make almost all decisions after getting everyone's approval in order to get the success of the whole system.  Many people participating in the discussion represents more collision among different opinions, which will create a lot of problems. Although effective division, communication and tools have avoided many problems, we still confront several some issues. 
 
 - Lack of communication between weekly meeting
 
-  We have fully communication during group meeting every week, dividing tasks, dealing with difficult problems together. However, we hardly discussed the process of work during that week (between weekly meeting) at first. We initially thought that we needed to give everyone independent time to do their work because they had other things to do besides the project, but things went wrong. Some members maybe encountered difficulties in their work, but they kept the question to themselves and couldn't solve it out until next weekly meeting, which leads to delays of the task and the group efficiency would be reduced. 
+  We have fully communication during group meeting every week, dividing tasks, dealing with difficult problems together. However, we hardly discussed the process of work during that week (between weekly meeting) at first. We initially thought that we needed to give everyone independent time to do their work because they had other things to do besides the project, but things went wrong. Some members may be encountered difficulties in their work, but they kept the question to themselves and couldn't solve it out until next weekly meeting, which leads to delays of the task and the group efficiency would be reduced. 
 
 - Mistakes about merge of git
 
@@ -129,11 +138,11 @@ In group work, we need to constantly solve problems. In view of the above two pr
 
 - Helping and monitoring mechanism 
 
-  In order to solve the problem of someone delaying work or not solving the problem in time, we adopt the Helping and monitoring mechanism between several group members.  We divide the group into several small groups such as, front end for 2 people, back end for two people etc and assign tasks to each small groups. In this way, people responsible for the same task can not only monitor and urge others to do the work, but help each other deal with problems as well.  In other words, people who have the same goal for the whole task can solve more problems and thus improve their work efficiency.
+  In order to solve the problem of someone delaying work or not solving the problem in time, we adopt the Helping and monitoring mechanism between several group members.  We divide the group into several small groups such as front end for 2 people, the back end for two people etc and assign tasks to each small groups. In this way, people responsible for the same task can not only monitor and urge others to do the work but help each other deal with problems as well.  In other words, people who have the same goal for the whole task can solve more problems and thus improve their work efficiency.
 
 - Good solution about git merge in WebStorm/GitKraken
 
-  Considering the drawback in primary cmd command line, we choose to use other better softwires to do git operations. WebStorm or GitKraken are good choices, which can not only upload files, modify content to remote git repository and update the local git repository, but also present the process flow and chart of each modification, which is clear and concise. This approach addresses the difficulty of seeing the process in each merging. Besides, WebStorm can also adjust cut and overwritten coverage to avoid the computer directly selecting the merged content by default and carrying out internal operation to get the result we do not want. In this way, files can be synchronized among members' local repository and git can merge correctly.
+  Considering the drawback in the primary cmd command line, we choose to use other better software to do git operations. WebStorm or GitKraken are good choices, which can not only upload files, modify content to the remote git repository and update the local git repository, but also present the process flow and chart of each modification, which is clear and concise. This approach addresses the difficulty of seeing the process in each merging. Besides, WebStorm can also adjust cut and overwritten coverage to avoid the computer directly selecting the merged content by default and carrying out an internal operation to get the result we do not want. In this way, files can be synchronized among members' local repository and git can merge correctly.
 
   <figure>
     <img src="src\kk.jpg"/>
@@ -146,21 +155,21 @@ In group work, we need to constantly solve problems. In view of the above two pr
 
 ### 4.1.1 Logic
 
-- Logic of customer-end.
+- The logic of customer-end.
 
-  First the customer need to sign in, if the customer doesn’t have an account he/she can apply for one in the applying interface. The system will send an Ajax to the back-end for login request, and then the back-end will return a state code. In the customer_homepage interface customers can apply for lost luggage, buy new policies and check all the policies they have already bought. 
+  First, the customer needs to sign in, if the customer doesn’t have an account he/she can apply for one in the applying interface. The system will send an Ajax to the back-end for login request, and then the back-end will return a state code. In the customer_homepage interface, customers can apply for lost luggage, buy new policies and check all the policies they have already bought. 
 
-  In the lost luggage interface, customers can write claims by fill the forms, they need to input the date when they lost it, their real name, and their policy number. Also they can find the processing policies if they have more than one claim.
+  In the lost luggage interface, customers can write claims by fill the forms, they need to input the date when they lost it, their real name, and their policy number. Also, they can find the processing policies if they have more than one claim.
 
   <font color=#FF0000>  In the select product interface, </font> 
 
    
 
-- Logic of the employee-end.
+- The logic of the employee-end.
 
   Every employee will be given an account at the very beginning when they work in the company. Like the customer-end, they need to sign in and the system will send an Ajax to the back-end for login request, and then the back-end will return a state code. 
 
-  In the dashboard the employee can see the number of processed and unprocessed claims. To achieve this, unprocessed will get the number of all the claims which state is ‘waiting’, and processed will get the number of the rest of them. To process the claims, the employee need to click the policyNo and then it will skip to the processing interface. In this interface, the whole details will be displayed to the employee and there are three buttons under the details, approve, deny, and ask for more information. Click the button and then will set the state to this claim, then skip to the Unprocessed interface, the number of unprocessed will minus one.   
+  In the dashboard, the employee can see the number of processed and unprocessed claims. To achieve this, unprocessed will get the number of all the claims which state is ‘waiting’, and process will get the number of the rest of them. To process the claims, the employee needs to click the policyNo and then it will skip to the processing interface. In this interface, the whole details will be displayed to the employee and there are three buttons under the details, approve, deny, and ask for more information. Click the button and then will set the state to this claim, then skip to the Unprocessed interface, the number of unprocessed will minus one. 
 
   
 
@@ -173,7 +182,7 @@ In group work, we need to constantly solve problems. In view of the above two pr
   <figcaption>Fig.3 Connection Outline</figcaption>
 </figure>
 
-The connection between front-end and back-end we divide funtions into 3 different case, just like the diagram shows above. get objects with parameters, no parameters, and return a message.
+The connection between front-end and back-end we divide funtions into 3 different cases, just like the diagram shows above. get objects with parameters, no parameters, and return a message.
 
 #### 4.1.2.2 Functions with parameters. 
 
@@ -182,17 +191,17 @@ The connection between front-end and back-end we divide funtions into 3 differen
   <figcaption>Fig.4 Functions with parameters</figcaption>
 </figure>
 
-We usally use these functions to get one object contains our desired informations. in the client-side we need specific different claims, quantity of claims and product's details. the problem in this stage, is we should hava correct api and clearly thought, using console.log print out the object to check. others funcitions, we only implement this function and using in corrent div to get we goal.
+we usally use these functions to get one object contains our desired information. in the client-side we need specific different claims, the number of claims and product's details. the problem in this stage, is we should hava correct api and clearly thought, using console.log print out the object to check. others funcitions, we only implement this function and using in corrent div to get we goal.
 
-#### 4.1.2.3 Functions that has no parameters, and only request for database information.
+#### 4.1.2.3 Functions that have no parameters, and only request for database information.
 
-In order to get many list. we send request to url and return a list that contains all the objects satisfy the constraints. 
+In order to get many lists. we send a request to url and return a list that contains all the objects to satisfy the constraints.
 
 <figure>
   <img src="src/Screen Shot 2019-04-25 at 10.03.59 AM.png"/>
   <figcaption>Fig.5 Functions without parameters</figcaption>
 </figure>
-
+ 
 In this function, we create list to store the information we selected and send to url. After receive lists in html, first we generate thead, and append tbody, dynamic generate in table.
 
 Following is dynamic generate options to offer customer to select your policy in creating a new claim. 
@@ -225,24 +234,21 @@ Following is dynamic generate options to offer customer to select your policy in
 
 <figure>
   <img src="src/Screen Shot 2019-04-25 at 4.35.20 PM.png"/>
-  <figcaption>Fig.6 Policies Purchased</figcaption>
+  <figcaption>Fig.6 Policies Selector</figcaption>
 </figure>
 
 
-
-![Screen Shot 2019-04-25 at 4.35.09 PM](src/Screen Shot 2019-04-25 at 4.35.09 PM.png)
 
 <figure>
   <img src="src/Screen Shot 2019-04-25 at 4.35.09 PM.png"/>
   <figcaption>Fig.7 Types of Policies</figcaption>
 </figure>
-
+ 
 #### 4.1.2.4 Return a message telling us whether succsss.
 
 Here are our sending function, different from before. We need to send informations to database, username and password. Database executeQuery and check whether this user have registered. 
 
-![Screen Shot 2019-04-25 at 3.36.41 PM](src/Screen Shot 2019-04-25 at 3.36.41 PM.png)
-
+The register is the same as login. In HTML, getElementById the user input. In JSON, package information as value with a specific key name. Add a new claim, process claim(employee check claim), after reading employee feedback, user append more information to the detail.
 <figure>
   <img src="src/Screen Shot 2019-04-25 at 3.36.41 PM.png"/>
   <figcaption>Fig.8 Sending Functions</figcaption>
@@ -318,7 +324,7 @@ Our project's API website build by APIdoc(<https://cccbd.top:8443/RESTHello/apid
 
 ## 4.3 Mobile-end
 
-This section introduces the mobile-end construction plan, as well as the technical details used to implement the mobile-end, and the fixes for the corresponding issues.
+This section introduces the mobile-end construction plan, as well as the technical details used to implement the mobile-end and the fixes for the corresponding issues.
 
 ### 4.3.1 Technical Overview
 
@@ -331,7 +337,7 @@ The method of constructing mobile-end is using Cordova to package the front-end 
 
 
 
-Currently we have built a web app for the Android platform, and will create a web app for the IOS platform in the future.
+Currently, we have built a web app for the Android platform and will create a web app for the IOS platform in the future.
 
 ### 4.3.2 Cordova's environment configuration requirements
 
@@ -345,4 +351,4 @@ When testing the web file package completion, we encountered a problem that the 
 
 # 5. Conclusion
 
-Above are all of the project information that CCCBD company apply for Hibernia-sino Company. According to our group condition, we separate into three groups. All of us were done ourselves job well and on time. 
+Above are all of the project information that CCCBD company apply for Hibernia-sino Company. According to our group condition, we separate into three groups. All of us were done our job well and on time. 
