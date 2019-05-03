@@ -10,10 +10,12 @@ p
     font-size: 12pt;
     line-height:1.5;
 }
-em
-    {
-        text-align:right;
-    }
+figcaption {
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
 
 
 
@@ -227,7 +229,11 @@ This section would describe the back-end's technology detail, the process about 
 ### 4.2.1 Technology overview
 
 In the back-end, the main design rule we followed is the microservices architecture, and the core concept is that we only build a series RESTful API provided to front-end, and let the front-end decide how to use them. 
-![](src/rest-apis-fig2.png)<br>*restful apis figure*
+<figure>
+  <img src="src/rest-apis-fig2.png"/>
+  <figcaption>restful apis figure</figcaption>
+</figure>
+
 
 With access control to every API, this design pattern gives the ability to front-end to decide how to process the business logic, hugely reduce server compute load, clearly delimit the edge between front-end and back-end (and delimit the developing process, so we can separate the back-end and front-end into two different project folder). Besides, this design symbol gives front-end application freely scalability, we can even use different languages to implement the client logic without change the back-end, and this trait makes the multi-platform develop to become much easier.
 
@@ -237,7 +243,10 @@ todo: API document example
 
 In specific practice, we decide to use the RESTEasy framework to start the development of back-end, we build many necessary micro applications which provide different function interfaces, and use tomcat as container to running with Mysql in DigitalOcean could services, and then we through Cloudflare's global CDN to deliver services to everywhere in the world.
 
-![](src/architecture.jpg)<br>*System architecture graph*
+<figure>
+  <img src="src/architecture.jpg"/>
+  <figcaption>System architecture graph</figcaption>
+</figure>
 
 ### 4.2.3 The reason for choosing these technology stacks
 

@@ -10,10 +10,11 @@ p
     font-size: 12pt;
     line-height:1.5;
 }
-em
-    {
-        text-align:right;
-    }
+figcaption {
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
 
 # User Document
 
