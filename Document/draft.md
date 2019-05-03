@@ -231,9 +231,9 @@ In specific practice, we decide to use the RESTEasy framework to start the devel
 
 Before we start developing the project, we firstly analyze the requirement of this system, and these features below we found are important in our project:
 
-* 
-
-* 
+* Security
+* Reliability
+* Portability
 * 
 
 ### 4.2.4 Develop process
