@@ -20,8 +20,6 @@ figcaption {
 
 
 
-
-
 <h1>CCCBD Group's Hibernia-Sino Travel Insurance System Document</h1>
 
 
@@ -48,7 +46,10 @@ As for the packing project, we decide to use Electron for cross-platform present
 
 <font color=#FF0000> As for phone terminal, we plan to attempt for two ways and compare the more effective method ---adaptive screen resolution and independent framework of android side.</font> 
 
-![1556525524458](src\gantt.jpg)
+<figure>
+  <img src="src\gantt.jpg"/>
+  <figcaption>Fig.1 Gantt Diagram</figcaption>
+</figure>
 
 
 
@@ -134,7 +135,10 @@ In group work, we need to constantly solve problems. In view of the above two pr
 
   Considering the drawback in primary cmd command line, we choose to use other better softwires to do git operations. WebStorm or GitKraken are good choices, which can not only upload files, modify content to remote git repository and update the local git repository, but also present the process flow and chart of each modification, which is clear and concise. This approach addresses the difficulty of seeing the process in each merging. Besides, WebStorm can also adjust cut and overwritten coverage to avoid the computer directly selecting the merged content by default and carrying out internal operation to get the result we do not want. In this way, files can be synchronized among members' local repository and git can merge correctly.
 
-  ![1556544296718](src\kk.jpg)
+  <figure>
+    <img src="src\kk.jpg"/>
+    <figcaption>Fig.2 Using Git</figcaption>
+  </figure>
 
 # 4. TECHNICAL IMPLEMENTATION
 
@@ -162,25 +166,36 @@ In group work, we need to constantly solve problems. In view of the above two pr
 
 ### 4.1.2 Connection between the front-end and the back-end
 
-#### 4.1.2.1 outline 
+#### 4.1.2.1 Outline 
 
-![Screen Shot 2019-04-25 at 4.22.05 PM](src/Screen Shot 2019-04-25 at 4.22.05 PM.png)
+<figure>
+  <img src="src/Screen Shot 2019-04-25 at 4.22.05 PM.png"/>
+  <figcaption>Fig.3 Connection Outline</figcaption>
+</figure>
 
 The connection between front-end and back-end we divide funtions into 3 different case, just like the diagram shows above. get objects with parameters, no parameters, and return a message.
 
-#### 4.1.2.2 functions has parameters. 
+#### 4.1.2.2 Functions with parameters. 
 
-![Screen Shot 2019-04-23 at 8.43.44 PM](src/Screen Shot 2019-04-23 at 8.43.44 PM.png)
+<figure>
+  <img src="src/Screen Shot 2019-04-23 at 8.43.44 PM.png"/>
+  <figcaption>Fig.4 Functions with parameters</figcaption>
+</figure>
 
-we usally use this functions to get one object contains our desired informations. in the client-side we need specific different claims, quantity of claims and product's details. the problem in this stage, is we should hava correct api and clearly thought, using console.log print out the object to check. others funcitions, we only implement this function and using in corrent div to get we goal.
+We usally use these functions to get one object contains our desired informations. in the client-side we need specific different claims, quantity of claims and product's details. the problem in this stage, is we should hava correct api and clearly thought, using console.log print out the object to check. others funcitions, we only implement this function and using in corrent div to get we goal.
 
 #### 4.1.2.3 Functions that has no parameters, and only request for database information.
 
-In order to get many list. we send request to url and return a list that contains all the objects satisfy the constraints. ![Screen Shot 2019-04-25 at 10.03.59 AM](src/Screen Shot 2019-04-25 at 10.03.59 AM.png)
+In order to get many list. we send request to url and return a list that contains all the objects satisfy the constraints. 
 
-in this function, we create list to store the information we selected and send to url. After receive lists in html, first we generate thead, and append tbody, dynamic generate in table.
+<figure>
+  <img src="src/Screen Shot 2019-04-25 at 10.03.59 AM.png"/>
+  <figcaption>Fig.5 Functions without parameters</figcaption>
+</figure>
 
-Following is dynamic generate options to offer customer to select your policy in create a new claim. 
+In this function, we create list to store the information we selected and send to url. After receive lists in html, first we generate thead, and append tbody, dynamic generate in table.
+
+Following is dynamic generate options to offer customer to select your policy in creating a new claim. 
 
 ```javascript
  function addOptions(selector) {
@@ -208,15 +223,30 @@ Following is dynamic generate options to offer customer to select your policy in
         }
 ```
 
-![Screen Shot 2019-04-25 at 4.35.20 PM](src/Screen Shot 2019-04-25 at 4.35.20 PM.png)
+<figure>
+  <img src="src/Screen Shot 2019-04-25 at 4.35.20 PM.png"/>
+  <figcaption>Fig.6 Policies Purchased</figcaption>
+</figure>
+
+
 
 ![Screen Shot 2019-04-25 at 4.35.09 PM](src/Screen Shot 2019-04-25 at 4.35.09 PM.png)
 
-#### 4.1.2.4 return a message telling us whether succsss.
+<figure>
+  <img src="src/Screen Shot 2019-04-25 at 4.35.09 PM.png"/>
+  <figcaption>Fig.7 Types of Policies</figcaption>
+</figure>
 
-Here are our send function, different from before. we need to send informations to database, username and password. database executeQuery and check whether this user have registered. 
+#### 4.1.2.4 Return a message telling us whether succsss.
+
+Here are our sending function, different from before. We need to send informations to database, username and password. Database executeQuery and check whether this user have registered. 
 
 ![Screen Shot 2019-04-25 at 3.36.41 PM](src/Screen Shot 2019-04-25 at 3.36.41 PM.png)
+
+<figure>
+  <img src="src/Screen Shot 2019-04-25 at 3.36.41 PM.png"/>
+  <figcaption>Fig.8 Sending Functions</figcaption>
+</figure>
 
 Register are same as login. In html, getElementById the user input. In JSON, package information as value with specific key name. Add a new claim, process claim(emoployee check claim), after read employee feedback, user append more information to the detail.
 
@@ -231,8 +261,9 @@ This section would describe the back-end's technology detail, the process about 
 In the back-end, the main design rule we followed is the microservices architecture, and the core concept is that we only build a series RESTful API provided to front-end, and let the front-end decide how to use them. 
 <figure>
   <img src="src/rest-apis-fig2.png"/>
-  <figcaption>restful apis figure</figcaption>
+  <figcaption>Fig.9 Restful apis figure</figcaption>
 </figure>
+
 
 
 With access control to every API, this design pattern gives the ability to front-end to decide how to process the business logic, hugely reduce server compute load, clearly delimit the edge between front-end and back-end (and delimit the developing process, so we can separate the back-end and front-end into two different project folder). Besides, this design symbol gives front-end application freely scalability, we can even use different languages to implement the client logic without change the back-end, and this trait makes the multi-platform develop to become much easier.
@@ -245,8 +276,9 @@ In specific practice, we decide to use the RESTEasy framework to start the devel
 
 <figure>
   <img src="src/architecture.jpg"/>
-  <figcaption>System architecture graph</figcaption>
+  <figcaption>Fig.10 System architecture graph</figcaption>
 </figure>
+
 
 ### 4.2.3 The reason for choosing these technology stacks
 
@@ -277,7 +309,10 @@ At the starting of the project, we firstly want to work together in the back-end
 
 Our project's API website build by APIdoc(<https://cccbd.top:8443/RESTHello/apidoc/index.html#api-Policy_and_Claim-PostClaimNew_claim>):
 
-![](src/api_document.jpg)
+<figure>
+  <img src="src/api_document.jpg"/>
+  <figcaption>Fig.11 API</figcaption>
+</figure>
 
 
 
@@ -288,7 +323,13 @@ This section introduces the mobile-end construction plan, as well as the technic
 ### 4.3.1 Technical Overview
 
 The method of constructing mobile-end is using Cordova to package the front-end web files into the web app. Cordova is a platform for building mobile apps using HTML, CSS and JS. We can think of Cordova as a container for connecting our web applications to native mobile features. The construction progress of the mobile terminal follows the development progress of the front-end. As each front-end version is updated, the mobile-end will update and maintain accordingly, and make corresponding adjustments.
-![](src/mobile-end.png)
+
+<figure>
+  <img src="src/mobile-end.png"/>
+  <figcaption>Fig.12 Documents distribution in mobile-end</figcaption>
+</figure>
+
+
 
 Currently we have built a web app for the Android platform, and will create a web app for the IOS platform in the future.
 
