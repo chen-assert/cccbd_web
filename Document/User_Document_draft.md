@@ -82,13 +82,13 @@ Customers have two ways to check their policies bought before. In homepage, cust
 
 The employee login window is on the right of customer login window. Every employee will be given an account at the very beginning when they work in the company. The account number is their job number, and the original password is 123456 which they can modified by themselves later.
 
-![login](/Users/wanfangdu/Documents/cccbd/cccbd_web/Document/src/login.png)
+![login](src/login.png)
 
 ### <font color=#FF0000>Forget Password</font>
 
 If employees forget their password, they can click the “Forget Password” link to reset the password. They need to input their ID number and new password double times, and they also need to input their email to receive the security code that the system send to them. Then they enter the security code, press the submit button and then the new password is set done.
 
-![reset](/Users/wanfangdu/Documents/cccbd/cccbd_web/Document/src/reset.png)
+![reset](src/reset.png)
 
 
 
@@ -98,7 +98,7 @@ If employees forget their password, they can click the “Forget Password” lin
 
 Enter the dashboard interface the employee will see the number of unprocessed claims and processed claims. They can see the table of each kind of claims by pressing the icons.
 
-![em_NumberOfClaim](/Users/wanfangdu/Documents/cccbd/cccbd_web/Document/src/em_NumberOfClaim.png)
+![em_NumberOfClaim](src/em_NumberOfClaim.png)
 
 
 
@@ -108,7 +108,7 @@ Enter the dashboard interface the employee will see the number of unprocessed cl
 
 To process a claim, employees can press the claimNo of this claim, and then it will skip to the processing interface. In this interface, employees can see the whole details of this claim, including the customer’s name, claim date, loss date, policy number, and the describing details of his/her luggage. Then the employee can judge whether this claim could be approved or not, or maybe need more details. For the last option, employees can give some feedback to the customer to tell him/her what should him/her to add. 
 
-![em_processing](/Users/wanfangdu/Documents/cccbd/cccbd_web/Document/src/em_processing.png)
+![em_processing](src/em_processing.png)
 
 
 
