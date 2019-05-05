@@ -1,3 +1,4 @@
+<!--todo-->
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
@@ -176,6 +177,7 @@
 
 
     </div>
+</div>
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
@@ -194,6 +196,19 @@
     </script>
     <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script>
-
+<script type="text/javascript">
+    if (document.body.clientWidth<400){
+        document.getElementById('title1').style.display='none';
+        document.getElementById('xiala2').style.display='none';
+        var a = document.getElementById('xiala1').innerHTML;
+        document.getElementById('xiala1').innerHTML = a+"<ul class=\"nav navbar-top-links navbar-right\" id=\"xiala2\"><li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" aria-expanded=\"false\"><i class=\"fa fa-user fa-fw\"></i> <i class=\"fa fa-caret-down\"></i></a><ul class=\"dropdown-menu dropdown-user\"><li><a href=\"#\"><i class=\"fa fa-user fa-fw\"></i> User Profile</a></li><li><a href=\"#\"><i class=\"fa fa-gear fa-fw\"></i> Settings</a></li><li class=\"divider\"></li><li><a href=\"../index.html\"><i class=\"fa fa-sign-out fa-fw\"></i> Logout</a></li></ul></li></ul>"
+        document.getElementById('button111').click();
+        document.getElementById('button111').click();
+    }
+    if(location.href.indexOf("#reloaded")==-1){
+        location.href=location.href+"#reloaded";
+        location.reload();
+    }
+</script>
 
 </body>

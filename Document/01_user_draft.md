@@ -32,7 +32,28 @@ In this document, we will tell customers and employees how to use our applicatio
 
 ### Install
 
-To install our application, each customer and employee will be given to a link to download the installation package of our application. And it is very easy to install on their computers,
+To install our application, each customer and employee will be given to a link to download the installation package of our application. And it is very easy to install on their computers.
+
+For windows system, you would get a zip compress file, the only thing you need to do is extract it.
+<figure>
+  <img src="src\windows_install1.png"/>
+  <figcaption>Fig.0.1 Install1 </figcaption>
+</figure>
+Then find the executed file and open it.
+<figure>
+  <img src="src\windows_install2.png"/>
+  <figcaption>Fig.0.2 Install1</figcaption>
+</figure>
+### Testing Account
+
+#### test user account
+username:testuser   
+password:123456 
+
+#### test employee account
+username:testemployee   
+password:123456 
+
 
 ## 1. Customer
 
