@@ -94,11 +94,22 @@
             // $(selector).append(headerTr$);
             return columnSet;
         }
+
+        function getdate() {
+            var mydate = new Date()
+            var year = mydate.getFullYear();
+            var month = mydate.getMonth();
+            var date = mydate.getDate();
+            var string = year.toString() +'-'+ '0' + (month+1).toString() +'-'+ '0'+date.toString();
+            document.getElementById('ld').setAttribute("max",string);
+            document.getElementById('d').setAttribute("max",string);
+            return string;
+        }
     </script>
 </head>
 
 
-<body class="translate" id="translate">
+<body class="translate" id="translate" onload="getdate()">
 <div id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
         <div class="navbar-header" id="xiala1">

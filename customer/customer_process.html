@@ -29,8 +29,8 @@
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
             let myArr = '';
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            xmlhttp.onreadystatec (xmlhttp.readyState hange = function () {
+                if=== 4 && xmlhttp.status === 200) {
                     myArr = JSON.parse(xmlhttp.responseText);
                     document.getElementById('unprocessed').innerHTML = myArr['unprocessed'];
                     document.getElementById('processed').innerHTML = myArr['processed'];
