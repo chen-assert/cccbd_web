@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <head>
     <script src="../jquery-3.3.1.js"></script>
+    <meta charset="utf-8"/>
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="../i18next.min.js"></script>
+    <script src="../jquery-i18next.min.js"></script>
+    <script src="../translation.js"></script>
     <script>
         $(document).ready(function () {
             $("#dropdown").click();
@@ -42,7 +47,7 @@
 
     </script>
 </head>
-<body onload="buildHtmlTable()">
+<body onload="buildHtmlTable()" class="translate">
 <div id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
         <div class="navbar-header" id="xiala1">
@@ -55,7 +60,26 @@
             <a class="navbar-brand" href="../index.html" id="title1"><i class="fa fa-comments" id="title2"></i> <strong id="title3">Hibernia-Sino</strong></a>
         </div>
 
-        <ul class="nav navbar-top-links navbar-right" id="xiala2"><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"><i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i></a><ul class="dropdown-menu dropdown-user"><li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a></li><li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li><li class="divider"></li><li><a href="../index.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li></ul></li></ul>
+        <ul class="nav navbar-top-links navbar-right"id="xiala2">
+
+            <!-- /.dropdown -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i><mylable data-i18n="noun.profile"> User Profile</mylable></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i><mylable data-i18n="noun.setting"> Settings</mylable></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="../index.html"><i class="fa fa-sign-out fa-fw"></i><mylable data-i18n="noun.logout"> Logout</mylable> </a>
+                    </li>
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        </ul>
     </nav>
 
 
@@ -65,29 +89,29 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="homepage_customer.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    <a href="homepage_customer.html"><i class="fa fa-dashboard"></i>  <mylable data-i18n="noun.dashboard">Dashboard</mylable></a>
                 </li>
 
                 <li>
-                    <a href="Lost-custo.html"><i class="fa fa-suitcase"></i> Lost luggage</a>
+                    <a href="Lost-custo.html"><i class="fa fa-suitcase"></i>  <mylable data-i18n="noun.lostluggage">Lost luggage</mylable>
+                    </a>
                 </li>
 
                 <li>
-                    <a id="dropdown" href="customer_process.html"  class="active-menu"><i class="fa fa-spinner"></i> Process Procedure</a>
+                    <a href="customer_process.html" class="active-menu"><i class="fa fa-spinner"></i> <mylable data-i18n="noun.procedure">Process Procedure</mylable></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="customer_processed.html">Processed claim</a>
+                            <a href="customer_processed.html" ><mylable data-i18n="noun.processed_claim">Processed claim</mylable></a>
                         </li>
                         <li>
-                            <a href="customer_unprocessed.html">Unprocessed claim</a>
+                            <a href="customer_unprocessed.html" ><mylable data-i18n="noun.unprocessed_claim">Unprocessed claim</mylable></a>
                         </li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="policy.html"><i class="fa fa-list"></i>Policies</a>
+                    <a href="policy.html"><i class="fa fa-list"></i><mylable data-i18n="noun.policies">Policies</mylable></a>
                 </li>
-
 
             </ul>
 
@@ -101,9 +125,8 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-header">
-                        Process Procedure
-                        <small>claim of lost-baggage</small>
+                    <h1 class="page-header"><mylable data-i18n="noun.procedure">Process Procedure</mylable>
+                        <small><mylable data-i18n="noun.claim_of_lostluggage"></mylable></small>
                     </h1>
 
 
@@ -118,7 +141,7 @@
                         </div>
                         <div class="panel-right pull-right" onclick="fun()">
                             <h3 id="unprocessed"></h3>
-                            <strong> Unprocessed </strong>
+                            <strong data-i18n="noun.unprocessed_claim"> Unprocessed </strong>
 
                         </div>
                     </div>
@@ -140,7 +163,7 @@
 
                         <div class="panel-right pull-right" onclick="fpr()">
                             <h3 id="processed"></h3>
-                            <strong> Processed</strong>
+                            <strong data-i18n="noun.processed_claim"> Processed</strong>
 
                         </div>
                     </div>
@@ -148,11 +171,17 @@
 
 
             </div>
+            <div class="translate" style="top:30px;position:absolute;right:20px">
+                <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)" id="lan_selecter">
+                    <option value="en" data-content='English' data-i18n="noun.english"></option>
+                    <option value="ch" data-content='Chinese' data-i18n="noun.chinese"></option>
+                </select>
+            </div>
         </div>
         <!-- /. WRAPPER  -->
         <!-- JS Scripts-->
         <!-- jQuery Js -->
-        <script src="assets/js/jquery-1.10.2.js"></script>
+<!--        <script src="assets/js/jquery-1.10.2.js"></script>-->
         <!-- Bootstrap Js -->
         <script src="assets/js/bootstrap.min.js"></script>
         <!-- Metis Menu Js -->

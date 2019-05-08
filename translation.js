@@ -19,7 +19,7 @@ i18next.init({
                     gender:'Gender',
                     male:'Male',
                     female:'Female',
-                    about_us:'About Us',
+                    about_us:'Help',
                     contact_us:'Contact Us',
                     language:'Language',
                     luggage_lost:'Luggage Lost',
@@ -43,7 +43,9 @@ i18next.init({
                     setting:'Settings',
                     Logout:'Logout',
                     processed_claim:'Processed Claims',
-                    unprocessed_claim:'Uprocessed Claims'
+                    unprocessed_claim:'Uprocessed Claims',
+                    claim_of_lostluggage:'Claims of Lost Luggage',
+                    small_policies:'More then professional'
                 }
             }
         },
@@ -65,7 +67,7 @@ i18next.init({
                     gender:'性别',
                     male:'男性',
                     female:'女性',
-                    about_us:'关于我们',
+                    about_us:'帮助',
                     contact_us:'联系我们',
                     language:'语言',
                     luggage_lost:'行李丢失',
@@ -89,7 +91,9 @@ i18next.init({
                     setting:' 设置',
                     Logout:' 退出',
                     processed_claim:'已处理',
-                    unprocessed_claim:'未处理'
+                    unprocessed_claim:'未处理',
+                    claim_of_lostluggage:'申请数量',
+                    small_policies:'不止是专业'
                 }
             }
         }
