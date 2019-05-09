@@ -45,7 +45,10 @@ i18next.init({
                     processed_claim:'Processed Claims',
                     unprocessed_claim:'Uprocessed Claims',
                     claim_of_lostluggage:'Claims of Lost Luggage',
-                    small_policies:'More then professional'
+                    small_policies:'More then professional',
+                    Summary_of_your_Claims:'Summary of the Claims',
+                    fair:' Please be fair and professional',
+                    detail:'Details'
                 }
             }
         },
@@ -93,7 +96,10 @@ i18next.init({
                     processed_claim:'已处理',
                     unprocessed_claim:'未处理',
                     claim_of_lostluggage:'申请数量',
-                    small_policies:'不止是专业'
+                    small_policies:'不止是专业',
+                    Summary_of_your_Claims:'各项数量',
+                    fair:'耐心 专业',
+                    detail:'详情'
                 }
             }
         }

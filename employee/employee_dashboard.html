@@ -2,6 +2,11 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="../i18next.min.js"></script>
+    <script src="../jquery-i18next.min.js"></script>
+    <script src="../translation.js"></script>
     <title></title>
     <!-- Bootstrap Styles-->
     <link href="../assets/css/bootstrap.css" rel="stylesheet"/>
@@ -33,7 +38,7 @@
         }
     </script>
 </head>
-<body onload="buildHtmlTable()">
+<body onload="buildHtmlTable()" class="translate">
 <div id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
         <div class="navbar-header" id="xiala1">
@@ -54,12 +59,12 @@
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i><mylable data-i18n="noun.profile"> User Profile</mylable></a>
                     </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i><mylable data-i18n="noun.setting"> Settings</mylable></a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="../index.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="../index.html"><i class="fa fa-sign-out fa-fw"></i><mylable data-i18n="noun.logout"> Logout</mylable> </a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -75,13 +80,13 @@
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="employee_dashboard.html" class="active-menu"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    <a href="employee_dashboard.html" class="active-menu"><i class="fa fa-dashboard"></i>  <mylable data-i18n="noun.dashboard">Dashboard</mylable></a>
                 </li>
                 <li>
-                    <a href="employee_unprocessed.html"><i class="fa fa-edit"></i> Unprocessed</a>
+                    <a href="employee_unprocessed.html"><i class="fa fa-edit"></i> <mylable data-i18n="noun.unprocessed_claim">Unprocessed claim</mylable></a>
                 </li>
                 <li>
-                    <a href="employee_processed.html"><i class="fa fa-fw fa-file"></i> Processed</a>
+                    <a href="employee_processed.html"><i class="fa fa-fw fa-file"></i> <mylable data-i18n="noun.processed_claim">Processed claim</mylable></a>
                 </li>
 
             </ul>
@@ -97,8 +102,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="page-header">
-                        Dashboard
-                        <small>Summary of your App</small>
+                        <mylable data-i18n="noun.dashboard">Dashboard</mylable>
+                        <small data-i18n="noun.Summary_of_your_Claims">Summary of your App</small>
                     </h1>
                     <!--
                     <ol class="breadcrumb">
@@ -108,8 +113,7 @@
                     </ol>
                     -->
                 </div>
-            </div>
-            <div class="row">
+
                 <div class="col-md-3 col-sm-12 col-xs-12">
                     <div class="panel panel-primary text-center no-boder bg-color-red red">
                         <div class="panel-left pull-left red">
@@ -118,7 +122,7 @@
                         </div>
                         <div class="panel-right pull-right" onclick="fun()">
                             <h3 id="unprocessed"></h3>
-                            <strong> Unprocessed </strong>
+                            <strong data-i18n="noun.unprocessed_claim"> Unprocessed </strong>
 
                         </div>
                     </div>
@@ -140,7 +144,7 @@
 
                         <div class="panel-right pull-right" onclick="fpr()">
                             <h3 id="processed"></h3>
-                            <strong> Processed</strong>
+                            <strong data-i18n="noun.processed_claim"> Processed</strong>
 
                         </div>
                     </div>
@@ -148,13 +152,18 @@
 
 
             </div>
-
+            <div class="translate" style="top:30px;position:absolute;right:20px">
+                <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)" id="lan_selecter">
+                    <option value="en" data-content='English' data-i18n="noun.english"></option>
+                    <option value="ch" data-content='Chinese' data-i18n="noun.chinese"></option>
+                </select>
+            </div>
 
         </div>
         <!-- /. WRAPPER  -->
         <!-- JS Scripts-->
         <!-- jQuery Js -->
-        <script src="../assets/js/jquery-1.10.2.js"></script>
+<!--        <script src="../assets/js/jquery-1.10.2.js"></script>-->
         <!-- Bootstrap Js -->
         <script src="../assets/js/bootstrap.min.js"></script>
         <!-- Metis Menu Js -->
