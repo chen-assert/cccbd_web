@@ -151,13 +151,10 @@
     }
 
     function checkId() {
-        //for test
-        return true;
-
         var x = document.getElementById("identification").value;
-        var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+        var reg=/^[a-zA-Z0-9]{5,17}$/;
         if (!x.match(reg)) {
-            alert("illegal input id");
+            alert("illegal input passport no");
             return false;
         }
         return true;
@@ -165,7 +162,7 @@
 
     function checkName() {
         var x = document.getElementById("username").value;
-        var reg = /^[A-Za-z0-9]+$/;
+        var reg = /^[A-Za-z0-9_]+$/;
         if (!x.match(reg)) {
             alert("illegal input name");
             return false;
@@ -255,7 +252,7 @@
                 <option value="male" data-content='Male' data-i18n="noun.male">Male</option>
             </select>
         </p>
-        <input type="text" name="id" placeholder="ID Number: 18 character" id="identification" onchange="checkId()"
+        <input type="text" name="passport_no" placeholder="Passport No." id="identification" onchange="checkId()"
                onkeypress="detectCapsLock(event)"><br>
         <input type="password" name="password" id="password" placeholder="password"
                onchange="checkPassword()" onkeypress="detectCapsLock(event)"><br>

@@ -20,22 +20,20 @@ figcaption {
 }
 figure{
     text-align:center;
-}
-
-
-​    
-
-
-
-
-
-
+}
 
 <h1>CCCBD Group's Hibernia-Sino Travel Insurance System Document</h1>
 
 
 [TOC]
+
+
+
+
+
+
 # Content
+
 # 1. ABSTRACT
 
 In this document, we talk about the detail about our Insurance project. It includes how our team to organize and how to teamwork and did the development process, and the technical detail behind the project. lastly, we do a brief conclusion about the project and analyze our gain and loss at this time.
@@ -194,7 +192,7 @@ In group work, we need to constantly solve problems. In view of the above two pr
 
 The connection between front-end and back-end we divide funtions into 3 different cases, just like the diagram shows above. get objects with parameters, no parameters, and return a message.
 
-#### 4.1.2.2 Functions with parameters. 
+#### 4.1.2.2 Functions with parameters
 
 <figure>
   <img src="src/Screen Shot 2019-04-23 at 8.43.44 PM.png"/>
@@ -203,7 +201,7 @@ The connection between front-end and back-end we divide funtions into 3 differen
 
 we usally use these functions to get one object contains our desired information. in the client-side we need specific different claims, the number of claims and product's details. the problem in this stage, is we should hava correct api and clearly thought, using console.log print out the object to check. others funcitions, we only implement this function and using in corrent div to get we goal.
 
-#### 4.1.2.3 Functions that have no parameters, and only request for database information.
+#### 4.1.2.3 Functions that have no parameters, and only request for database information
 
 In order to get many lists. we send a request to url and return a list that contains all the objects to satisfy the constraints.
 
@@ -254,7 +252,7 @@ Following is dynamic generate options to offer customer to select your policy in
   <figcaption>Fig.7 Types of Policies</figcaption>
 </figure>
 
-#### 4.1.2.4 Return a message telling us whether succsss.
+#### 4.1.2.4 Return a message telling us whether succsss
 
 Here are our sending function, different from before. We need to send informations to database, username and password. Database executeQuery and check whether this user have registered. 
 
@@ -266,7 +264,7 @@ The register is the same as login. In HTML, getElementById the user input. In JS
 
 Register are same as login. In html, getElementById the user input. In JSON, package information as value with specific key name. Add a new claim, process claim(emoployee check claim), after read employee feedback, user append more information to the detail.
 
-
+#### 4.1.2.5 Security guarantee
 
 ## 4.2 Back-end
 

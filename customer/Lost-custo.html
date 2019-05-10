@@ -113,7 +113,8 @@
 <div id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
         <div class="navbar-header" id="xiala1">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse" id="button111">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse"
+                    id="button111">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -131,12 +132,18 @@
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#" ><i class="fa fa-user fa-fw" ></i><mylable data-i18n="noun.profile"> User Profile</mylable></a>
+                    <li><a href="User_Profile.html"><i class="fa fa-user fa-fw"></i>
+                        <mylable data-i18n="noun.profile"> User Profile</mylable>
+                    </a>
                     </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i><mylable data-i18n="noun.setting"> Settings</mylable></a>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i>
+                        <mylable data-i18n="noun.setting"> Settings</mylable>
+                    </a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="../index.html"><i class="fa fa-sign-out fa-fw"></i><mylable data-i18n="noun.logout"> Logout</mylable> </a>
+                    <li><a href="../index.html"><i class="fa fa-sign-out fa-fw"></i>
+                        <mylable data-i18n="noun.logout"> Logout</mylable>
+                    </a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -160,7 +167,7 @@
                 </li>
 
                 <li>
-                    <a href="Lost-custo.html" class="active-menu" ><i class="fa fa-suitcase"></i>
+                    <a href="Lost-custo.html" class="active-menu"><i class="fa fa-suitcase"></i>
                         <mylable data-i18n="noun.lostluggage">Lost luggage</mylable>
                     </a>
 
@@ -173,7 +180,7 @@
                 </li>
 
                 <li>
-                    <a href="policy.html" ><i class="fa fa-list"></i>
+                    <a href="policy.html"><i class="fa fa-list"></i>
                         <mylable data-i18n="noun.policies">Policies</mylable>
                     </a>
                 </li>
@@ -204,24 +211,30 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
+
                                     <form role="form" id="form1">
-
                                         <div class="form-group">
-                                            <p> <mylable data-i18n="noun.date">Date: </mylable><input id="d" class="form-control datePicker" type="date" required="required" name="claim_date" /></p>
+                                            <p>
+                                                <mylable data-i18n="noun.date">Date:</mylable>
+                                                <input id="d" class="form-control datePicker" type="date"
+                                                       required="required" name="claim_date"/></p>
 
-                                            <p><mylable data-i18n="noun.name">Name [real]: </mylable> <input id="name" class="form-control" required="required"
-                                                                                                             name="real_name"></p>
+                                            <p>
+                                                <mylable data-i18n="noun.name">Name [real]:</mylable>
+                                                <input id="name" class="form-control" required="required"
+                                                       name="real_name"></p>
 
-                                            <p><mylable data-i18n="noun.lossdate">Loss Date:</mylable><input id="ld" class="form-control datePicker" type="date"
-                                                                                                             required="required"
-                                                                                                             name="loss_date"/></p>
+                                            <p>
+                                                <mylable data-i18n="noun.lossdate">Loss Date:</mylable>
+                                                <input id="ld" class="form-control datePicker" type="date"
+                                                       required="required" name="loss_date"/>
+                                            </p>
                                             <p>Policy number:
-                                                <span id="anchor1"></span></p>
-
+                                                <span id="anchor1"></span>
+                                            </p>
                                         </div>
                                     </form>
                                 </div>
@@ -229,16 +242,20 @@
                                 <div class="col-lg-6">
                                     <form role="form" id="form2">
                                         <div class="form-group">
-                                            <p><mylable data-i18n="noun.flight">Flight number: </mylable><input name="flight_number" id="fn" class="form-control">
+                                            <p>
+                                                <mylable data-i18n="noun.flight">Flight number:</mylable>
+                                                <input name="flight_number" id="fn" class="form-control">
                                             </p>
-                                            <p><mylable data-i18n="noun.baggageno">Baggage Check Number: </mylable><input name="check_number" id="bn"
-                                                                            class="form-control"></p>
+                                            <p>
+                                                <mylable data-i18n="noun.baggageno">Baggage Check Number:</mylable>
+                                                <input name="check_number" id="bn"
+                                                       class="form-control"></p>
                                         </div>
 
                                         <div class="form-group">
                                             <label data-i18n="noun.receipt">Receipt ( if you have )</label>
                                             <input type="file">
-											<label data-i18n="noun.photos">Photos ( if you have )</label>
+                                            <label data-i18n="noun.photos">Photos ( if you have )</label>
                                             <input type="file" accept="image/gif, image/jpeg" multiple>
                                         </div>
 
@@ -304,11 +321,11 @@
 <!--what is that?-->
 <!--<script src="assets/js/custom-scripts.js"></script>-->
 <script type="text/javascript">
-    if (document.body.clientWidth<400){
-        document.getElementById('title1').style.display='none';
-        document.getElementById('xiala2').style.display='none';
+    if (document.body.clientWidth < 400) {
+        document.getElementById('title1').style.display = 'none';
+        document.getElementById('xiala2').style.display = 'none';
         var a = document.getElementById('xiala1').innerHTML;
-        document.getElementById('xiala1').innerHTML = a+"<ul class=\"nav navbar-top-links navbar-right\" id=\"xiala2\"><li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" aria-expanded=\"false\"><i class=\"fa fa-user fa-fw\"></i> <i class=\"fa fa-caret-down\"></i></a><ul class=\"dropdown-menu dropdown-user\"><li><a href=\"#\"><i class=\"fa fa-user fa-fw\"></i> User Profile</a></li><li><a href=\"#\"><i class=\"fa fa-gear fa-fw\"></i> Settings</a></li><li class=\"divider\"></li><li><a href=\"../index.html\"><i class=\"fa fa-sign-out fa-fw\"></i> Logout</a></li></ul></li></ul>"
+        document.getElementById('xiala1').innerHTML = a + "<ul class=\"nav navbar-top-links navbar-right\" id=\"xiala2\"><li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" aria-expanded=\"false\"><i class=\"fa fa-user fa-fw\"></i> <i class=\"fa fa-caret-down\"></i></a><ul class=\"dropdown-menu dropdown-user\"><li><a href=\"#\"><i class=\"fa fa-user fa-fw\"></i> User Profile</a></li><li><a href=\"#\"><i class=\"fa fa-gear fa-fw\"></i> Settings</a></li><li class=\"divider\"></li><li><a href=\"../index.html\"><i class=\"fa fa-sign-out fa-fw\"></i> Logout</a></li></ul></li></ul>"
         document.getElementById('button111').click();
         document.getElementById('button111').click();
     }

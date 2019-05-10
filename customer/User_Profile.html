@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="../i18next.min.js"></script>
+    <script src="../jquery-i18next.min.js"></script>
+    <!--<script src="../jquery-3.3.1.js"></script>-->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="../translation.js"></script>
+    <title></title>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <!-- Morris Chart Styles-->
+
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link href='open+sans.css' rel='stylesheet' type='text/css'/>
+    <!-- TABLE STYLES-->
+    <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+        });
+
+
+    </script>
+</head>
+
+
+<body class="translate" id="translate"">
+<div id="wrapper">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header" id="xiala1">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse"
+                    id="button111">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../index.html" id="title1"><i class="fa fa-comments"></i>
+                <strong>Hibernia-Sino</strong></a>
+        </div>
+
+        <ul class="nav navbar-top-links navbar-right" id="xiala2">
+
+            <!-- /.dropdown -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="User_Profile.html"><i class="fa fa-user fa-fw"></i>
+                        <mylable data-i18n="noun.profile"> User Profile</mylable>
+                    </a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i>
+                        <mylable data-i18n="noun.setting"> Settings</mylable>
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="../index.html"><i class="fa fa-sign-out fa-fw"></i>
+                        <mylable data-i18n="noun.logout"> Logout</mylable>
+                    </a>
+                    </li>
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        </ul>
+    </nav>
+
+
+    <!--/. NAV TOP  -->
+    <nav class="navbar-default navbar-side" role="navigation">
+
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+
+                <li>
+                    <a href="homepage_customer.html"><i class="fa fa-dashboard"></i>
+                        <mylable data-i18n="noun.dashboard">Dashboard</mylable>
+                    </a>
+
+                </li>
+
+                <li>
+                    <a href="Lost-custo.html"><i class="fa fa-suitcase"></i>
+                        <mylable data-i18n="noun.lostluggage">Lost luggage</mylable>
+                    </a>
+
+                </li>
+
+                <li>
+                    <a href="customer_process.html"><i class="fa fa-spinner"></i>
+                        <mylable data-i18n="noun.procedure">Process Procedure</mylable>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="policy.html"><i class="fa fa-list"></i>
+                        <mylable data-i18n="noun.policies">Policies</mylable>
+                    </a>
+                </li>
+
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- /. NAV SIDE  -->
+
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header" data-i18n="">
+                        User Profile
+                    </h1>
+                    <span id="result"></span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <form role="form" id="form1" onsubmit="event.preventDefault();">
+                    <p data-i18n="">Username:</p>
+                    <input id="username" class="form-control" type="text" name="username" readonly="readonly"/>
+                    <p data-i18n="">Gender:</p>
+                    <select name="gender" class="form-control">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <p data-i18n="">Email:</p>
+                    <input id="email" class="form-control" type="text" name="email"/>
+                    <p data-i18n="">Passport No.:</p>
+                    <input id="passport_no" class="form-control" type="text" name="passport_no"/>
+                    <p data-i18n="">Phone:</p>
+                    <input id="phone" class="form-control" type="text" name="phone"/>
+                    <p></p>
+                    <input type="submit" class="btn btn-default" value="Save"
+                           style="display:block;margin:0 auto"
+                           onclick="logincust()" data-i18n="[value]"/>
+                </form>
+            </div>
+
+            </form>
+
+            <!-- /.panel -->
+        </div>
+        <!-- /. PAGE INNER  -->
+        <div class="translate" style="top:30px;position:absolute;right:20px">
+            <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)" id="lan_selecter">
+                <option value="en" data-content='English' data-i18n="noun.english"></option>
+                <option value="ch" data-content='Chinese' data-i18n="noun.chinese"></option>
+            </select>
+        </div>
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+</div>
+<!-- /. WRAPPER  -->
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<!--<script src="assets/js/jquery-1.10.2.js"></script>-->
+<!-- Bootstrap Js -->
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- Metis Menu Js -->
+<script src="assets/js/jquery.metisMenu.js"></script>
+<!-- DATA TABLE SCRIPTS -->
+<script src="assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+<script>
+    Date.prototype.toDateInputValue = (function () {
+        var local = new Date(this);
+        local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+        return local.toJSON().slice(0, 10);
+    });
+    $(document).ready(function () {
+        $('.datePicker').val(new Date().toDateInputValue());
+        if (document.body.clientWidth < 400) {
+            document.getElementById('title1').style.display = 'none';
+            document.getElementById('xiala2').style.display = 'none';
+            var a = document.getElementById('xiala1').innerHTML;
+            document.getElementById('xiala1').innerHTML = a + "<ul class=\"nav navbar-top-links navbar-right\" id=\"xiala2\"><li class=\"dropdown\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\" aria-expanded=\"false\"><i class=\"fa fa-user fa-fw\"></i> <i class=\"fa fa-caret-down\"></i></a><ul class=\"dropdown-menu dropdown-user\"><li><a href=\"#\"><i class=\"fa fa-user fa-fw\"></i> User Profile</a></li><li><a href=\"#\"><i class=\"fa fa-gear fa-fw\"></i> Settings</a></li><li class=\"divider\"></li><li><a href=\"../index.html\"><i class=\"fa fa-sign-out fa-fw\"></i> Logout</a></li></ul></li></ul>"
+            document.getElementById('button111').click();
+            document.getElementById('button111').click();
+        }
+    });
+</script>
+<!-- Custom Js -->
+<!--what is that?-->
+<!--<script src="assets/js/custom-scripts.js"></script>-->
+<script type="text/javascript">
+</script>
+</body>
