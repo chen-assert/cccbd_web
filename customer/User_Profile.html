@@ -30,7 +30,7 @@
 </head>
 
 
-<body class="translate" id="translate"">
+<body class="translate" id="translate">
 <div id="wrapper">
     <nav class="navbar navbar-default top-navbar" role="navigation">
         <div class="navbar-header" id="xiala1">
@@ -79,7 +79,6 @@
 
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
-
                 <li>
                     <a href="homepage_customer.html"><i class="fa fa-dashboard"></i>
                         <mylable data-i18n="noun.dashboard">Dashboard</mylable>
@@ -127,10 +126,14 @@
             </div>
             <div class="col-lg-6">
                 <form role="form" id="form1" onsubmit="event.preventDefault();">
+
+                    <img id="portrait" width="250" alt="portrait" style="display:block;margin:0 auto"/>
+                    <p data-i18n="">Change photo:</p>
+                    <input type="file" id="file" accept="image/jpeg">
                     <p data-i18n="">Username:</p>
-                    <input id="username" class="form-control" type="text" name="username" readonly="readonly"/>
+                    <input id="name" class="form-control" type="text" name="name" readonly="readonly"/>
                     <p data-i18n="">Gender:</p>
-                    <select name="gender" class="form-control">
+                    <select id="gender" name="gender" class="form-control">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
@@ -143,7 +146,7 @@
                     <p></p>
                     <input type="submit" class="btn btn-default" value="Save"
                            style="display:block;margin:0 auto"
-                           onclick="logincust()" data-i18n="[value]"/>
+                           onclick="save()" data-i18n="[value]"/>
                 </form>
             </div>
 
@@ -173,6 +176,7 @@
 <script src="assets/js/dataTables/jquery.dataTables.js"></script>
 <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
 <script>
+    let mysave = 0;
     Date.prototype.toDateInputValue = (function () {
         var local = new Date(this);
         local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
@@ -188,7 +192,61 @@
             document.getElementById('button111').click();
             document.getElementById('button111').click();
         }
+        $.ajax({
+            url: 'https://cccbd.top:8443/RESTHello/profile/my_profile',
+            type: 'GET',
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (data) {
+                mysave = data;
+                $("#name").val(data["name"]);
+                if (data["gender"] === 'male') {
+                    $("#gender")[0].selectedIndex = 0
+                } else {
+                    $("#gender")[0].selectedIndex = 1
+                }
+                $("#email").val(data["email"]);
+                $("#passport_no").val(data["passport_no"]);
+                $("#phone").val(data["phone"]);
+                if(data["portrait"]!=null){
+                    let url="https://cccbd.top:8443/img/"+data["portrait"];
+                    $("#portrait").attr("src",url);
+                }else{
+                    $("#portrait").attr("src","../image/default.png");
+                }
+            }
+        });
     });
+
+    function save() {
+        var fd = new FormData();
+        fd.append('uploadedFile', $("#file")[0].files[0]);
+        fd.append('name', $("#name").val());
+        fd.append('email', $("#email").val());
+        fd.append('passport_no', $("#passport_no").val());
+        fd.append('phone', $("#phone").val());
+        fd.append('gender', $("#gender")[0].value);
+        $.ajax({
+                url: 'https://cccbd.top:8443/RESTHello/profile/update_profile',
+                data: fd,
+                processData: false,
+                contentType: false,
+                xhrFields: {
+                    withCredentials: true
+                },
+                type: 'POST',
+                success: function (data) {
+                    alert(data);
+                    location.reload();
+                },
+                fail: function (jqXHR) {
+                    alert(jqXHR.responseText)
+                }
+            }
+        );
+    }
+
 </script>
 <!-- Custom Js -->
 <!--what is that?-->
