@@ -62,9 +62,10 @@ password:123456
 The user login window is on the left of login interface. Customers input specific user-name and password set previously (registration) in enter the homepage and their account. Password can be modified later in their account.
 
 <figure>
-  <img src="src\login_user"/>
+  <img src="src\login_user.jpg"/>
   <figcaption>Fig.1 User Login</figcaption>
 </figure>
+
 
 ### Forget password
 
@@ -148,7 +149,6 @@ Customers have two ways to check their policies bought before. In homepage, cust
   <img src="src\policy"/>
   <figcaption>Fig.10 Purchased Policies</figcaption>
 </figure>
-
 <font color=#FF0000>The customer can also click policyNo in the form to check more details about the insurance policy. </font>
 
 ### <font color=#FF0000>Third party login</font>

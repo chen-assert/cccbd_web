@@ -20,7 +20,8 @@ figcaption {
 }
 figure{
     text-align:center;
-}
+}
+
 
 <h1>CCCBD Group's Hibernia-Sino Travel Insurance System Document</h1>
 
@@ -153,7 +154,7 @@ In group work, we need to constantly solve problems. In view of the above two pr
   Considering the drawback in the primary cmd command line, we choose to use other better software to do git operations. WebStorm or GitKraken are good choices, which can not only upload files, modify content to the remote git repository and update the local git repository, but also present the process flow and chart of each modification, which is clear and concise. This approach addresses the difficulty of seeing the process in each merging. Besides, WebStorm can also adjust cut and overwritten coverage to avoid the computer directly selecting the merged content by default and carrying out an internal operation to get the result we do not want. In this way, files can be synchronized among members' local repository and git can merge correctly.
 
   <figure>
-    <img src="src\kk.jpg"/>
+    <img src="src\kk.jpg" height=300/>
     <figcaption>Fig.2 Using Git</figcaption>
   </figure>
 
@@ -186,18 +187,20 @@ In group work, we need to constantly solve problems. In view of the above two pr
 #### 4.1.2.1 Outline 
 
 <figure>
-  <img src="src/Screen Shot 2019-04-25 at 4.22.05 PM.png"/>
+  <img src="src/Screen Shot 2019-04-25 at 4.22.05 PM.png" height=300/>
   <figcaption>Fig.3 Connection Outline</figcaption>
 </figure>
+
 
 The connection between front-end and back-end we divide funtions into 3 different cases, just like the diagram shows above. get objects with parameters, no parameters, and return a message.
 
 #### 4.1.2.2 Functions with parameters
 
 <figure>
-  <img src="src/Screen Shot 2019-04-23 at 8.43.44 PM.png"/>
+  <img src="src/Screen Shot 2019-04-23 at 8.43.44 PM.png" height=400/>
   <figcaption>Fig.4 Functions with parameters</figcaption>
 </figure>
+
 
 we usally use these functions to get one object contains our desired information. in the client-side we need specific different claims, the number of claims and product's details. the problem in this stage, is we should hava correct api and clearly thought, using console.log print out the object to check. others funcitions, we only implement this function and using in corrent div to get we goal.
 
@@ -206,9 +209,10 @@ we usally use these functions to get one object contains our desired information
 In order to get many lists. we send a request to url and return a list that contains all the objects to satisfy the constraints.
 
 <figure>
-  <img src="src/Screen Shot 2019-04-25 at 10.03.59 AM.png"/>
+  <img src="src/Screen Shot 2019-04-25 at 10.03.59 AM.png" height=400/>
   <figcaption>Fig.5 Functions without parameters</figcaption>
 </figure>
+
 
 In this function, we create list to store the information we selected and send to url. After receive lists in html, first we generate thead, and append tbody, dynamic generate in table.
 
@@ -222,10 +226,9 @@ Following is dynamic generate options to offer customer to select your policy in
             xmlhttp.withCredentials = true;
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
-            let myArr = '';
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                    myArr = JSON.parse(xmlhttp.responseText);
+                    let myArr = JSON.parse(xmlhttp.responseText);
                     var columns = addAllColumnHeaders(myArr, selector);
                     var row$ = $('<select/>');
                     for (var i = 0; i < myArr.length; i++) {
@@ -241,16 +244,17 @@ Following is dynamic generate options to offer customer to select your policy in
 ```
 
 <figure>
-  <img src="src/Screen Shot 2019-04-25 at 4.35.20 PM.png"/>
+  <img src="src/Screen Shot 2019-04-25 at 4.35.20 PM.png" height=300/>
   <figcaption>Fig.6 Policies Selector</figcaption>
 </figure>
 
 
 
 <figure>
-  <img src="src/Screen Shot 2019-04-25 at 4.35.09 PM.png"/>
+  <img src="src/Screen Shot 2019-04-25 at 4.35.09 PM.png" height=200/>
   <figcaption>Fig.7 Types of Policies</figcaption>
 </figure>
+
 
 #### 4.1.2.4 Return a message telling us whether succsss
 
@@ -258,13 +262,21 @@ Here are our sending function, different from before. We need to send informatio
 
 The register is the same as login. In HTML, getElementById the user input. In JSON, package information as value with a specific key name. Add a new claim, process claim(employee check claim), after reading employee feedback, user append more information to the detail.
 <figure>
-  <img src="src/Screen Shot 2019-04-25 at 3.36.41 PM.png"/>
+  <img src="src/mypic2.jpg" height=300/>
   <figcaption>Fig.8 Sending Functions</figcaption>
 </figure>
+
 
 Register are same as login. In html, getElementById the user input. In JSON, package information as value with specific key name. Add a new claim, process claim(emoployee check claim), after read employee feedback, user append more information to the detail.
 
 #### 4.1.2.5 Security guarantee
+
+During this process, we need a mechanism to protect our data during the transamission, so we register a SSL certificate in Let's Encrypt and use it to prevent our data be eavesdropping or tampering, besides, when user's password be transmate to services, we would use sha384 cryptographic hash function to prevent possible data breaches.
+
+<figure>
+  <img src="src/certificate.jpg" height=300/>
+  <figcaption>Fig.x SSL certificate</figcaption>
+</figure>
 
 ## 4.2 Back-end
 
@@ -274,10 +286,9 @@ This section would describe the back-end's technology detail, the process about 
 
 In the back-end, the main design rule we followed is the microservices architecture, and the core concept is that we only build a series RESTful API provided to front-end, and let the front-end decide how to use them. 
 <figure>
-  <img src="src/rest-apis-fig2.png"/>
+  <img src="src/rest-apis-fig2.png" height=300/>
   <figcaption>Fig.9 Restful apis figure</figcaption>
 </figure>
-
 
 
 With access control to every API, this design pattern gives the ability to front-end to decide how to process the business logic, hugely reduce server compute load, clearly delimit the edge between front-end and back-end (and delimit the developing process, so we can separate the back-end and front-end into two different project folder). Besides, this design symbol gives front-end application freely scalability, we can even use different languages to implement the client logic without change the back-end, and this trait makes the multi-platform develop to become much easier.
@@ -289,9 +300,10 @@ todo: API document example
 In specific practice, we decide to use the RESTEasy framework to start the development of back-end, we build many necessary micro applications which provide different function interfaces, and use tomcat as container to running with Mysql in DigitalOcean could services, and then we through Cloudflare's global CDN to deliver services to everywhere in the world.
 
 <figure>
-  <img src="src/architecture.jpg"/>
+  <img src="src/architecture.jpg" height=500/>
   <figcaption>Fig.10 System architecture graph</figcaption>
 </figure>
+
 
 
 ### 4.2.3 The reason for choosing these technology stacks
@@ -324,9 +336,10 @@ At the starting of the project, we firstly want to work together in the back-end
 Our project's API website build by APIdoc(<https://cccbd.top:8443/RESTHello/apidoc/index.html#api-Policy_and_Claim-PostClaimNew_claim>):
 
 <figure>
-  <img src="src/api_document.jpg"/>
-  <figcaption>Fig.11 API</figcaption>
+  <img src="src/api_document.jpg" height=300/>
+  <figcaption>Fig.11 API document</figcaption>
 </figure>
+
 
 
 
@@ -339,9 +352,10 @@ This section introduces the mobile-end construction plan, as well as the technic
 The method of constructing mobile-end is using Cordova to package the front-end web files into the web app. Cordova is a platform for building mobile apps using HTML, CSS and JS. We can think of Cordova as a container for connecting our web applications to native mobile features. The construction progress of the mobile terminal follows the development progress of the front-end. As each front-end version is updated, the mobile-end will update and maintain accordingly, and make corresponding adjustments.
 
 <figure>
-  <img src="src/mobile-end.png"/>
+  <img src="src/mobile-end.png" height=300/>
   <figcaption>Fig.12 Documents distribution in mobile-end</figcaption>
 </figure>
+
 
 
 
