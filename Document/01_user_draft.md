@@ -36,14 +36,16 @@ To install our application, each customer and employee will be given to a link t
 For windows system, you would get a zip compress file. The only thing you need to do is extract it.
 
 <figure>
-  <img src="src\windows_install1.png"/>
+  <img src="src\windows_install1.png" height=300/>
   <figcaption>Fig.0.1 Install1 </figcaption>
 </figure>
+
 Then find the executed file and open it.
 <figure>
-  <img src="src\windows_install2.png"/>
+  <img src="src\windows_install2.png" height=500/>
   <figcaption>Fig.0.2 Install1</figcaption>
 </figure>
+
 ### Testing Account
 
 #### test user account
@@ -62,9 +64,10 @@ password:123456
 The user login window is on the left of the login interface. Customers input specific user-name and password set previously (registration) in entering the homepage and their account. Password can be modified later in their account.
 
 <figure>
-  <img src="src\login_user.jpg"/>
+  <img src="src\login_user.jpg" height=400/>
   <figcaption>Fig.1 User Login</figcaption>
 </figure>
+
 
 
 ### Forget password
@@ -73,9 +76,10 @@ If customers forget their password, they can click the link at the bottom right 
 Customers should input their identification number (the system would check if the id is the same as when the account was registered to facilitate rest.) And the new password for two time, the new passwords must be the same. And they also need to input their email to receive the security code that the system sends to them. Then they input the security code and press the smile-face button. (the system would check if the security code is correct and return reset state) if correct. Customers' new password is set successfully.
 
 <figure>
-  <img src="src\reset"/>
+  <img src="src\reset" height=300/>
   <figcaption>Fig.2 Reset Password</figcaption>
 </figure>
+
 
 ### Register
 
@@ -83,16 +87,9 @@ If customers are a new user of the website, they can click "Create New Account" 
 Then customers should set their password for two time. The new passwords must be the same. And they also need to input their email to receive the security code that the system sends to them. Then they input the security code and press the smile-face button. (the system would check if the security code is correct and return reset state) if correct. The registration is finished successfully. (Each customer can only have one account)
 
 <figure>
-  <img src="src\register"/>
+  <img src="src\register" height=400/>
   <figcaption>Fig.3 Register</figcaption>
 </figure>
-
-
-
-
-
-
-
 
 
 ### Apply for lost luggage
@@ -101,51 +98,56 @@ After login, user can press the luggage icon with "Luggage Lost" link and enter 
 Customers can also input flight number and baggage check number. These are optional. If customers have a receipt or photos of the luggage,  they can upload it. And input more detailed description of the luggage will be better.
 
 <figure>
-  <img src="src\lost"/>
+  <img src="src\lost" height=400/>
   <figcaption>Fig.4 Lost Luggage</figcaption>
 </figure>
+
 
 ### Check the state of processing claims
 
 Customer can check the sate of processing claims of lost luggage by clicking "Process Procedure" in the drop-down list, then it will show the number of processed claims and unprocessed claims, customers can click each icon to enter each interface and check the details and state of the claim. (click the item in the drop-down list can also enter these interfaces)
 
 <figure>
-  <img src="src\process"/>
+  <img src="src\process"height=300/>
   <figcaption>Fig.5 Process Procedure</figcaption>
 </figure>
+
 
 In the processed/unprocessed claim interface, the customer can check all processed/unprocessed claim he/she submit before. All information the customer gave is presented in the table, including the processing state (accept -> accept the claim; refuse -> refuse to the claim; request -> request for more information from the customer; waiting -> waiting to be processed in unprocessed interface )
 
 <figure>
-  <img src="src\processed"/>
+  <img src="src\processed" height=200/>
   <figcaption>Fig.6 Processed Claims</figcaption>
 </figure>
 
 <figure>
-  <img src="src\unprocessed"/>
+  <img src="src\unprocessed" height=300/>
   <figcaption>Fig.7 Unprocessed Claims</figcaption>
 </figure>
+
 
 The customer can also click claimNo of each claim to check more details including all information filled before and feedback from the employee. Customers can also input some instrument or required information in the blank below and press the arrow button to submit. These information would be appended to the details.
 
 <figure>
-  <img src="src\detail"/>
+  <img src="src\detail" height=300/>
   <figcaption>Fig.8 Claim Details</figcaption>
 </figure>
+
 
 ### Check my policies
 
 Customers have two ways to check their policies bought before. In homepage, customer can press the "Access Your Policy" on the right to enter the interface. Or, if customers want to view policies when filling the lost-luggage claim, they can just click "Policies" in the drop-down list to enter the interface. 
 
 <figure>
-  <img src="src\home"/>
+  <img src="src\home"height=200/>
   <figcaption>Fig.9 Home</figcaption>
 </figure>
 
 <figure>
-  <img src="src\policy"/>
+  <img src="src\policy" height=300/>
   <figcaption>Fig.10 Purchased Policies</figcaption>
 </figure>
+
 <font color=#FF0000>The customer can also click policyNo in the form to check more details about the insurance policy. </font>
 
 ### <font color=#FF0000>Third party login</font>

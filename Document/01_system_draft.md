@@ -57,9 +57,10 @@ As for the packing project, we decide to use Electron for cross-platform present
 <font color=#FF0000> As for phone terminal, we plan to attempt for two ways and compare the more effective method ---adaptive screen resolution and independent framework of android side.</font> 
 
 <figure>
-  <img src="src\gantt.jpg"/>
+  <img src="src\gantt.jpg" height=300/>
   <figcaption>Fig.1 Gantt Diagram</figcaption>
 </figure>
+
 
 
 
@@ -166,10 +167,11 @@ In group work, we need to constantly solve problems. In view of the above two pr
   First, the customer needs to sign in, if the customer doesn’t have an account he/she can apply for one of the applying interface. The system will send an Ajax to the back-end for a login request, and then the back-end will return to a state code. In the customer_homepage interface, customers can apply for lost luggage, buy new policies and check all the policies they have already bought. 
 In the lost luggage interface, customers can write claims by filling the forms, they need to input the date when they lost it, their real name, and their policy number. Also, they can find the processing policies if they have more than one claim.
   
+
 In the select product interface,  customers can see all of the insurance kind and they can select one by pressing the productNo, and then they will enter the buying interface where they can pay the bill. Only after buying the policy, customers can apply for lost luggages.
-  
+
  
-  
+
 - The logic of the employee-end.
 
   Every employee will be given an account at the very beginning when they work in the company. Like the customer-end, they need to sign in and the system will send an Ajax to the back-end for a login request, and then the back-end will return to a state code. 
@@ -261,14 +263,21 @@ The register is the same as login. In HTML, getElementById the user input. In JS
 
 Register is same as login. In html, getElementById the user input. In JSON, package information as value of specific key name. Add a new claim, process claim(employee check claim), after read employee feedback, user append more information to the detail.
 
+<font color=#FF0000>
+
 #### 4.1.2.5 Security guarantee
 
-During this process, we need a mechanism to protect our data during the transmission, so we register a SSL certificate in Let's Encrypt and use it to prevent our data be eavesdropping or tampering, besides, when user's password be transmit to services, we would use sha384 cryptographic hash function to prevent possible data breaches.
+During this process, we need a mechanism to protect our data during the transmission, so we register an SSL/TLS certificate in Let's Encrypt and use it to encrypt our data transmission. After deploying the certificate, all data transmission would be encryption and protection, so avoid the eavesdropping or tampering. Besides, when user's password be transmitted to services, we would use sha384 cryptographic hash function to hash that password then save to database, this hash function is irreversible, so it eliminates the chance to let employee get users' password.
+</font>
 
-<figure>
+<figure class="half">
   <img src="src/certificate.jpg" height=300/>
+  <img src="src/sha384.jpg" height=300/>
   <figcaption>Fig.x SSL certificate</figcaption>
 </figure>
+
+</figure>
+
 
 ## 4.2 Back-end
 
