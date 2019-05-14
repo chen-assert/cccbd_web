@@ -28,13 +28,13 @@ figure{
 
 ### Overview
 
-In this document, we will tell customers and employees how to use our application step by step. Our application is designed for customers and employees separately, each of them have their own login entrance and different system logic.
+In this document, we will tell customers and employees how to use our application step by step. Our application is designed for customers and employees separately. Each of them has their own login entrance and different system logic.
 
 ### Install
 
 To install our application, each customer and employee will be given to a link to download the installation package of our application. And it is very easy to install on their computers.
+For windows system, you would get a zip compress file. The only thing you need to do is extract it.
 
-For windows system, you would get a zip compress file, the only thing you need to do is extract it.
 <figure>
   <img src="src\windows_install1.png"/>
   <figcaption>Fig.0.1 Install1 </figcaption>
@@ -59,7 +59,7 @@ password:123456
 
 ### Login
 
-The user login window is on the left of login interface. Customers input specific user-name and password set previously (registration) in enter the homepage and their account. Password can be modified later in their account.
+The user login window is on the left of the login interface. Customers input specific user-name and password set previously (registration) in entering the homepage and their account. Password can be modified later in their account.
 
 <figure>
   <img src="src\login_user.jpg"/>
@@ -69,9 +69,8 @@ The user login window is on the left of login interface. Customers input specifi
 
 ### Forget password
 
-If customers forget their password, they can click the link at the bottom right of the login key "Forget Password?", then they would fill a form to rest the password. 
-
-Customers should input their identification number ( the system would check if the id is the same as when the account was registered to facilitate reset. ) and the new password for two times, the new passwords must be the same. And they also need to input their email to receive the security code that the system send to them. Then they input the security code and press the smile-face button. ( the system would check if the security code are correct and return reset state ) If correct, customers' new password is set successfully.
+If customers forget their password, they can click the link at the bottom right of the login key "Forget Password?", then they would fill a form to reset the password. 
+Customers should input their identification number (the system would check if the id is the same as when the account was registered to facilitate rest.) And the new password for two time, the new passwords must be the same. And they also need to input their email to receive the security code that the system sends to them. Then they input the security code and press the smile-face button. (the system would check if the security code is correct and return reset state) if correct. Customers' new password is set successfully.
 
 <figure>
   <img src="src\reset"/>
@@ -80,9 +79,8 @@ Customers should input their identification number ( the system would check if t
 
 ### Register
 
-If customers are new user of the website, they can click "Create New Account" link  at the bottom left of the login key and fill the registration form. Customers should input their real name, gender and identification number for the system to authenticate.
-
-Then customers should set their password for two times, the new passwords must be the same. And they also need to input their email to receive the security code that the system send to them. Then they input the security code and press the smile-face button. ( the system would check if the security code are correct and return reset state) If correct, the registration is finished successfully. (Each customer can only have one account)
+If customers are a new user of the website, they can click "Create New Account" link at the bottom left of the login key and fill the registration form. Customers should input their real name, gender and identification number for the system to authenticate.
+Then customers should set their password for two time. The new passwords must be the same. And they also need to input their email to receive the security code that the system sends to them. Then they input the security code and press the smile-face button. (the system would check if the security code is correct and return reset state) if correct. The registration is finished successfully. (Each customer can only have one account)
 
 <figure>
   <img src="src\register"/>
@@ -100,8 +98,7 @@ Then customers should set their password for two times, the new passwords must b
 ### Apply for lost luggage
 
 After login, user can press the luggage icon with "Luggage Lost" link and enter the filling claim page. In the form, user must fill the loss date, full name and select specific policy number bought by the customer before. 
-
-Customers can also input flight number and baggage check number, theses are optional. If customers have receipt or photos of the luggage,  they can upload it. And input more detailed description of the luggage will be better.
+Customers can also input flight number and baggage check number. These are optional. If customers have a receipt or photos of the luggage,  they can upload it. And input more detailed description of the luggage will be better.
 
 <figure>
   <img src="src\lost"/>
@@ -110,7 +107,7 @@ Customers can also input flight number and baggage check number, theses are opti
 
 ### Check the state of processing claims
 
-Customer can check the sate of processing claims of lost luggage by clicking "Process Procedure" in the drop-down list, then it will show the number of processed claims and unprocessed claims, customers can click each icon to enter each interface and check the details and state of the claim. (click the item in the drop-down list can also enter these interface)
+Customer can check the sate of processing claims of lost luggage by clicking "Process Procedure" in the drop-down list, then it will show the number of processed claims and unprocessed claims, customers can click each icon to enter each interface and check the details and state of the claim. (click the item in the drop-down list can also enter these interfaces)
 
 <figure>
   <img src="src\process"/>
@@ -191,7 +188,7 @@ Customers have two ways to check their policies bought before. In homepage, cust
 
 ### Login
 
-The employee login window is on the right of customer login window. Every employee will be given an account at the very beginning when they work in the company. The account number is their job number, and the original password is 123456 which they can modify by themselves later.
+The employee login window is on the right of the customer login window. Every employee will be given an account at the very beginning when they work in the company. The account number is their job number, and the original password is 123456 which they can modify by themselves later.
 
 <figure>
   <img src="src\login.png"/>
@@ -200,7 +197,7 @@ The employee login window is on the right of customer login window. Every employ
 
 ### <font color=#FF0000>Forget Password</font>
 
-If employees forget their password, they can click the “Forgot Password” link to reset the password. They need to input their ID number and new password double times, and they also need to input their email to receive the security code that the system sends to them. Then they enter the security code, press the submit button and then the new password is set done.
+If employees forget their password, they can click the “Forgot Password” link to reset the password. They need to input their ID number and new password double time, and they also need to input their email to receive the security code that the system sends to them. Then they enter the security code, press the submit button and then the new password is set down.
 
 <figure>
   <img src="src\reset.png"/>
@@ -226,7 +223,7 @@ Enter the dashboard interface the employee will see the number of unprocessed cl
 
 ### Processing claims
 
-To process a claim, employees can press the claimNo of this claim, and then it will skip to the processing interface. In this interface, employees can see the whole details of this claim, including the customer’s name, claim date, loss date, policy number, and the describing details of his/her luggage. Then the employee can judge whether this claim could be approved or not, or maybe need more details. For the last option, employees can give some feedback to the customer to tell him/her what should him/her to add. 
+To process a claim, employees can press the claimNo of this claim, and then it will skip to the processing interface. In this interface, employees can see the whole details of this claim, including the customer’s name, claim date, loss date, policy number, and describing details of his/her luggage. Then the employee can judge whether this claim could be approved or not, or maybe need more details. For the last option, employees can give some feedback to the customer to tell him/her what should him/her to add. 
 
 <figure>
   <img src="src/em_processing.png"/>
@@ -237,7 +234,9 @@ To process a claim, employees can press the claimNo of this claim, and then it w
 
 ### Mobile-end
 
-Customers can use all businesses of Hibernia-Sino Insurance Company abovementioned by smartphones. Customers using Android platform devices can login, change password, register, apply for lost luggage, and check claims or policies by proper app.<font color=#FF0000>IOS also have corresponding app with all of this features </font>
+Customers can use all business of Hibernia-Sino Insurance Company abovementioned for smart phones. Customers are using Android platform devices can login, change password, register, apply for lost luggage, and check claims or policies by proper app.
+
+<font color=#FF0000>IOS also have corresponding app with all of this features </font>
 
 
 
