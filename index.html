@@ -109,14 +109,15 @@
 </head>
 <body id="bod" style="padding:1px;">
 <img src="image/icon.png" width="75px" height="75px" style="left:2px;top:2px;position:absolute;">
-<b style="font-size: 30px; left:90px;top:25px;position:absolute;">Hibernia-Sino Travel Insurance Company</b>
-<div class="translate" style="top:30px;position:absolute;right:200px">
+<b style="font-size: 30px; left:90px;top:25px;position:absolute;" id="needtohide">Hibernia-Sino Travel Insurance
+    Company</b>
+<div class="translate" style="top:30px;position:absolute;right:10%">
     <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)" id="lan_selecter">
         <option value="en" data-i18n="noun.english"></option>
         <option value="ch" data-i18n="noun.chinese"></option>
     </select>
 </div>
-<div class="translate">
+<div class="translate" id="loginbody">
     <div class="container login-container">
         <div class="row">
             <div class="col-md-6 login-form-2">
@@ -137,8 +138,12 @@
                     <div class="form-group">
                         <a href="register_page_Eng.html" class="ForgetPwd" data-i18n="noun.create">Create new
                             account</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="reset_page_customer.html" class="ForgetPwd" data-i18n="noun.forget">Forget Password?</a>
+                        <mylable>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </mylable>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="reset_page_customer.html" class="ForgetPwd" data-i18n="noun.forget">Forget
+                            Password?</a>
                     </div>
                 </form>
             </div>
@@ -158,15 +163,25 @@
                                data-i18n="[value]noun.login" onclick="loginstaf()"/>
                     </div>
                     <div class="form-group">
-                        <a href="reset_page_employee.html" class="ForgetPwd" data-i18n="noun.forget">Forget Password?</a>
+                        <a href="reset_page_employee.html" class="ForgetPwd" data-i18n="noun.forget">Forget
+                            Password?</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-<script color="0,0,0" opacity='0.75' count="16"  src="lib/canvas-nest.js"></script>
+<script>
+    $(document).ready(function () {
+        if (document.body.clientWidth<420) {
+            $("#needtohide").hide();
+            $("#loginbody").css({"top":"36px","position":"relative"});
+            $("mylable").hide();
+            $("body").css({"background-image":"url('')"});
+        }
+    });
+</script>
+<script color="0,0,0" opacity='0.75' count="16" src="lib/canvas-nest.js"></script>
 </body>
 
 </html>

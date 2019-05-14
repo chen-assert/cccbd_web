@@ -306,6 +306,7 @@ In specific practice, we decide to use the RESTEasy framework to start the devel
 
 
 
+
 ### 4.2.3 The reason for choosing these technology stacks
 
 Before we start developing the project, we firstly analyze the requirement of this system, and these features below we found are important in our project:
