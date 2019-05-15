@@ -166,10 +166,11 @@ In group work, we need to constantly solve problems. In view of the above two pr
   First, the customer needs to sign in, if the customer doesn’t have an account he/she can apply for one of the applying interface. The system will send an Ajax to the back-end for a login request, and then the back-end will return to a state code. In the customer_homepage interface, customers can apply for lost luggage, buy new policies and check all the policies they have already bought. 
 In the lost luggage interface, customers can write claims by filling the forms, they need to input the date when they lost it, their real name, and their policy number. Also, they can find the processing policies if they have more than one claim.
   
+
 In the select product interface,  customers can see all of the insurance kind and they can select one by pressing the productNo, and then they will enter the buying interface where they can pay the bill. Only after buying the policy, customers can apply for lost luggages.
-  
+
  
-  
+
 - The logic of the employee-end.
 
   Every employee will be given an account at the very beginning when they work in the company. Like the customer-end, they need to sign in and the system will send an Ajax to the back-end for a login request, and then the back-end will return to a state code. 
@@ -269,6 +270,38 @@ During this process, we need a mechanism to protect our data during the transmis
   <img src="src/certificate.jpg" height=300/>
   <figcaption>Fig.x SSL certificate</figcaption>
 </figure>
+<font color=#FF0000> 4.1.3 Feedback on front-end and improvement</font>
+
+<figure>
+  <figcaption style="color = #FF0000">the improvement of personal information</figcaption>
+  <p>
+    What can be improved: Although most of the basic functions have been implemented, in order to make it easy for users to use, it is recommended to add the user's personal information entry and illegal input warning function of the policy creation page.If they can record the selected language, support to modify personal data, optimize the mobile version of the UI is much better.
+  </p>
+  <img src="src/add2.png" height=200/>
+  <img src="src/add3.png" height=200/>
+  <p><font color = 'red'>we create the html of personal information, allow user to input their information and update to the database, as the video shown.</font></p>
+</figure>
+
+<figure>
+  <figcaption style="color = #FF0000">the improvement of invisible password</figcaption>
+  <p>
+    What can be improved: Buttons and some prompts are too small. The entrance of personal information at the top right of the page is also slightly smaller.
+The password is displayed in clear text. For security, it is expected by users to displayed the password in a hidden form.
+  </p>
+  <img src="src/add11.png" height=200/><p><font color = 'red'>  we change the input type to 'password', and change its css similar with others.</font></p></figure>
+
+<figure>
+  <figcaption>Development of change languega in using</figcaption>
+  <p>Disadvantages: 1. There are only one language of the images’ button on the main interface. 2. User should choose the language by himself, but not automatically detect the system environment or the using record.</p>
+
+
+
+<figure>
+  <figcaption>Development of user looking for help</figcaption>
+  <p>Disadvantages/Advices:  1. If user meet problems, he cannot find solutions or get help by using user's interface.</p>
+  <p><font color = 'red'>we add a automatic opem email and send to the company and explain your problem,looking for help.</font></p>
+</figure>
+
 
 ## 4.2 Back-end
 
@@ -334,6 +367,12 @@ Our project's API website build by APIdoc(<https://cccbd.top:8443/RESTHello/apid
 </figure>
 
 
+<h3 font>
+  4.2.5 Feedback and Development
+</h3>
+<figure>
+  <figcaption>Development of password security</figcaption>
+</figure>
 
 
 ## 4.3 Mobile-end
