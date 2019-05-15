@@ -24,11 +24,13 @@ figure{
 
 # User Document
 
-## 0. Getting Started
+## 1. Getting Started
 
 ### Overview
 
 In this document, we will tell customers and employees how to use our application step by step. Our application is designed for customers and employees separately. Each of them has their own login entrance and different system logic.
+
+
 
 ### Install
 
@@ -40,24 +42,28 @@ For windows system, you would get a zip compress file. The only thing you need t
   <figcaption>Fig.0.1 Install1 </figcaption>
 </figure>
 
+
 Then find the executed file and open it.
+
 <figure>
-  <img src="src\windows_install2.png" height=500/>
+  <img src="src\windows_install2.png" height=400 width=500/>
   <figcaption>Fig.0.2 Install1</figcaption>
 </figure>
 
+
 ### Testing Account
 
-#### test user account
-username:testuser   
-password:123456 
+#### Test user account
 
-#### test employee account
-username:testemployee   
-password:123456 
+* username:testuser   
+* password:123456 
+
+#### Test employee account
+* username:testemployee   
+* password:123456 
 
 
-## 1. Customer
+## 2. Customer
 
 ### Login
 
