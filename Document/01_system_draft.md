@@ -57,9 +57,10 @@ As for the packing project, we decide to use Electron for cross-platform present
 <font color=#FF0000> As for phone terminal, we plan to attempt for two ways and compare the more effective method ---adaptive screen resolution and independent framework of android side.</font> 
 
 <figure>
-  <img src="src\gantt.jpg"/>
+  <img src="src\gantt.jpg" height=300/>
   <figcaption>Fig.1 Gantt Diagram</figcaption>
 </figure>
+
 
 
 
@@ -262,12 +263,16 @@ The register is the same as login. In HTML, getElementById the user input. In JS
 
 Register is same as login. In html, getElementById the user input. In JSON, package information as value of specific key name. Add a new claim, process claim(employee check claim), after read employee feedback, user append more information to the detail.
 
+<font color=#FF0000>
+
 #### 4.1.2.5 Security guarantee
 
-During this process, we need a mechanism to protect our data during the transmission, so we register a SSL certificate in Let's Encrypt and use it to prevent our data be eavesdropping or tampering, besides, when user's password be transmit to services, we would use sha384 cryptographic hash function to prevent possible data breaches.
+During this process, we need a mechanism to protect our data during the transmission, so we register an SSL/TLS certificate in Let's Encrypt and use it to encrypt our data transmission. After deploying the certificate, all data transmission would be encryption and protection, so avoid the eavesdropping or tampering. Besides, when user's password be transmitted to services, we would use sha384 cryptographic hash function to hash that password then save to database, this hash function is irreversible, so it eliminates the chance to let employee get users' password.
+</font>
 
-<figure>
+<figure class="half">
   <img src="src/certificate.jpg" height=300/>
+  <img src="src/sha384.jpg" height=300/>
   <figcaption>Fig.x SSL certificate</figcaption>
 </figure>
 <font color=#FF0000> 4.1.3 Feedback on front-end and improvement</font>
@@ -300,6 +305,9 @@ The password is displayed in clear text. For security, it is expected by users t
   <figcaption>Development of user looking for help</figcaption>
   <p>Disadvantages/Advices:  1. If user meet problems, he cannot find solutions or get help by using user's interface.</p>
   <p><font color = 'red'>we add a automatic opem email and send to the company and explain your problem,looking for help.</font></p>
+</figure>
+
+
 </figure>
 
 
