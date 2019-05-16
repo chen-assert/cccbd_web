@@ -1,13 +1,17 @@
 {
   "name": "cccbd_web",
-  "version": "0.9.9",
-  "description": "no description",
+  "displayName": "Hibernia-Sino Insurance",
+  "version": "1.0.0",
+  "description": "Hibernia-Sino Insurance Application for desktop",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
   },
-  "author": "cccbd",
+  "keywords": [
+    "ecosystem:electron"
+  ],
+  "author": "CCCBD team",
   "license": "ISC",
   "devDependencies": {
     "electron": "^4.1.4",

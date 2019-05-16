@@ -2,6 +2,9 @@
 
 <html>
 <head>
+    <head>
+        <meta name="google-signin-client_id" content="238990018787-95hmldt09vdln761u97bq18p7g8s45ee.apps.googleusercontent.com">
+    </head>
     <title>Login</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -131,10 +134,32 @@
                         <input type="password" class="form-control" placeholder="password" id="cp"
                                data-i18n="[placeholder]noun.password"/>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" >
                         <input type="submit" class="btnSubmit" value="Login"
                                onclick="logincust()" data-i18n="[value]noun.login"/>
                     </div>
+                    <center><div class="form-group" id="my-signin2"></div></center>
+                    <script>
+                        function onSuccess(googleUser) {
+                            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+                        }
+                        function onFailure(error) {
+                            console.log(error);
+                        }
+                        function renderButton() {
+                            gapi.signin2.render('my-signin2', {
+                                'scope': 'profile email',
+                                'width': 240,
+                                'height': 50,
+                                'longtitle': true,
+                                'theme': 'dark',
+                                'onsuccess': onSuccess,
+                                'onfailure': onFailure
+                            });
+                        }
+                    </script>
+
+                    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
                     <div class="form-group">
                         <a href="register_page_Eng.html" class="ForgetPwd" data-i18n="noun.create">Create new
                             account</a>
@@ -144,7 +169,9 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="reset_page_customer.html" class="ForgetPwd" data-i18n="noun.forget">Forget
                             Password?</a>
+
                     </div>
+
                 </form>
             </div>
             <div class="col-md-6 login-form-1">
