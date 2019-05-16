@@ -43,7 +43,7 @@ i18next.init({
                     setting:'Settings',
                     Logout:'Logout',
                     processed_claim:'Processed Claims',
-                    unprocessed_claim:'Uprocessed Claims',
+                    unprocessed_claim:'Unprocessed Claims',
                     claim_of_lostluggage:'Claims of Lost Luggage',
                     small_policies:'More than professional',
                     Summary_of_your_Claims:'Summary of the Claims',
@@ -124,6 +124,3 @@ $(document).ready(function () {
     // i18next.changeLanguage(lan);
     // $('.translate').localize();
 });
-// $('.btnSubmit').addEventListener("click", function (event) {
-//     event.preventDefault()
-// });
