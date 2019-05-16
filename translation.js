@@ -45,7 +45,7 @@ i18next.init({
                     processed_claim:'Processed Claims',
                     unprocessed_claim:'Uprocessed Claims',
                     claim_of_lostluggage:'Claims of Lost Luggage',
-                    small_policies:'More then professional',
+                    small_policies:'More than professional',
                     Summary_of_your_Claims:'Summary of the Claims',
                     fair:' Please be fair and professional',
                     detail:'Details'

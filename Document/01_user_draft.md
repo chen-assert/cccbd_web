@@ -194,13 +194,18 @@ Customers have two ways to check their policies bought before. In homepage, cust
 
 The customer can also click policyNo in the form to check more details about the insurance policy. 
 
-## <font color=#FF0000>Third party login</font>
+## Third party login
 
-<font color=#FF0000>Customers can login using the third party account.</font>
+If a customer does not have an account of our company and he/she does not want to create a new one, he/she can sign in with their Google account as the third party account.
 
-## <font color=#FF0000>Share policies to social media</font>
+<figure>
+  <img src="src\thirdparty.png" height=200/>
+  <figcaption>Fig.12 Log in</figcaption>
+</figure>
 
-<font color=#FF0000>Customers can share their policies to social media such as WeChat</font>
+## Share policies to social media
+
+If customers want to tell their friends that our products are good, they can click the share buttons under the policy list in the policies interface and share their policies to social media such as WeChat moments, 
 
 
 
@@ -258,9 +263,9 @@ To process a claim, employees can press the claimNo of this claim, and then it w
 
 ## Mobile-end
 
-Customers can use all business of Hibernia-Sino Insurance Company abovementioned for smart phones. Customers are using Android platform devices can login, change password, register, apply for lost luggage, and check claims or policies by proper app.
+Customers can use all business of Hibernia-Sino Insurance Company abovementioned for smart phones. Customers using Android platform devices can login, change password, register new accounts, apply for lost luggage claims, and check claims or policies by proper application.
 
-<font color=#FF0000>IOS also have corresponding app with all of this features </font>
+IOS users can use Hibernia-Sino Insurance service by Browsers, and can get functions and services that achieve the same effect.
 
 
 
