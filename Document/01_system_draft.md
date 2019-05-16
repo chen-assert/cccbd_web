@@ -308,7 +308,6 @@ Following is dynamic generation options to offer the customer to select your pol
 ```
 
 <figure>
-
   <img src="src/Screen Shot 2019-04-25 at 4.35.20 PM.png" height=300/>
   <figcaption>Fig.6 Policies Selector</figcaption>
 </figure>
@@ -316,7 +315,6 @@ Following is dynamic generation options to offer the customer to select your pol
 
 
 <figure>
-
   <img src="src/Screen Shot 2019-04-25 at 4.35.09 PM.png" height=200/>
   <figcaption>Fig.7 Types of Policies</figcaption>
 </figure>
@@ -369,8 +367,7 @@ Register is same as login. In html, getElementById the user input. In JSON, pack
 
 
 
-
-###<font color=#FF0000> 4.1.3 Feedback on front-end and improvement</font>
+### <font color=#FF0000> 4.1.3 Feedback on front-end and improvement</font>
 
 <div>
   <p style="color = #FF0000"><b>1. The improvement of personal information</b></p>
@@ -382,7 +379,7 @@ Register is same as login. In html, getElementById the user input. In JSON, pack
     <br>We add this function as following pictures. 
 </div>
 
- 
+
 
 <figure class="half">
   <img src="src/add2.png" height=200 width = 290/>
@@ -441,7 +438,7 @@ This section would describe the back-end's technology detail, the process of how
 
 ### 4.2.1 Technology overview
 
-In the back-end, the main design rule we followed is the microsurgery architecture, and the core concept is that we only build a series RESTful API provided to front-end, and let the front-end to decide how to use them.
+In the back-end, the main design rule we followed is the microservices architecture, the core concept of our design is to build a series services and provided to front-end by RESTful API, and let the front-end application decide how to use them to process business logic.
 <figure>
   <div align='center'>
   <img src="src/rest-apis-fig2.png" height=300/>
@@ -449,10 +446,7 @@ In the back-end, the main design rule we followed is the microsurgery architectu
 </figure>
 
 
-
-With access control to every API, this design pattern gives the ability to front-end to decide how to process the business logic, hugely reduce server compute load, clearly delimit the edge between front-end and back-end (and delimit the developing process, so we can separate the back-end and front-end into two different project folder). Besides, this design symbol gives front-end application freely scalability, we can even use different languages to implement the client logic without changing the back-end, and this trait makes the multi-platform development to become much easier.
-
-Todo: API documentation example
+This design pattern clearly delimits the edge between front-end and back-end(and delimit the two teams' developing process, so we can separate the back-end and front-end code into two different project folder), and transfer the responsibility of design business process to front-end team, so hugely reduce server compute load. In the meanwhile, we set access control for the whole system, every API has a permission requirement, with these fine-grained restrictions, we can confidence said our system don't exist any privilege escalation problem. Besides, this design symbol gives front-end application fully scalability, we can even use different languages to implement the client logic without changing the back-end, and this trait makes the multi-platform development to become much easier.
 
 
 
@@ -475,7 +469,7 @@ In specific practice, we decide to use the RESTEasy framework to start the devel
 Before we start developing the project, we firstly analyze the requirement of this system, and these features below we found are important in our project:
 
 * Security
-  	As an insurance application and related to money, the security of this project is a major aspect we need to concern, we should never let user's information be leak or theft, so we need a good way to encrypt our information both in transmission and storage.
+   As an insurance application and related to money, the security of this project is a major aspect we need to concern, we should never let user's information be leak or theft, so we need a good way to encrypt our information both in transmission and storage.
 
 * Reliability
 
@@ -491,15 +485,15 @@ Before we start developing the project, we firstly analyze the requirement of th
 
 * Globalization ability
 
-  Because this application is mainly designed for transnational business, we should not only make the application can support multi-language but also need to make users everywhere could get good network linking.
-  
-  
+  Because this application is mainly designed for transnational business, we should not only make the application can support multi-language but also need to make users everywhere could get fast access speed.
+
+And after thinking about this question, we gradually design and discuss the whole system and finally make it can satisfy these requirements.
 
 ### 4.2.4 Develop process
 
 At the starting of the project, we firstly want to work together in the back-end development, but because the lacking of back-end develops experience and for better divide the work, we finally decide to make an individual sub-group for the responsible to do technical choosing and back-end developing. And next, by following the DevOps way, our team through continuous communication between front-end group and back-end group, and summarize the function required in the back-end. Then, we could build the required functions and provide them as APIs and write a document to let front-end group use these functions and build the application.
 
-Our project's API website build by APIdoc(<https://cccbd.top:8443/RESTHello/apidoc/index.html#api-Policy_and_Claim-PostClaimNew_claim>):
+Our project's API website build by APIdoc(<https://cccbd.top:8443/RESTHello/apidoc/index.html>):
 
 <figure>
   <div align='center'>

@@ -43,13 +43,13 @@ figure{
 
 #1. Getting Started
 
-##Overview
+## Overview
 
 In this document, we will tell customers and employees how to use our application step by step. Our application is designed for customers and employees separately. Each of them has their own login entrance and different system logic.
 
 
 
-##Install
+## Install
 
 To install our application, each customer and employee will be given to a link to download the installation package of our application. And it is very easy to install on their computers.
 
@@ -80,15 +80,14 @@ To install our application, each customer and employee will be given to a link t
 </figure>
 
 
+## Testing Account
 
-##Testing Account
-
-###Test user account
+### Test user account
 
 * username:testuser   
 * password:123456 
 
-###Test employee account
+### Test employee account
 
 * username:testemployee   
 * password:123456 
