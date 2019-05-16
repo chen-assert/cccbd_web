@@ -272,7 +272,7 @@ In order to obtain many lists. We send a request to url and return a list that c
 
 <figure>
   <div align='center'>
-  <img src="src/Screen Shot 2019-04-25 at 10.03.59 AM.png" height=300 width=500/>
+  <img src="src/newscreen.png" height=300 width=500/>
   <figcaption>Fig.5 Functions without parameters</figcaption> 
   </div>
 </figure>
@@ -382,7 +382,7 @@ Register is same as login. In html, getElementById the user input. In JSON, pack
     <br>We add this function as following pictures. 
 </div>
 
- 
+
 
 <figure class="half">
   <img src="src/add2.png" height=200 width = 290/>

@@ -199,13 +199,19 @@ The customer can also click policyNo in the form to check more details about the
 If a customer does not have an account of our company and he/she does not want to create a new one, he/she can sign in with their Google account as the third party account.
 
 <figure>
-  <img src="src\thirdparty.png" height=200/>
-  <figcaption>Fig.12 Log in</figcaption>
+  <img src="src\thirdparty2.png" height=200/>
+  <figcaption>Fig.13 Log in</figcaption>
 </figure>
 
 ## Share policies to social media
 
-If customers want to tell their friends that our products are good, they can click the share buttons under the policy list in the policies interface and share their policies to social media such as WeChat moments, 
+If customers want to tell their friends that our products are good, they can click the share buttons under the policy list in the policies interface and share their policies to social media such as Facebook, Twitter and so on.
+
+<figure>
+  <img src="src\share1.png" height=200/>
+  <img src="src\share2.png" height=220/>
+  <figcaption>Fig.14 Share</figcaption>
+</figure>
 
 
 
@@ -222,9 +228,10 @@ If customers want to tell their friends that our products are good, they can cli
 The employee login window is on the right of the customer login window. Every employee will be given an account at the very beginning when they work in the company. The account number is their job number, and the original password is 123456 which they can modify by themselves later.
 
 <figure>
-  <img src="src\login.png" height=250 width=480/>
-  <figcaption>Fig.11 Login</figcaption>
+  <img src="src\newlogin.png" height=250 width=480/>
+  <figcaption>Fig.15 Login</figcaption>
 </figure>
+
 
 ## Forget Password
 
@@ -232,8 +239,9 @@ If employees forget their password, they can click the “Forgot Password” lin
 
 <figure>
   <img src="src\reset.png" height=260 width=480/>
-  <figcaption>Fig.12 Reset password</figcaption>
+  <figcaption>Fig.16 Reset password</figcaption>
 </figure>
+
 
 
 ## Check the number of claims
@@ -242,8 +250,9 @@ Enter the dashboard interface the employee will see the number of unprocessed cl
 
 <figure>
   <img src="src/em_NumberOfClaim.png" width=480/>
-  <figcaption>Fig.13 Dashboard</figcaption>
+  <figcaption>Fig.17 Dashboard</figcaption>
 </figure>
+
 
 
 ## Processing claims
@@ -252,8 +261,9 @@ To process a claim, employees can press the claimNo of this claim, and then it w
 
 <figure>
   <img src="src/em_processing.png" width=480/>
-  <figcaption>Fig.14 Processing Interface</figcaption>
+  <figcaption>Fig.17 Processing Interface</figcaption>
 </figure>
+
 
 
 
