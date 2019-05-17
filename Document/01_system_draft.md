@@ -365,9 +365,18 @@ Register is same as login. In html, getElementById the user input. In JSON, pack
 </figure>
 
 
+### 4.1.3 Language
 
+We use i18next page layer framework to achieve the function of switching languages, which makes a more concise and structured system. Rather than build two set of websites of different language, i18next framework keeps us from redundant work. 
 
-### <font color=#FF0000> 4.1.3 Feedback on front-end and improvement</font>
+Using java script, we construct two sets with different words in Chinese and English in a specific file as a language resource file, then in every pages with words, we bind the language resource file content according to the variables declared in the label to replace words in another language, and then render the result page finishing the switching.
+
+<figure>
+  <img src="src/translate_code.png" height=200/>
+  <figcaption>Fig.10 Part of code in translation.js</figcaption>
+</figure>
+
+### <font color=#FF0000> 4.1.4 Feedback on front-end and improvement</font>
 
 <div>
   <p style="color = #FF0000"><b>1. The improvement of personal information</b></p>
@@ -380,11 +389,10 @@ Register is same as login. In html, getElementById the user input. In JSON, pack
 </div>
 
 
-
 <figure class="half">
   <img src="src/add2.png" height=200 width = 290/>
   <img src="src/add3.png" height=200 width = 290/>
-  <figcaption>Fig.10 User Profile</figcaption>
+  <figcaption>Fig.11 User Profile</figcaption>
 </figure>
 
 
@@ -396,14 +404,9 @@ Register is same as login. In html, getElementById the user input. In JSON, pack
 The password is displayed in clear text. For security, it is expected by users to display the password in a hidden form.
   </p>
   <div align='center'><img src="src/add11.png" height=200 width=250 /><p>
-  <figcaption>Fig.11 Invisible password</figcaption>
+  <figcaption>Fig.12 Invisible password</figcaption>
   <li><font color = 'red'>Improvements:
     <br>We change the input type of 'password', and change its css similar with others.</font></p></div>
-
-
-
-
-
 
 <div>
   <p><b>3. Development of changing language in using the product</b></p><ul>
@@ -427,9 +430,6 @@ The password is displayed in clear text. For security, it is expected by users t
   </div>
 
 
-
-
-
 ## 4.2 Back-end
 
 This section would describe the back-end's technology detail, the process of how we build this back-end server, and why we choose these technology stacks.
@@ -442,8 +442,9 @@ In the back-end, the main design rule we followed is the microservices architect
 <figure>
   <div align='center'>
   <img src="src/rest-apis-fig2.png" height=300/>
-  <figcaption>Fig.12 Restful apis figure</figcaption>
+  <figcaption>Fig.13 Restful apis figure</figcaption>
 </figure>
+
 
 
 This design pattern clearly delimits the edge between front-end and back-end(and delimit the two teams' developing process, so we can separate the back-end and front-end code into two different project folder), and transfer the responsibility of design business process to front-end team, so hugely reduce server compute load. In the meanwhile, we set access control for the whole system, every API has a permission requirement, with these fine-grained restrictions, we can confidence said our system don't exist any privilege escalation problem. Besides, this design symbol gives front-end application fully scalability, we can even use different languages to implement the client logic without changing the back-end, and this trait makes the multi-platform development to become much easier.
@@ -457,11 +458,8 @@ In specific practice, we decide to use the RESTEasy framework to start the devel
 <figure>
   <div align='center'>
   <img src="src/architecture.jpg" height=400 />
-  <figcaption>Fig.13 System architecture graph</figcaption>
+  <figcaption>Fig.14 System architecture graph</figcaption>
 </figure>
-
-
-
 
 
 ### 4.2.3 The reason for choosing these technology stacks
@@ -497,12 +495,9 @@ Our project's API website build by APIdoc(<https://cccbd.top:8443/RESTHello/apid
 
 <figure>
   <div align='center'>
-  <img src="src/api_document.jpg" height=300/>
-  <figcaption>Fig.14 API document</figcaption>
+  <img src="src/api_document.jpg" height=250/>
+  <figcaption>Fig.15 API document</figcaption>
 </figure>
-
-
-
 
 
 ## 4.3 Mobile-end
@@ -516,8 +511,9 @@ The method of constructing mobile-end is using Cordova to package the front-end 
 <figure>
   <div align='center'>
   <img src="src/mobile-end.png" height=300/>
-  <figcaption>Fig.15 Documents distribution in mobile-end</figcaption>
+  <figcaption>Fig.16 Documents distribution in mobile-end</figcaption>
 </figure>
+
 
 
 

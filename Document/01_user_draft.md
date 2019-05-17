@@ -21,8 +21,8 @@ figcaption {
 figure{
     text-align:center;
 }
-[TOC]
 
+[TOC]
 
 
 
@@ -59,8 +59,6 @@ To install our application, each customer and employee will be given to a link t
   <img src="src\windows_install1.png" height=300/>
   <figcaption>Fig.1 Install 1 </figcaption>
 </figure>
-
-
 
 
 
@@ -140,10 +138,9 @@ After login, user can press the luggage icon with "Luggage Lost" link and enter 
 Customers can also input flight number and baggage check number. These are optional. If customers have a receipt or photos of the luggage,  they can upload it. And input more detailed description of the luggage will be better.
 
 <figure>
-  <img src="src\lost" height=300/>
+  <img src="src\lost" width=480/>
   <figcaption>Fig.6 Lost Luggage</figcaption>
 </figure>
-
 
 
 ## Check the state of processing claims
@@ -195,12 +192,16 @@ The customer can also click policyNo in the form to check more details about the
 
 ## Third party login
 
-If a customer does not have an account of our company and he/she does not want to create a new one, he/she can sign in with their Google account as the third party account.
+If a customer does not have an account and he/she does not want to create a new one, he/she can sign in with their Google account as the third party account.
 
 <figure>
-  <img src="src\thirdparty2.png" height=200/>
+  <img src="src\thirdparty2.png" height=180/>
   <figcaption>Fig.13 Log in</figcaption>
 </figure>
+
+
+
+
 
 ## Share policies to social media
 
@@ -220,6 +221,38 @@ If customers want to tell their friends that our products are good, they can cli
 
 
 
+
+
+
+
+
+
+
+## <font color=#FF0000>Language</font>
+
+<font color=#FF0000>Users can change language between English and Chinese in every page to meet their need, and the system will remember user’s first choice and convert to appropriate language.</font>
+
+<figure>
+  <img src="src\translate1.png" width=480/>
+  <figcaption>Fig.15 Translation</figcaption>
+</figure>
+
+
+
+## <font color=#FF0000>User profile</font>
+
+<font color=#FF0000>After login, there is a little person icon at the top right of every page, by clicking the drop-down list, the user can log out or enter the personal information page. </font>
+
+<font color=#FF0000>In this page, the user can view, modify or add personal information including identity number, email address and gender they filled before and additional information such as telephone number and address. Moreover, the user can also enter the reset page from this icon to modify their account password.</font>
+
+<figure>
+   <img src="src/add2.png" height=200 width = 290/>
+  <img src="src/add3.png" height=200 width = 290/>
+  <figcaption>Fig.16 User Profile</figcaption>
+</figure>
+
+
+
 # 3. Employee
 
 ## Login
@@ -228,18 +261,18 @@ The employee login window is on the right of the customer login window. Every em
 
 <figure>
   <img src="src\newlogin.png" height=250 width=480/>
-  <figcaption>Fig.15 Login</figcaption>
+  <figcaption>Fig.17 Login</figcaption>
 </figure>
-
 
 ## Forget Password
 
 If employees forget their password, they can click the “Forgot Password” link to reset the password. They need to input their ID number and new password double time, and also need to input their email to receive the security code that the system sends to them. Then enter the security code, press the submit button and the new password is set done.
 
 <figure>
-  <img src="src\reset.png" height=260 width=480/>
-  <figcaption>Fig.16 Reset password</figcaption>
+  <img src="src\reset.png" height=250 width=480/>
+  <figcaption>Fig.18 Reset password</figcaption>
 </figure>
+
 
 
 
@@ -249,9 +282,8 @@ Enter the dashboard interface the employee will see the number of unprocessed cl
 
 <figure>
   <img src="src/em_NumberOfClaim.png" width=480/>
-  <figcaption>Fig.17 Dashboard</figcaption>
+  <figcaption>Fig.19 Dashboard</figcaption>
 </figure>
-
 
 
 ## Processing claims
@@ -260,8 +292,33 @@ To process a claim, employees can press the claimNo of this claim, and then it w
 
 <figure>
   <img src="src/em_processing.png" width=480/>
-  <figcaption>Fig.17 Processing Interface</figcaption>
+  <figcaption>Fig.20 Processing Interface</figcaption>
 </figure>
+
+
+
+## <font color=#FF0000>Language</font>
+
+<font color=#FF0000>Users can change language between English and Chinese in every page to meet their need, and the system will remember user’s first choice and convert to appropriate language.</font>
+
+<figure>
+  <img src="src/translate2.png" width=480/>
+  <img src="src/translate3.png" width=480/>
+  <figcaption>Fig.21 Translation</figcaption>
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -276,5 +333,8 @@ Customers can use all business of Hibernia-Sino Insurance Company abovementioned
 
 IOS users can use Hibernia-Sino Insurance service by Browsers, and can get functions and services that achieve the same effect.
 
-
+<figure>
+  <img src="src/mobile.png" width=250/>
+  <figcaption>Fig.22 Mobile-end</figcaption>
+</figure>
 
