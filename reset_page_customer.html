@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=800">
     <script src="jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="bootstrap-select-1.13.9/dist/css/bootstrap-select.min.css">
     <!-- Latest compiled and minified JavaScript -->
@@ -20,6 +21,10 @@
     </script>
     <title>Reset</title>
     <style type="text/css">
+        body {
+            height: 100%;
+            width: 100%;
+        }
         .background {
             background-image: url(image/resetpassword_back.jpg);
             background-size: 100% 100%;
@@ -199,7 +204,7 @@
         </form>
     </div>
 </div>
-<div class="translate" style="top:30px;position:absolute;right:200px">
+<div class="translate" style="top:120px;position:absolute;right:10%">
     <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)" id="lan_selecter">
         <option value="en" data-content='English' data-i18n="noun.english"></option>
         <option value="ch" data-content='Chinese' data-i18n="noun.chinese"></option>
