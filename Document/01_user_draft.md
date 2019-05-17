@@ -130,11 +130,10 @@ Then customers should set their password for two time. The new passwords must be
   <figcaption>Fig.5 Register</figcaption>
 </figure>
 
-
-
 ## Apply for lost luggage
 
 After login, user can press the luggage icon with "Luggage Lost" link and enter the filling claim page. In the form, user must fill the loss date, full name and select specific policy number bought by the customer before. 
+
 Customers can also input flight number and baggage check number. These are optional. If customers have a receipt or photos of the luggage,  they can upload it. And input more detailed description of the luggage will be better.
 
 <figure>
@@ -209,9 +208,13 @@ If customers want to tell their friends that our products are good, they can cli
 
 <figure>
   <img src="src\share1.png" height=200/>
+</figure>
+
+<figure>
   <img src="src\share2.png" height=220/>
   <figcaption>Fig.14 Share</figcaption>
 </figure>
+
 
 
 
