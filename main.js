@@ -8,6 +8,7 @@ function createWindow () {
   // 创建浏览器窗口。
   win = new BrowserWindow({ width: 800, height: 600,
 	webPreferences: {
+		//webSecurity: false,//一把梭!
 		nodeIntegration: false
 		}
 	})

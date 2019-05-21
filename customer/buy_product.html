@@ -2,15 +2,19 @@
 <html>
 
 <head>
+<script src="../sweetalert.min.js"></script>
     <meta charset="utf-8"/>
-    <script src="jquery-3.3.1.js"></script>
+    <script src="../i18next.min.js"></script>
+    <script src="../jquery-i18next.min.js"></script>
+    <script src="../jquery-3.3.1.js"></script>
+    <script src="../translation.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title></title>
     <!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <!--<link href="assets/css/bootstrap.css" rel="stylesheet"/>-->
     <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
-    <!-- Morris Chart Styles-->
+    <!--<link href="assets/css/font-awesome.css" rel="stylesheet"/>-->
+    <!--&lt;!&ndash; Morris Chart Styles&ndash;&gt;-->
 
     <!-- Custom Styles-->
     <link href="assets/css/custom-styles.css" rel="stylesheet"/>
@@ -41,6 +45,7 @@
             }
         };
         let myArr;
+
         function buildHtmlTable() {
             let xmlhttp = new XMLHttpRequest();
             let url = "http://cccbd.top:8080/RESTHello/transaction/product_detail?productNo=" + getUrlParameter('productNo');
@@ -52,11 +57,13 @@
                     myArr = JSON.parse(xmlhttp.responseText);
                     document.getElementById('productName').innerHTML = "Name:" + myArr['productName'];
                     document.getElementById('price').innerHTML = "Price:" + myArr['price'];
-                    document.getElementById('content').innerHTML = "Content:" + myArr['content']+"<br>"+"ProductNo:"+myArr['productNo'];
+                    document.getElementById('content').innerHTML = "Content:" + myArr['content'] + "<br>" + "ProductNo:" + myArr['productNo'];
                 }
-
+                $("#button2").show();
             };
+
         }
+
         function buy() {
             let mydata = new FormData();
             mydata.append("productNo", getUrlParameter('productNo'));
@@ -71,6 +78,7 @@
             };
             xhr.send(urlencodeFormData(mydata));
         }
+
         function urlencodeFormData(fd) {
             var params = new URLSearchParams();
             for (var pair of fd.entries()) {
@@ -86,7 +94,7 @@
             background-image: url('../image/background1.jpeg');
             background-position: 0px 100px;
             background-repeat: no-repeat;
-            background-size: 100% 550px;
+            background-size: 100%;
         }
     </style>
 
@@ -100,12 +108,13 @@
             width: 100%;
             position: absolute;
         }
-        #table1{
-            position:absolute;
-            z-index:3;
+
+        #table1 {
+            position: absolute;
+            z-index: 3;
             text-align: center;
             font-size: 20px;
-            margin-left:25%;
+            margin-left: 25%;
             width: 50%;
             top: 200px;
 
@@ -228,23 +237,27 @@
     </style>
 
 </head>
-<body style="background-color: #ff8844" onload="buildHtmlTable('#table1')">
+<div class="translate" style="top:30px;position:absolute;right:200px">
+    <select class="selectpicker" data-width="fit" onchange="changeLanguage(this)" id="lan_selecter">
+        <option value="en" data-content='English' data-i18n="noun.english"></option>
+        <option value="ch" data-content='Chinese' data-i18n="noun.chinese"></option>
+    </select>
+</div>
+<body style="background-color: #ff8844" onload="buildHtmlTable('#table1')" class="translate">
 <section class="HomePage">
     <img src="../image/icon.PNG" width="120px" height="120px">
     <b style="font-size: 30px; position: absolute; top: 35px">Hibernia-Sino Travel Insurance Company</b>
-    <a href="../index.html" style="float:right;">log out</a>
-
-
-
-
+    <a href="../index.html" style="float:right;" data-i18n="noun.logout">Log out</a>
     <div>
         <form>
-            <a href="" style="font-size: 15px; position: absolute; right: 30%;top: 80px;font-weight:bolder;">About
-                Us</a>
-            <a href="" style="font-size: 15px; position: absolute; right: 20%;top: 80px;font-weight:bolder;">Contact
+            <a href="" style="font-size: 15px; position: absolute; right: 30%;top: 80px;font-weight:bolder;"
+               data-i18n="noun.about_us">Help</a>
+            <a href="" style="font-size: 15px; position: absolute; right: 20%;top: 80px;font-weight:bolder;"
+               data-i18n="noun.contact_us">Contact
                 Us</a>
             <a href=""
-               style="font-size: 15px; position: absolute; right: 10%;top: 80px;font-weight:bolder;">Language</a>
+               style="font-size: 15px; position: absolute; right: 10%;top: 80px;font-weight:bolder;"
+               data-i18n="noun.language">Language</a>
         </form>
     </div>
     <div class="bodystyle">
@@ -302,6 +315,7 @@
             </div>
         </div>
 
+
     </div>
 
 
@@ -310,14 +324,14 @@
 <!-- /. WRAPPER  -->
 <!-- JS Scripts-->
 <!-- jQuery Js -->
-<script src="assets/js/jquery-1.10.2.js"></script>
-<!-- Bootstrap Js -->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- Metis Menu Js -->
-<script src="assets/js/jquery.metisMenu.js"></script>
-<!-- DATA TABLE SCRIPTS -->
-<script src="assets/js/dataTables/jquery.dataTables.js"></script>
-<script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+<!--<script src="assets/js/jquery-1.10.2.js"></script>-->
+<!--&lt;!&ndash; Bootstrap Js &ndash;&gt;-->
+<!--<script src="assets/js/bootstrap.min.js"></script>-->
+<!--&lt;!&ndash; Metis Menu Js &ndash;&gt;-->
+<!--<script src="assets/js/jquery.metisMenu.js"></script>-->
+<!--&lt;!&ndash; DATA TABLE SCRIPTS &ndash;&gt;-->
+<!--<script src="assets/js/dataTables/jquery.dataTables.js"></script>-->
+<!--<script src="assets/js/dataTables/dataTables.bootstrap.js"></script>-->
 <script>
     $(document).ready(function () {
         $('#dataTables-example').dataTable();
