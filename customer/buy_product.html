@@ -18,6 +18,10 @@
     <link href='open+sans.css' rel='stylesheet' type='text/css'/>
     <!-- TABLE STYLES-->
     <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="hoverEffect/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="jQueryTanchuan/my_popup.css">
+    <link rel="stylesheet" href="jQueryTanchuan/my_alert.css">
     <script type="text/javascript">
         function developing() {
             window.alert("this function is developing");
@@ -74,11 +78,12 @@
             }
             return params.toString();
         }
+
     </script>
     <title>HomePage</title>
     <style type="text/css">
         body {
-            background-image: url('../image/background.jpeg');
+            background-image: url('../image/background1.jpeg');
             background-position: 0px 100px;
             background-repeat: no-repeat;
             background-size: 100% 550px;
@@ -105,6 +110,121 @@
             top: 200px;
 
         }
+        .box {
+            font-family: 'Ubuntu', sans-serif;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s;
+        }
+        .box:hover {
+            box-shadow: 0 0 15px -5px #000;
+        }
+        .box:before {
+            content: '';
+            background-color: transparent;
+            background-image: radial-gradient(circle at 20% 80%, transparent 29%, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0.4) 33%, transparent 34%),  radial-gradient(circle at 80% 20%, transparent 29%, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0.4) 33%, transparent 34%);
+            background-size: 30px 30px;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            transition: all 0.3s ease 0.2s;
+        }
+        .box:hover:before {
+            opacity: 1;
+        }
+        .box img {
+            width: 100%;
+            height: auto;
+            transition: all 0.3s ease 0s;
+        }
+        .box:hover img {
+            filter: blur(2px);
+        }
+        .box .box-content {
+            color: #fff;
+            background-color: rgba(0,0,0,0.6);
+            text-align: center;
+            width: 100%;
+            height: 59%;
+            padding: 18% 0 0 0;
+            position: absolute;
+            left: 0;
+            top: -100%;
+            z-index: 2;
+            transition: all 0.3s ease 0s;
+        }
+        .box:hover .box-content {
+            top: 0;
+        }
+        .box .title {
+            color: #fff;
+            font-size: 23px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .box .post {
+            color: #32c287;
+            font-size: 14px;
+            font-style: italic;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+        }
+        .box .icon {
+            background: rgba(50,194,135,0.6);
+            text-align: center;
+            height: 39%;
+            width: 100%;
+            padding: 15px 0 0;
+            margin: 0;
+            list-style: none;
+            transform: translateX(50%);
+            position: absolute;
+            right: 50%;
+            bottom: -100%;
+            z-index: 1;
+            transition: all 0.3s;
+        }
+        .box:hover .icon {
+            bottom: 0;
+        }
+        .box .icon li {
+            display: inline-block;
+            margin: 0 3px;
+        }
+        .box .icon li a {
+            color: #32c287;
+            background-color: #fff;
+            font-size: 18px;
+            line-height: 40px;
+            height: 40px;
+            width: 40px;
+            border-radius: 40%;
+            display: block;
+            transition: all 0.3s;
+        }
+        .box .icon li a:hover {
+            color: #fff;
+            background-color: #04a562;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.5), 0 0 5px rgba(0,0,0,0.5) inset;
+        }
+
+        @media only screen and (max-width:990px) {
+            .box {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media only screen and (max-width:479px) {
+            .box .title {
+                font-size: 20px;
+            }
+        }
     </style>
 
 </head>
@@ -128,21 +248,59 @@
         </form>
     </div>
     <div class="bodystyle">
-        <img src="../image/white.png" width=98% height=800px" style="position: absolute; top: 100px;z-index:2;">
-        <div style="position: absolute;z-index: 3;text-align: center;margin-left: 35%;top: 200px;">
-            <h1 id="productName"></h1>
-            <h2 id="price"></h2>
-            <p id="content"></p>
-            <div class="col-md-6">
+<!--        <img src="../image/white.png" width=98% height=800px" style="position: absolute; top: 100px;z-index:2;">-->
+<!--        <div style="position: absolute;z-index: 3;text-align: center;margin-left: 35%;top: 200px;">-->
+<!--            <h1 id="productName"></h1>-->
+<!--            <h2 id="price"></h2>-->
+<!--            <p id="content"></p>-->
+<!--            <div class="col-md-6">-->
 
-                <button type="button" class="btn btn-success btn-circle" style="position:absolute;margin-left: 40%"
-                        id="button2"><i class="fa fa-shopping-cart fa-2x" onclick="buy()"></i>
-                </button>
-                <!-- <button type="button" class="btn btn-info btn-circle" style="position: absolute;margin-left: 120%"><i class="fa fa-info fa-2x"></i> -->
-                </button>
+<!--                <button type="button" class="btn btn-success btn-circle" style="position:absolute;margin-left: 40%"-->
+<!--                        id="button2"><i class="fa fa-shopping-cart fa-2x" onclick="buy()"></i>-->
+<!--                </button>-->
+<!--                &lt;!&ndash; <button type="button" class="btn btn-info btn-circle" style="position: absolute;margin-left: 120%"><i class="fa fa-info fa-2x"></i> &ndash;&gt;-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="demo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="box"> <img src="hoverEffect/images/img-1.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title">Sports</h3>
+                                <span class="post">sports insurance</span> </div>
+                            <ul class="icon">
+                                <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="box"> <img src="hoverEffect/images/img-2.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title">Family</h3>
+                                <span class="post">Family insurance</span> </div>
+                            <ul class="icon">
+                                <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="box"> <img src="hoverEffect/images/img-3.jpg" alt="">
+                            <div class="box-content">
+                                <h3 class="title">Luggage</h3>
+                                <span class="post">lost luggage</span> </div>
+                            <ul class="icon">
+                                <li><a href="#" id="threeShow3" ><i class="fa fa-search" ></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
 
     </div>
 
@@ -167,5 +325,23 @@
 </script>
 <!-- Custom Js -->
 <script src="assets/js/custom-scripts.js"></script>
+<script src="jQueryTanchuan/my_popup.js"></script>
+<script src="jQueryTanchuan/my_alert.js"></script>
+<script>
+    window.onload = function () {
+        var oThreeShow2 = document.getElementById('threeShow3');
+        var i;
+        var arr = ['改变1', '改变2']
+        oThreeShow2.onclick = function () {
+            oMyAlert.show('This is lost luggage insurance<br> content:xxxxxxxxxxxxxxxxxxxx', {
+                bgcolor: '#ccc',
+                opacity: 0.4,
+                showFn: function () {
+                    oMyAlert.addClass('state1');
+                }
+            })
+        }
+    }
+</script>
 </body>
 </html>
