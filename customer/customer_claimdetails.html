@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+<script src="../sweetalert.min.js"></script>
     <meta charset="utf-8"/>
     <script src="jquery-3.3.1.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -56,10 +57,9 @@
         }
 
         $(document).ready(function () {
-           
             $("#button2").click(function () {
-                send()
-                window.location.href = "customer_process.html";
+                send();
+                //window.location.href = "customer_process.html";
             });
         });
 
@@ -83,8 +83,10 @@
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function () {
                 console.log(this.responseText);
-                alert('success');
-                window.location.href = "process.html";
+                swal("Success!", this.responseText, "success").then((value) => {
+                    window.location.href = "customer_process.html";
+                });
+                // alert('success');
             };
             xhr.send(urlencodeFormData(mydata));
         }

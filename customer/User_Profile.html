@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+    <script src="../sweetalert.min.js"></script>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script src="../i18next.min.js"></script>
@@ -182,7 +183,7 @@
         local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
         return local.toJSON().slice(0, 10);
     });
-    if (document.body.clientWidth<420) {
+    if (document.body.clientWidth < 420) {
         document.getElementById('title1').style.display = 'none';
         document.getElementById('xiala2').style.display = 'none';
         var a = document.getElementById('xiala1').innerHTML;
@@ -210,15 +211,16 @@
                 $("#email").val(data["email"]);
                 $("#passport_no").val(data["passport_no"]);
                 $("#phone").val(data["phone"]);
-                if(data["portrait"]!=null){
-                    let url="https://cccbd.top:8443/img/"+data["portrait"];
-                    $("#portrait").attr("src",url);
-                }else{
-                    $("#portrait").attr("src","../image/default.png");
+                if (data["portrait"] != null) {
+                    let url = "https://cccbd.top:8443/img/" + data["portrait"];
+                    $("#portrait").attr("src", url);
+                } else {
+                    $("#portrait").attr("src", "../image/default.png");
                 }
             }
         });
     });
+
     function save() {
         var fd = new FormData();
         fd.append('uploadedFile', $("#file")[0].files[0]);
@@ -237,8 +239,11 @@
                 },
                 type: 'POST',
                 success: function (data) {
-                    alert(data);
-                    location.reload();
+                    swal("Success!", data, "success").then((value) => {
+                        location.reload();
+                    });
+                    //alert(data);
+
                 },
                 fail: function (jqXHR) {
                     alert(jqXHR.responseText)
